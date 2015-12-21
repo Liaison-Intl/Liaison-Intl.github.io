@@ -71,6 +71,12 @@ a {
   .page-header {
     padding: 2rem 1rem; } }
 
+.page-header a {
+  color: white; }
+
+.page-header a:hover {
+  text-decoration: none; }
+
 .project-name {
   margin-top: 0;
   margin-bottom: 0.1rem; }
