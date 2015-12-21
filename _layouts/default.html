@@ -1,31 +1,55 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>
-      {% if page.title %}
-        {{ page.title }} -
-      {% endif %}
-      WebAdMIT Developer
-    </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
-    <section class="page-header">
-      <h1 class="project-name"><a href="index.html">WebAdMIT Developer</a></h1>
-    </section>
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <section class="main-content">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <!--[if lt IE 9]>
+            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+            <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+        <![endif]-->
+    </head>
+    <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">WebAdMIT Developer</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
       {{ content }}
 
-      <footer class="site-footer">
-        <span class="site-footer-credits">&copy; {{ site.time | date: '%Y' }} Liaison International.  <a href="about.html">About</a>.</span>
-      </footer>
+      <hr>
 
-    </section>
+      <footer>
+        <p>&copy; {{ site.time | date: '%Y' }} Liaison International.  <a href="about.html">About</a>.</p>
+      </footer>
+    </div> <!-- /container -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+    <script src="js/vendor/bootstrap.min.js"></script>
+
+    <script src="js/main.js"></script>
   </body>
 </html>
