@@ -20,33 +20,23 @@ An applicant applies to a **program** at an organization.
 
 List existing programs.
 
-{% highlight http %}
-GET /api/v1/user_identity/:user_identity_id/programs
-{% endhighlight %}
-
+    GET /api/v1/user_identity/:user_identity_id/programs
 
 #### Curl Example
 
-{% highlight bash %}
-$ curl -n https://api.webadmit.org/api/v1/user_identity/:user_identity_id/programs
-{% endhighlight %}
+    $ curl -n https://api.webadmit.org/api/v1/user_identity/:user_identity_id/programs
 
 #### Response Example
 
-{% highlight http %}
-HTTP/1.1 200 OK
-{% endhighlight %}
+    HTTP/1.1 200 OK
 
-{% highlight json %}
-{
-  "href": "/api/v1/user_identities/1/programs",
-  "programs": [
     {
-      "id": 42,
-      "name": "Potions",
-      "organization_name": "Hogwarts School of Witchcraft and Wizardry"
+      "href": "/api/v1/user_identities/1/programs",
+      "programs": [
+        {
+          "id": 42,
+          "name": "Potions",
+          "organization_name": "Hogwarts School of Witchcraft and Wizardry"
+        }
+      ]
     }
-  ]
-}
-{% endhighlight %}
-
