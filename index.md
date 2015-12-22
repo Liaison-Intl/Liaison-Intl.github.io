@@ -9,3 +9,18 @@ layout: default
     <p><a class="btn btn-primary btn-lg" href="v1.html" role="button">Browse the documentation &raquo;</a></p>
   </div>
 </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Applicant Data</h2>
+      <p>Use our Export API to extract applicant data from WebAdMIT for analysis, processing, or other integration with on-campus systems.</p>
+      <p><a class="btn btn-default" href="http://help.webadmit.org/webadmit2016/documents/WebAdMIT_Export_Manager_API.pdf" role="button">Download PDF &raquo;</a></p>
+    </div>
+    <div class="col-md-6">
+      <h2>Custom Fields</h2>
+      <p>Record arbitrary applicant information programmatcally using Custom Fields.  Fields such as University ID, University email, etc. can be magically filled in by back-office applications.</p>
+      <p><a class="btn btn-default" href="v1.html" role="button">Read more &raquo;</a></p>
+    </div>
+  </div>
+</div>
