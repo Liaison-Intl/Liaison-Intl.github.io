@@ -16,15 +16,24 @@ generate_markdown_from_json_schema() {
 
   mkdir -p tmp
   bundle exec prmd combine --meta "$webadmit_path/schemata/meta.json" "$webadmit_path/$json_schema_filename" > tmp/schema.json
+  bundle exec prmd doc tmp/schema.json > tmp/schema.md
+
   cat <<EOF
 ---
 layout: default
 title: $title
 ---
 
+<!-- WARNING: This is an automatically generated file.  Do not modify directly.  See script/generate-docs. -->
+
 EOF
-  bundle exec prmd doc tmp/schema.json
-  rm tmp/schema.json
+  ruby -r  <<RUBY
+require 'github/markup'
+puts GitHub::Markup.render("tmp/schema.md")
+RUBY
+  echo # Without a trailing newline, Jekyll won't serve the file!
+
+  rm tmp/schema.json tmp/schema.md
 }
 
 read_config

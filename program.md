@@ -3,52 +3,74 @@ layout: default
 title: Program
 ---
 
-## <a name="resource-program"></a>Program
+<!-- WARNING: This is an automatically generated file.  Do not modify directly.  See script/generate-docs. -->
 
-An applicant applies to a **program** at an organization.
+<h2><a name="resource-program"></a>Program</h2>
 
-### Attributes
+<p>An applicant applies to a <strong>program</strong> at an organization.</p>
 
-| Name | Type | Description | Example |
-| ------- | ------- | ------- | ------- |
-| **href** | *string* | Hypertext reference to this resource.<br/> **pattern:** <code>/api/v1/user_identities/\d+/programs</code> | `"/api/v1/user_identities/1/programs"` |
-| **programs/id** | *integer* | Unique identifier of this program. | `42` |
-| **programs/name** | *string* | Human-readable name of this program.  Likely to be repeated between organizations. | `"Potions"` |
-| **programs/organization_name** | *nullable string* | Human-readable name of organization whose program this is. | `"Hogwarts School of Witchcraft and Wizardry"` |
+<h3>Attributes</h3>
 
-### Program List
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>href</strong></td>
+<td><em>string</em></td>
+<td>Hypertext reference to this resource.<br/> <strong>pattern:</strong> <code>/api/v1/user_identities/\d+/programs</code></td>
+<td><code>&quot;/api/v1/user_identities/1/programs&quot;</code></td>
+</tr>
+<tr>
+<td><strong>programs/id</strong></td>
+<td><em>integer</em></td>
+<td>Unique identifier of this program.</td>
+<td><code>42</code></td>
+</tr>
+<tr>
+<td><strong>programs/name</strong></td>
+<td><em>string</em></td>
+<td>Human-readable name of this program.  Likely to be repeated between organizations.</td>
+<td><code>&quot;Potions&quot;</code></td>
+</tr>
+<tr>
+<td><strong>programs/organization_name</strong></td>
+<td><em>nullable string</em></td>
+<td>Human-readable name of organization whose program this is.</td>
+<td><code>&quot;Hogwarts School of Witchcraft and Wizardry&quot;</code></td>
+</tr>
+</tbody></table>
 
-List existing programs.
+<h3>Program List</h3>
 
-```
-GET /api/v1/user_identity/:user_identity_id/programs
-```
+<p>List existing programs.</p>
 
+<pre><code>GET /api/v1/user_identity/:user_identity_id/programs
+</code></pre>
 
-#### Curl Example
+<h4>Curl Example</h4>
 
-```bash
-$ curl -n https://api.webadmit.org/api/v1/user_identity/:user_identity_id/programs
-```
+<pre lang="bash"><code>$ curl -n https://api.webadmit.org/api/v1/user_identity/:user_identity_id/programs
+</code></pre>
 
+<h4>Response Example</h4>
 
-#### Response Example
+<pre><code>HTTP/1.1 200 OK
+</code></pre>
 
-```
-HTTP/1.1 200 OK
-```
-
-```json
-{
-  "href": "/api/v1/user_identities/1/programs",
-  "programs": [
+<pre lang="json"><code>{
+  &quot;href&quot;: &quot;/api/v1/user_identities/1/programs&quot;,
+  &quot;programs&quot;: [
     {
-      "id": 42,
-      "name": "Potions",
-      "organization_name": "Hogwarts School of Witchcraft and Wizardry"
+      &quot;id&quot;: 42,
+      &quot;name&quot;: &quot;Potions&quot;,
+      &quot;organization_name&quot;: &quot;Hogwarts School of Witchcraft and Wizardry&quot;
     }
   ]
 }
-```
-
+</code></pre>
 
