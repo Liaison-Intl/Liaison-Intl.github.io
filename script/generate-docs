@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+set -o errexit
+
+read_config() {
+  webadmit_path=$(cat config/webadmit_path.txt)
+}
+
+# Use `prmd` to generate markdown from the JSON Schema files we use when testing.
+#
+# There's also a way of using `prmd` from a Rake task, but using this script
+# avoids some current problems with conflicting Ruby versions.  (Changing to
+# the Rake task would probably make sense in the future.)
+generate_markdown_from_json_schema() {
+  title="$1"
+  json_schema_filename="schemata/$2"
+
+  mkdir -p tmp
+  bundle exec prmd combine --meta "$webadmit_path/schemata/meta.json" "$webadmit_path/$json_schema_filename" > tmp/schema.json
+  cat <<EOF
+---
+layout: default
+title: $title
+---
+
+EOF
+  bundle exec prmd doc tmp/schema.json
+  rm tmp/schema.json
+}
+
+read_config
+generate_markdown_from_json_schema 'Program' 'program.json' > 'program.md'

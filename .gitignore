@@ -1,2 +1,4 @@
 _site
+config/webadmit_path.txt
 .DS_Store
+tmp/*
