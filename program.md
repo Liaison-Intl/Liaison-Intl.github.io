@@ -49,12 +49,12 @@ title: Program
 
 <p>List existing programs.</p>
 
-<pre><code>GET /api/v1/user_identity/:user_identity_id/programs
+<pre><code>GET /api/v1/user_identities/:user_identity_id/programs
 </code></pre>
 
 <h4>Curl Example</h4>
 
-<pre lang="bash"><code>$ curl -n https://api.webadmit.org/api/v1/user_identity/:user_identity_id/programs
+<pre lang="bash"><code>$ curl -n https://api.webadmit.org/api/v1/user_identities/:user_identity_id/programs
 </code></pre>
 
 <h4>Response Example</h4>

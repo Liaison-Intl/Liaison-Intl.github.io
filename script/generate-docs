@@ -38,3 +38,4 @@ RUBY
 
 read_config
 generate_markdown_from_json_schema 'Program' 'program.json' > 'program.md'
+generate_markdown_from_json_schema 'Custom Field' 'custom_field.json' > 'custom_field.md'
