@@ -41,26 +41,26 @@ title: User Identity
 </tr>
 <tr>
 <td><strong>user_identities/association</strong></td>
-<td><em>string</em></td>
-<td>Human-readable name of the association that this user identity belongs to.</td>
+<td><em>nullable string</em></td>
+<td>Human-readable name of the association that this user identity belongs to, or <code>null</code> if not applicable.</td>
 <td><code>&quot;SOPHAS&quot;</code></td>
 </tr>
 <tr>
 <td><strong>user_identities/institution</strong></td>
-<td><em>string</em></td>
-<td>Human-readable name of the institution that this user identity belongs to, or empty string if not applicable.</td>
+<td><em>nullable string</em></td>
+<td>Human-readable name of the institution that this user identity belongs to, or <code>null</code> if not applicable.</td>
 <td><code>&quot;Demo University&quot;</code></td>
 </tr>
 <tr>
 <td><strong>user_identities/organization</strong></td>
-<td><em>string</em></td>
-<td>Human-readable name of the organization that this user identity belongs to, or empty string if not applicable.</td>
+<td><em>nullable string</em></td>
+<td>Human-readable name of the organization that this user identity belongs to, or <code>null</code> if not applicable.</td>
 <td><code>&quot;Demo University School of Public Health&quot;</code></td>
 </tr>
 <tr>
 <td><strong>user_identities/cycle</strong></td>
-<td><em>string</em></td>
-<td>Academic cycle that this user identity can access.</td>
+<td><em>nullable string</em></td>
+<td>Academic cycle that this user identity can access, or <code>null</code> if not applicable.</td>
 <td><code>&quot;2014 - 2015&quot;</code></td>
 </tr>
 </tbody></table>
