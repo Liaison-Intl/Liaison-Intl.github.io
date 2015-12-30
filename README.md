@@ -16,3 +16,13 @@ After installing, you can run Jekyll like so:
     jekyll serve
 
 And then visit [http://127.0.0.1:4000/](http://127.0.0.1:4000/).
+
+## Modifying the documentation
+
+While some of the markdown files in this repository can be edited by hand, the endpoint documentation is generated like so:
+
+    script/generate-docs
+
+We are using [JSON Schema](http://json-schema.org/) to both generate documentation and to test that the generated documentation is accurate.
+
+You will need to configure the path to WebAdMIT in `config/webadmit_path.txt`.  For an example of how to do this, see `config/webadmit_path.sample.txt`.
