@@ -14,6 +14,12 @@ generate_markdown_from_json_schema() {
   title="$1"
   json_schema_filename="schemata/$2"
 
+  if [ -f "$3" ]; then
+    extended_description_filename="$3"
+  else
+    extended_description_filename='/dev/null'
+  fi
+
   mkdir -p tmp
   bundle exec prmd combine --meta "$webadmit_path/schemata/meta.json" "$webadmit_path/$json_schema_filename" > tmp/schema.json
   bundle exec prmd doc tmp/schema.json > tmp/schema.md
@@ -27,13 +33,16 @@ title: $title
 <!-- WARNING: This is an automatically generated file.  Do not modify directly.  See script/generate-docs. -->
 
 EOF
+
   ruby -r <<RUBY
 require 'github/markup'
 # Work around a [bug][] in prmd that erroneously continues a line when there is a header but no data.
 #
 #   [bug]: https://github.com/interagent/prmd/blob/34b7fbefa168a5c58fe012eb335d21b06e600323/lib/prmd/templates/schemata/link_curl_example.md.erb#L27
-puts GitHub::Markup.render("tmp/schema.md").gsub(/ \\\s*\n<\/code><\/pre>/m, "\n</code></pre>")
+extended_description = File.read('$extended_description_filename')
+puts GitHub::Markup.render("tmp/schema.md").sub('<h3>Attributes</h3>', "#{extended_description}\n<h3>Attributes</h3>").gsub(/ \\\s*\n<\/code><\/pre>/m, "\n</code></pre>")
 RUBY
+
   echo # Without a trailing newline, Jekyll won't serve the file!
 
   rm tmp/schema.json tmp/schema.md
