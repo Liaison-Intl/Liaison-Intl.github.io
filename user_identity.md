@@ -74,7 +74,8 @@ title: User Identity
 
 <h4>Curl Example</h4>
 
-<pre lang="bash"><code>$ curl -n https://api.webadmit.org/api/v1/user_identities
+<pre lang="bash"><code>$ curl -n https://api.webadmit.org/api/v1/user_identities \
+  -H &quot;x-api-key: 0123456789abcdef0123456789abcdef&quot;
 </code></pre>
 
 <h4>Response Example</h4>

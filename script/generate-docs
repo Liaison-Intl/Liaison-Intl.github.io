@@ -27,9 +27,12 @@ title: $title
 <!-- WARNING: This is an automatically generated file.  Do not modify directly.  See script/generate-docs. -->
 
 EOF
-  ruby -r  <<RUBY
+  ruby -r <<RUBY
 require 'github/markup'
-puts GitHub::Markup.render("tmp/schema.md")
+# Work around a [bug][] in prmd that erroneously continues a line when there is a header but no data.
+#
+#   [bug]: https://github.com/interagent/prmd/blob/34b7fbefa168a5c58fe012eb335d21b06e600323/lib/prmd/templates/schemata/link_curl_example.md.erb#L27
+puts GitHub::Markup.render("tmp/schema.md").gsub(/ \\\s*\n<\/code><\/pre>/m, "\n</code></pre>")
 RUBY
   echo # Without a trailing newline, Jekyll won't serve the file!
 
