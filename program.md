@@ -76,3 +76,15 @@ title: Program
 }
 </code></pre>
 
+<h3>Not Found</h3>
+
+<h4>Response Example</h4>
+
+<pre><code>HTTP/1.1 404 Not Found
+</code></pre>
+
+<pre lang="json"><code>{
+  &quot;message&quot;: &quot;Not Found&quot;
+}
+</code></pre>
+
