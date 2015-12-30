@@ -9,6 +9,7 @@ title: Custom Field
 
 <p>A <strong>custom field</strong> defines an abstract field that admissions staff can use to store arbitrary data about an applicant.  The data itself is stored in a <strong>custom field answer</strong>.</p>
 
+
 <h3>Attributes</h3>
 
 <table><thead>
