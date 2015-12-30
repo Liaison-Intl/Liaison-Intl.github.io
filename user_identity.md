@@ -76,7 +76,7 @@ In general, configuration entities such as Lists, Exports, Email Templates, and 
 
 <h3>User Identity List</h3>
 
-<p>List user identities belonging to the user (as identified by API key) that have been given the &quot;API Access&quot; permission.</p>
+<p>Retrieve details on all user identities that are part of a user&#39;s WebAdMIT profile and that have the &quot;API Access&quot; permission assigned to them.  The <code>id</code> associated with each identity will not change, and only becomes something new when a new identity is created – for example at the start of a new academic cycle.</p>
 
 <pre><code>GET /api/v1/user_identities
 </code></pre>
