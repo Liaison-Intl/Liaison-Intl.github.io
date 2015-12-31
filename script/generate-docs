@@ -12,7 +12,7 @@ read_config() {
 # the Rake task would probably make sense in the future.)
 generate_markdown_from_json_schema() {
   title="$1"
-  json_schema_filename="schemata/$2"
+  json_schema_filename="$2"
 
   if [ -f "$3" ]; then
     extended_description_filename="$3"
@@ -22,8 +22,11 @@ generate_markdown_from_json_schema() {
 
   footer_filename="$4"
 
+  cp "$webadmit_path/schemata/meta.json" schemata
+  cp "$webadmit_path/schemata/$json_schema_filename" schemata
+
   mkdir -p tmp
-  bundle exec prmd combine --meta "$webadmit_path/schemata/meta.json" "$webadmit_path/$json_schema_filename" > tmp/schema.json
+  bundle exec prmd combine --meta "schemata/meta.json" "schemata/$json_schema_filename" > tmp/schema.json
   bundle exec prmd doc tmp/schema.json > tmp/schema.md
 
   if [ -f "$footer_filename" ]; then

@@ -1,0 +1,11 @@
+{
+ "id": "webadmit",
+ "title": "WebAdMIT",
+ "description": "WebAdMIT API",
+ "links": [
+   {
+     "href": "https://api.webadmit.org",
+     "rel": "self"
+   }
+ ]
+}
