@@ -15,3 +15,10 @@ body {
 .liaison-navbar-logo {
   margin: 0;
 }
+
+#content img {
+  border: 1px solid #ddd;
+  display: block;
+  margin: 0 auto;
+  padding: 4px;
+}

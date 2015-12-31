@@ -1,6 +1,8 @@
 ### What is a user identity in WebAdMIT?
 
-Each of the selectable items in the standard WebAdMIT account dropdown are considered to be standard admissions-level **user identities** -- for most universities, this ties to the cohorts of students from each major graduate department.
+Each of the selectable items in the standard WebAdMIT account dropdown are considered to be standard admissions-level **user identities** -- for most universities, this ties to the cohorts of students from each major graduate department:
+
+![User Identity Switcher](img/user-identity-switcher.png)
 
 There are two additional "special" types of identities available in WebAdMIT:
 
