@@ -20,7 +20,7 @@ generate_markdown_from_json_schema() {
     extended_description_filename='/dev/null'
   fi
 
-  footer_filename="$4"
+  footer_filenames=$4
 
   cp "$webadmit_path/schemata/meta.json" schemata
   cp "$webadmit_path/schemata/$json_schema_filename" schemata
@@ -29,10 +29,12 @@ generate_markdown_from_json_schema() {
   bundle exec prmd combine --meta "schemata/meta.json" "schemata/$json_schema_filename" > tmp/schema.json
   bundle exec prmd doc tmp/schema.json > tmp/schema.md
 
-  if [ -f "$footer_filename" ]; then
-    echo >> tmp/schema.md
-    cat "$footer_filename" >> tmp/schema.md
-  fi
+  for footer_filename in $footer_filenames; do
+    if [ -f "$footer_filename" ]; then
+      echo >> tmp/schema.md
+      cat "$footer_filename" >> tmp/schema.md
+    fi
+  done
 
   echo >> tmp/schema.md
   cat unauthorized.md >> tmp/schema.md
@@ -69,3 +71,5 @@ generate_markdown_from_json_schema 'User Identity' 'user_identity.json' 'user_id
 generate_markdown_from_json_schema 'Organization' 'organization.json' 'prototype.md' 'not_found.md' > 'organization.md'
 generate_markdown_from_json_schema 'Program' 'program.json' '' 'not_found.md' > 'program.md'
 generate_markdown_from_json_schema 'Custom Field' 'custom_field.json' '' 'not_found.md' > 'custom_field.md'
+generate_markdown_from_json_schema 'PDF Manager Template' 'pdf_manager_template.json' '' 'not_found.md' > 'pdf_manager_template.md'
+generate_markdown_from_json_schema 'PDF Manager Zip File' 'pdf_manager_zip_file.json' '' 'pdf_manager_zip_file_errors.md not_found.md' > 'pdf_manager_zip_file.md'
