@@ -50,6 +50,9 @@ require 'github/markup'
 #
 #   [bug]: https://github.com/interagent/prmd/blob/34b7fbefa168a5c58fe012eb335d21b06e600323/lib/prmd/templates/schemata/link_curl_example.md.erb#L27
 extended_description = File.read('$extended_description_filename')
+# The "extra backlash" bug is [fixed][] in v0.11.x but there is another bug that duplicates attributes that started around v0.10.x that is preventing us from upgrading.  @benjaminoakes has spoken with @geemus about this directly.
+#
+#   [fixed]: https://github.com/interagent/prmd/commit/687d20b61a0d08ae16bbe76e59678ee5f4026464
 puts GitHub::Markup.render("tmp/schema.md").sub('<h3>Attributes</h3>', "#{extended_description}\n<h3>Attributes</h3>").gsub(/ \\\s*\n<\/code><\/pre>/m, "\n</code></pre>")
 RUBY
 
