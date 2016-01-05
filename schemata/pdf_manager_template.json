@@ -45,6 +45,12 @@
             "type": "string",
             "description": "Human-readable name of the list that is used when populating this template.",
             "example": "Offer Accepted"
+          },
+          "document_type": {
+            "type": "string",
+            "description": "Human-readable name of the document type that is used when populating this template.",
+            "enum": ["Full Application PDF"],
+            "example": "Full Application PDF"
           }
         }
       }
