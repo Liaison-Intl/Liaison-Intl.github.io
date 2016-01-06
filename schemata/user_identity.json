@@ -52,6 +52,11 @@
             "description": "Human-readable name of the institution that this user identity belongs to, or `null` if not applicable.",
             "example": "Demo University"
           },
+          "organization_id": {
+            "type": ["integer", "null"],
+            "description": "Unique identifier of the organization that this user identity belongs to, or `null` if not applicable.",
+            "example": 65432
+          },
           "organization": {
             "type": ["string", "null"],
             "description": "Human-readable name of the organization that this user identity belongs to, or `null` if not applicable.",
@@ -61,6 +66,11 @@
             "type": ["string", "null"],
             "description": "Academic cycle that this user identity can access, or `null` if not applicable.",
             "example": "2014 - 2015"
+          },
+          "cas_application_form_identifier": {
+            "type": ["string", "null"],
+            "description": "Unique identifier of the Configuration Portal application form",
+            "example": "5436"
           }
         }
       }

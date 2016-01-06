@@ -63,6 +63,12 @@ In general, configuration entities such as Lists, Exports, Email Templates, and 
 <td><code>&quot;Demo University&quot;</code></td>
 </tr>
 <tr>
+<td><strong>user_identities/organization_id</strong></td>
+<td><em>nullable integer</em></td>
+<td>Unique identifier of the organization that this user identity belongs to, or <code>null</code> if not applicable.</td>
+<td><code>65432</code></td>
+</tr>
+<tr>
 <td><strong>user_identities/organization</strong></td>
 <td><em>nullable string</em></td>
 <td>Human-readable name of the organization that this user identity belongs to, or <code>null</code> if not applicable.</td>
@@ -73,6 +79,12 @@ In general, configuration entities such as Lists, Exports, Email Templates, and 
 <td><em>nullable string</em></td>
 <td>Academic cycle that this user identity can access, or <code>null</code> if not applicable.</td>
 <td><code>&quot;2014 - 2015&quot;</code></td>
+</tr>
+<tr>
+<td><strong>user_identities/cas_application_form_identifier</strong></td>
+<td><em>nullable string</em></td>
+<td>Unique identifier of the Configuration Portal application form</td>
+<td><code>&quot;5436&quot;</code></td>
 </tr>
 </tbody></table>
 
@@ -102,8 +114,10 @@ In general, configuration entities such as Lists, Exports, Email Templates, and 
       &quot;type&quot;: &quot;Admissions User&quot;,
       &quot;association&quot;: &quot;SOPHAS&quot;,
       &quot;institution&quot;: &quot;Demo University&quot;,
+      &quot;organization_id&quot;: 65432,
       &quot;organization&quot;: &quot;Demo University School of Public Health&quot;,
-      &quot;cycle&quot;: &quot;2014 - 2015&quot;
+      &quot;cycle&quot;: &quot;2014 - 2015&quot;,
+      &quot;cas_application_form_identifier&quot;: &quot;5436&quot;
     }
   ]
 }
