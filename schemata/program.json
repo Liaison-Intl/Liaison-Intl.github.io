@@ -3,7 +3,7 @@
   "id": "/schemata/program",
 
   "title": "Program",
-  "description": "An applicant applies to a **program** at an organization.",
+  "description": "An applicant applies to a **program** at an **organization**.",
 
   "links": [
     {

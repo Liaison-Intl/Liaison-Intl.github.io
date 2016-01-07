@@ -7,7 +7,7 @@ title: Program
 
 <h2><a name="resource-program"></a>Program</h2>
 
-<p>An applicant applies to a <strong>program</strong> at an organization.</p>
+<p>An applicant applies to a <strong>program</strong> at an <strong>organization</strong>.</p>
 
 
 <h3>Attributes</h3>
