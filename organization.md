@@ -40,13 +40,19 @@ title: Organization
 <td><strong>organizations/name</strong></td>
 <td><em>string</em></td>
 <td>Human-readable name of this organization.</td>
-<td><code>&quot;Hogwarts School of Witchcraft and Wizardry&quot;</code></td>
+<td><code>&quot;Demo University&quot;</code></td>
 </tr>
 <tr>
 <td><strong>organizations/cycle_name</strong></td>
 <td><em>nullable string</em></td>
 <td>Academic cycle of this organization, or <code>null</code> if not applicable.<br/> <strong>pattern:</strong> <code>^\d{4} - \d{4}$</code></td>
 <td><code>&quot;2014 - 2015&quot;</code></td>
+</tr>
+<tr>
+<td><strong>organizations/association_name</strong></td>
+<td><em>nullable string</em></td>
+<td>Human-readable name of the association that this organization belongs to, or <code>null</code> if not applicable.</td>
+<td><code>&quot;SOPHAS&quot;</code></td>
 </tr>
 <tr>
 <td><strong>organizations/cas3</strong></td>
@@ -85,8 +91,9 @@ title: Organization
   &quot;organizations&quot;: [
     {
       &quot;id&quot;: 42,
-      &quot;name&quot;: &quot;Hogwarts School of Witchcraft and Wizardry&quot;,
+      &quot;name&quot;: &quot;Demo University&quot;,
       &quot;cycle_name&quot;: &quot;2014 - 2015&quot;,
+      &quot;association_name&quot;: &quot;SOPHAS&quot;,
       &quot;cas3&quot;: true,
       &quot;config_portal_identifier&quot;: &quot;2235&quot;
     }

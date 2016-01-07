@@ -40,13 +40,18 @@
           "name": {
             "type": "string",
             "description": "Human-readable name of this organization.",
-            "example": "Hogwarts School of Witchcraft and Wizardry"
+            "example": "Demo University"
           },
           "cycle_name": {
             "type": ["string", "null"],
             "description": "Academic cycle of this organization, or `null` if not applicable.",
             "pattern": "^\\d{4} - \\d{4}$",
             "example": "2014 - 2015"
+          },
+          "association_name": {
+            "type": ["string", "null"],
+            "description": "Human-readable name of the association that this organization belongs to, or `null` if not applicable.",
+            "example": "SOPHAS"
           },
           "cas3": {
             "type": "boolean",
