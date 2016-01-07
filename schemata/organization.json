@@ -42,6 +42,12 @@
             "description": "Human-readable name of this organization.",
             "example": "Hogwarts School of Witchcraft and Wizardry"
           },
+          "cycle_name": {
+            "type": ["string", "null"],
+            "description": "Academic cycle of this organization, or `null` if not applicable.",
+            "pattern": "^\\d{4} - \\d{4}$",
+            "example": "2014 - 2015"
+          },
           "cas3": {
             "type": "boolean",
             "description": "Whether or not this organization is using CAS3 (as opposed the older CAS2, for example).",
