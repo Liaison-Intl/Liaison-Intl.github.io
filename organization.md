@@ -40,7 +40,7 @@ title: Organization
 <td><strong>organizations/name</strong></td>
 <td><em>string</em></td>
 <td>Human-readable name of this organization.</td>
-<td><code>&quot;Demo University&quot;</code></td>
+<td><code>&quot;Demo University School of Public Health&quot;</code></td>
 </tr>
 <tr>
 <td><strong>organizations/cycle_name</strong></td>
@@ -91,7 +91,7 @@ title: Organization
   &quot;organizations&quot;: [
     {
       &quot;id&quot;: 42,
-      &quot;name&quot;: &quot;Demo University&quot;,
+      &quot;name&quot;: &quot;Demo University School of Public Health&quot;,
       &quot;cycle_name&quot;: &quot;2014 - 2015&quot;,
       &quot;association_name&quot;: &quot;SOPHAS&quot;,
       &quot;cas3&quot;: true,

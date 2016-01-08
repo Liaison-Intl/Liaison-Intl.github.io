@@ -40,7 +40,7 @@
           "name": {
             "type": "string",
             "description": "Human-readable name of this organization.",
-            "example": "Demo University"
+            "example": "Demo University School of Public Health"
           },
           "cycle_name": {
             "type": ["string", "null"],
