@@ -113,3 +113,12 @@ title: Organization
 }
 </code></pre>
 
+<h3>Unauthorized</h3>
+
+<h4>Response Example</h4>
+
+<pre><code>HTTP/1.1 401 Unauthorized
+</code></pre>
+
+<p>(Empty response body.)</p>
+

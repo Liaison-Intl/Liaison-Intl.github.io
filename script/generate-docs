@@ -34,6 +34,9 @@ generate_markdown_from_json_schema() {
     cat "$footer_filename" >> tmp/schema.md
   fi
 
+  echo >> tmp/schema.md
+  cat unauthorized.md >> tmp/schema.md
+
   cat <<EOF
 ---
 layout: default
