@@ -3,6 +3,7 @@
   "id": "/schemata/pdf_manager_zip_file",
 
   "title": "PDF Manager Zip File",
+  "stability": "prototype",
   "description": "A **PDF Manager zip file** represents the asynchronous execution and eventual population of a **PDF Manager template**.",
 
   "definitions": {

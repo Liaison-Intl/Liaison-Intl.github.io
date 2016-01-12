@@ -71,5 +71,5 @@ generate_markdown_from_json_schema 'User Identity' 'user_identity.json' 'user_id
 generate_markdown_from_json_schema 'Organization' 'organization.json' 'prototype.md' 'not_found.md' > 'organization.md'
 generate_markdown_from_json_schema 'Program' 'program.json' '' 'not_found.md' > 'program.md'
 generate_markdown_from_json_schema 'Custom Field' 'custom_field.json' '' 'not_found.md' > 'custom_field.md'
-generate_markdown_from_json_schema 'PDF Manager Template' 'pdf_manager_template.json' '' 'not_found.md' > 'pdf_manager_template.md'
-generate_markdown_from_json_schema 'PDF Manager Zip File' 'pdf_manager_zip_file.json' '' 'pdf_manager_zip_file_errors.md not_found.md' > 'pdf_manager_zip_file.md'
+generate_markdown_from_json_schema 'PDF Manager Template' 'pdf_manager_template.json' 'prototype.md' 'not_found.md' > 'pdf_manager_template.md'
+generate_markdown_from_json_schema 'PDF Manager Zip File' 'pdf_manager_zip_file.json' 'prototype.md' 'pdf_manager_zip_file_errors.md not_found.md' > 'pdf_manager_zip_file.md'

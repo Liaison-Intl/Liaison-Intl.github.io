@@ -9,6 +9,10 @@ title: PDF Manager Template
 
 <p>A <strong>PDF Manager template</strong> contains the configuration that determines the contents of a <strong>PDF Manager zip file</strong>.  It is configured in the user interface and only <em>readable</em> in the API.</p>
 
+<div class="alert alert-warning">
+  <p><strong>This is a prototype resource.</strong></p>
+  <p>A prototype resource is experimental and major changes are likely. In time, a prototype resource may or may not advance to production.</p>
+</div>
 
 <h3>Attributes</h3>
 
@@ -94,4 +98,13 @@ title: PDF Manager Template
   &quot;message&quot;: &quot;Not Found&quot;
 }
 </code></pre>
+
+<h3>Unauthorized</h3>
+
+<h4>Response Example</h4>
+
+<pre><code>HTTP/1.1 401 Unauthorized
+</code></pre>
+
+<p>(Empty response body.)</p>
 
