@@ -11,3 +11,10 @@ To generate the documentation, you will need access to the current WebAdMIT sche
 **NOTE:** Pull requests that directly modify endpoint documentation will be rejected.  However, we value your feedback; please [make an issue][new_issue] instead.
 
   [new_issue]: https://github.com/Liaison-Intl/Liaison-Intl.github.io/issues/new
+
+## References
+
+  * [prmd README](https://github.com/interagent/prmd#prmd-)
+  * [prmd schemata](https://github.com/interagent/prmd/blob/master/docs/schemata.md)
+  * [Understanding JSON Schema](http://spacetelescope.github.io/understanding-json-schema/)
+  * [json-schema.org](http://json-schema.org/)
