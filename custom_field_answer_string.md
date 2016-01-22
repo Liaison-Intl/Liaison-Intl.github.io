@@ -144,7 +144,7 @@ title: Custom Field Answer (String)
 
 <h3>Custom Field Answer (String) Destroy</h3>
 
-<p>Clear an existing custom field answer.</p>
+<p>Clear an existing custom field answer.  (Same semantics as <code>PUT</code> with <code>&quot;value&quot;: null</code>.)  This is a &quot;soft delete&quot; that tracks who made the change.</p>
 
 <pre><code>DELETE /api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:cas_id/custom_field_answers/:custom_field_id
 </code></pre>
