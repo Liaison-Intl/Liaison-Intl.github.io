@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/hyper-schema",
-  "id": "/schemata/program",
+  "id": "/schemata/organization",
 
   "title": "Organization",
   "stability": "prototype",
@@ -30,7 +30,7 @@
     "organizations": {
       "type": "array",
       "items": {
-        "required": ["id", "name", "cas_3", "config_portal_identifier"],
+        "required": ["id", "name", "cycle_name", "association_name", "cas3", "config_portal_identifier"],
         "type": "object",
         "properties": {
           "id": {
