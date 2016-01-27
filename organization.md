@@ -5,7 +5,7 @@ title: Organization
 
 <!-- WARNING: This is an automatically generated file.  Do not modify directly.  See script/generate-docs. -->
 
-<h2><a name="resource-program"></a>Organization</h2>
+<h2><a name="resource-organization"></a>Organization</h2>
 
 <p>An applicant applies to a <strong>program</strong> at an <strong>organization</strong>.</p>
 

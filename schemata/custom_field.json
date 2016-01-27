@@ -18,14 +18,12 @@
 
   "type": "object",
   "strictProperties": true,
-
-  "type": "object",
   "properties": {
     "href": {
       "type": "string",
       "description": "Hypertext reference to this resource.",
       "pattern": "/api/v1/user_identities/\\d+/programs/\\d+/custom_fields",
-      "example": "/api/v1/user_identities/1/programs/42/custom_fields"
+      "example": "/api/v1/user_identities/1/programs/2/custom_fields"
     },
     "custom_fields": {
       "type": "array",
@@ -35,7 +33,7 @@
           "id": {
             "type": "integer",
             "description": "Unique identifier for this custom field.",
-            "example": 42
+            "example": 4
           },
           "label": {
             "type": "string",

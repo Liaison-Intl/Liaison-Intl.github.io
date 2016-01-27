@@ -7,7 +7,7 @@ title: PDF Manager Template
 
 <h2><a name="resource-pdf_manager_template"></a>PDF Manager Template</h2>
 
-<p>A <strong>PDF Manager template</strong> contains the configuration that determines the contents of a <strong>PDF Manager zip file</strong>.  It is configured in the user interface and only <em>readable</em> in the API.</p>
+<p>A <strong>PDF Manager template</strong> contains the configuration that determines the contents of a <strong>PDF Manager batch</strong>.  It is configured in the user interface and only <em>readable</em> in the API.</p>
 
 <div class="alert alert-warning">
   <p><strong>This is a prototype resource.</strong></p>
@@ -48,12 +48,6 @@ title: PDF Manager Template
 <td>Human-readable name of the list that is used when populating this template.</td>
 <td><code>&quot;Offer Accepted&quot;</code></td>
 </tr>
-<tr>
-<td><strong>pdf_manager_templates/document_type</strong></td>
-<td><em>string</em></td>
-<td>Human-readable name of the document type that is used when populating this template.<br/> <strong>one of:</strong><code>&quot;Full Application PDF&quot;</code></td>
-<td><code>&quot;Full Application PDF&quot;</code></td>
-</tr>
 </tbody></table>
 
 <h3>PDF Manager Template List</h3>
@@ -80,8 +74,7 @@ title: PDF Manager Template
     {
       &quot;id&quot;: 42,
       &quot;name&quot;: &quot;Accepted Offers for Review&quot;,
-      &quot;list_name&quot;: &quot;Offer Accepted&quot;,
-      &quot;document_type&quot;: &quot;Full Application PDF&quot;
+      &quot;list_name&quot;: &quot;Offer Accepted&quot;
     }
   ]
 }

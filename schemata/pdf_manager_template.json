@@ -4,7 +4,7 @@
 
   "title": "PDF Manager Template",
   "stability": "prototype",
-  "description": "A **PDF Manager template** contains the configuration that determines the contents of a **PDF Manager zip file**.  It is configured in the user interface and only *readable* in the API.",
+  "description": "A **PDF Manager template** contains the configuration that determines the contents of a **PDF Manager batch**.  It is configured in the user interface and only *readable* in the API.",
 
   "links": [
     {
@@ -46,12 +46,6 @@
             "type": "string",
             "description": "Human-readable name of the list that is used when populating this template.",
             "example": "Offer Accepted"
-          },
-          "document_type": {
-            "type": "string",
-            "description": "Human-readable name of the document type that is used when populating this template.",
-            "enum": ["Full Application PDF"],
-            "example": "Full Application PDF"
           }
         }
       }
