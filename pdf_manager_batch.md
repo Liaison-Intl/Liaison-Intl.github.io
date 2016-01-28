@@ -39,7 +39,7 @@ title: PDF Manager Batch
 <tr>
 <td><strong>pdf_manager_batch:updated_at</strong></td>
 <td><em>date-time</em></td>
-<td>The time that this batch was last updated.</td>
+<td>The time that this batch was last updated.<br/> <strong>pattern:</strong> <code>\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\dZ</code></td>
 <td><code>&quot;2016-01-05T16:51:00Z&quot;</code></td>
 </tr>
 <tr>

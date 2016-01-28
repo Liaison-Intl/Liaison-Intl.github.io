@@ -37,7 +37,7 @@
               "required": ["id", "updated_at", "state", "download_urls", "pdf_manager_template"],
               "properties": {
                 "id": { "type": "integer" },
-                "updated_at": { "type": "string", "format": "date-time" },
+                "updated_at": { "type": "string", "format": "date-time", "pattern": "\\d\\d\\d\\d-\\d\\d-\\d\\dT\\d\\d:\\d\\d:\\d\\dZ" },
                 "state": {
                   "type": "string",
                   "enum": ["initializing", "queued", "in_progress", "available", "success_with_errors", "empty_list", "failed"]
@@ -106,6 +106,7 @@
         "updated_at": {
           "type": "string",
           "format": "date-time",
+          "pattern": "\\d\\d\\d\\d-\\d\\d-\\d\\dT\\d\\d:\\d\\d:\\d\\dZ",
           "description": "The time that this batch was last updated.",
           "example": "2016-01-05T16:51:00Z"
         },
