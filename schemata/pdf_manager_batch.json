@@ -8,31 +8,6 @@
 
   "links": [
     {
-      "description": "Initiate the creation of a batch from a template.  If you attempt to run the same export several times in close succession, you will receive back the id of the already-running instance of that export. This is a safeguard to prevent many accidental simultaneous runs of the exact same export -- one must finish before a new one can be initiated.",
-      "href": "/api/v1/user_identities/:user_identity_id/pdf_manager_batches",
-      "method": "POST",
-      "rel": "create",
-      "title": "Initiate Run",
-      "http_header": { "x-api-key": "0123456789abcdef0123456789abcdef" },
-      "schema": {
-        "required": ["pdf_manager_template_id"],
-        "properties": {
-          "pdf_manager_template_id": {
-            "type": "integer",
-            "description": "Unique identifier of the template.",
-            "example": 2
-          },
-          "callback": {
-            "type": "string",
-            "format": "uri",
-            "description": "When the batch is completed, WebAdMIT will `POST` to this callback URL.  The `POST`ed JSON data uses the same schema as the GET request.",
-            "pattern": "^https://",
-            "example": "https://example.com/my_callback"
-          }
-        }
-      }
-    },
-    {
       "description": "Display existing batch with download URL.",
       "href": "/api/v1/user_identities/:user_identity_id/pdf_manager_batches/:pdf_manager_batch_id",
       "method": "GET",
@@ -79,6 +54,31 @@
                 }
               }
             }
+          }
+        }
+      }
+    },
+    {
+      "description": "Initiate the creation of a batch from a template.  If you attempt to run the same export several times in close succession, you will receive back the id of the already-running instance of that export. This is a safeguard to prevent many accidental simultaneous runs of the exact same export -- one must finish before a new one can be initiated.",
+      "href": "/api/v1/user_identities/:user_identity_id/pdf_manager_batches",
+      "method": "POST",
+      "rel": "create",
+      "title": "Initiate Run",
+      "http_header": { "x-api-key": "0123456789abcdef0123456789abcdef" },
+      "schema": {
+        "required": ["pdf_manager_template_id"],
+        "properties": {
+          "pdf_manager_template_id": {
+            "type": "integer",
+            "description": "Unique identifier of the template.",
+            "example": 2
+          },
+          "callback": {
+            "type": "string",
+            "format": "uri",
+            "description": "When the batch is completed, WebAdMIT will `POST` to this callback URL.  The `POST`ed JSON data uses the same schema as the GET request.",
+            "pattern": "^https://",
+            "example": "https://example.com/my_callback"
           }
         }
       }
