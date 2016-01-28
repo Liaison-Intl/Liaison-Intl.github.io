@@ -54,7 +54,7 @@
       "type": "string",
       "description": "Hypertext reference to this resource.",
       "pattern": "/api/v1/user_identities/\\d+/pdf_manager_templates/\\d+",
-      "example": "/api/v1/user_identities/1/pdf_manager_template/2"
+      "example": "/api/v1/user_identities/1/pdf_manager_templates/2"
     },
     "pdf_manager_template": {
       "type": "object",

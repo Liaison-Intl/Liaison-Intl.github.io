@@ -28,7 +28,7 @@ title: PDF Manager Template
 <td><strong>href</strong></td>
 <td><em>string</em></td>
 <td>Hypertext reference to this resource.<br/> <strong>pattern:</strong> <code>/api/v1/user_identities/\d+/pdf_manager_templates/\d+</code></td>
-<td><code>&quot;/api/v1/user_identities/1/pdf_manager_template/2&quot;</code></td>
+<td><code>&quot;/api/v1/user_identities/1/pdf_manager_templates/2&quot;</code></td>
 </tr>
 <tr>
 <td><strong>pdf_manager_template:id</strong></td>
@@ -99,7 +99,7 @@ title: PDF Manager Template
 </code></pre>
 
 <pre lang="json"><code>{
-  &quot;href&quot;: &quot;/api/v1/user_identities/1/pdf_manager_template/2&quot;,
+  &quot;href&quot;: &quot;/api/v1/user_identities/1/pdf_manager_templates/2&quot;,
   &quot;pdf_manager_template&quot;: {
     &quot;id&quot;: 42,
     &quot;name&quot;: &quot;Accepted Offers for Review&quot;,
