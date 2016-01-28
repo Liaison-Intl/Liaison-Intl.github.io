@@ -27,23 +27,23 @@ title: PDF Manager Template
 <tr>
 <td><strong>href</strong></td>
 <td><em>string</em></td>
-<td>Hypertext reference to this resource.<br/> <strong>pattern:</strong> <code>/api/v1/user_identities/\d+/pdf_manager_templates</code></td>
-<td><code>&quot;/api/v1/user_identities/1/pdf_manager_templates&quot;</code></td>
+<td>Hypertext reference to this resource.<br/> <strong>pattern:</strong> <code>/api/v1/user_identities/\d+/pdf_manager_templates/\d+</code></td>
+<td><code>&quot;/api/v1/user_identities/1/pdf_manager_template/2&quot;</code></td>
 </tr>
 <tr>
-<td><strong>pdf_manager_templates/id</strong></td>
+<td><strong>pdf_manager_template:id</strong></td>
 <td><em>integer</em></td>
 <td>Unique identifier of this PDF Manager template.</td>
 <td><code>42</code></td>
 </tr>
 <tr>
-<td><strong>pdf_manager_templates/name</strong></td>
+<td><strong>pdf_manager_template:name</strong></td>
 <td><em>string</em></td>
 <td>Human-readable name of this PDF Manager template.</td>
 <td><code>&quot;Accepted Offers for Review&quot;</code></td>
 </tr>
 <tr>
-<td><strong>pdf_manager_templates/list_name</strong></td>
+<td><strong>pdf_manager_template:list_name</strong></td>
 <td><em>string</em></td>
 <td>Human-readable name of the list that is used when populating this template.</td>
 <td><code>&quot;Offer Accepted&quot;</code></td>
@@ -73,10 +73,38 @@ title: PDF Manager Template
   &quot;pdf_manager_templates&quot;: [
     {
       &quot;id&quot;: 42,
-      &quot;name&quot;: &quot;Accepted Offers for Review&quot;,
-      &quot;list_name&quot;: &quot;Offer Accepted&quot;
+      &quot;name&quot;: &quot;example&quot;,
+      &quot;list_name&quot;: &quot;example&quot;
     }
   ]
+}
+</code></pre>
+
+<h3>PDF Manager Template Show</h3>
+
+<p>Display an existing PDF Manager template.</p>
+
+<pre><code>GET /api/v1/user_identities/:user_identity_id/pdf_manager_templates/:pdf_manager_template_id
+</code></pre>
+
+<h4>Curl Example</h4>
+
+<pre lang="bash"><code>$ curl -n https://api.webadmit.org/api/v1/user_identities/:user_identity_id/pdf_manager_templates/:pdf_manager_template_id \
+  -H &quot;x-api-key: 0123456789abcdef0123456789abcdef&quot;
+</code></pre>
+
+<h4>Response Example</h4>
+
+<pre><code>HTTP/1.1 200 OK
+</code></pre>
+
+<pre lang="json"><code>{
+  &quot;href&quot;: &quot;/api/v1/user_identities/1/pdf_manager_template/2&quot;,
+  &quot;pdf_manager_template&quot;: {
+    &quot;id&quot;: 42,
+    &quot;name&quot;: &quot;Accepted Offers for Review&quot;,
+    &quot;list_name&quot;: &quot;Offer Accepted&quot;
+  }
 }
 </code></pre>
 

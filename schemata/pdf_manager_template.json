@@ -11,8 +11,37 @@
       "description": "List existing PDF Manager templates.",
       "href": "/api/v1/user_identities/:user_identity_id/pdf_manager_templates",
       "method": "GET",
-      "rel": "self",
+      "rel": "instances",
       "title": "List",
+      "http_header": { "x-api-key": "0123456789abcdef0123456789abcdef" },
+      "targetSchema": {
+        "properties": {
+          "href": {
+            "type": "string",
+            "pattern": "/api/v1/user_identities/\\d+/pdf_manager_templates",
+            "example": "/api/v1/user_identities/1/pdf_manager_templates"
+          },
+          "pdf_manager_templates": {
+            "type": "array",
+            "items": {
+              "required": ["id", "name", "list_name"],
+              "type": "object",
+              "properties": {
+                "id": { "type": "integer" },
+                "name": { "type": "string" },
+                "list_name": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "description": "Display an existing PDF Manager template.",
+      "href": "/api/v1/user_identities/:user_identity_id/pdf_manager_templates/:pdf_manager_template_id",
+      "method": "GET",
+      "rel": "self",
+      "title": "Show",
       "http_header": { "x-api-key": "0123456789abcdef0123456789abcdef" }
     }
   ],
@@ -24,29 +53,26 @@
     "href": {
       "type": "string",
       "description": "Hypertext reference to this resource.",
-      "pattern": "/api/v1/user_identities/\\d+/pdf_manager_templates",
-      "example": "/api/v1/user_identities/1/pdf_manager_templates"
+      "pattern": "/api/v1/user_identities/\\d+/pdf_manager_templates/\\d+",
+      "example": "/api/v1/user_identities/1/pdf_manager_template/2"
     },
-    "pdf_manager_templates": {
-      "type": "array",
-      "items": {
-        "required": ["id", "name", "list_name"],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Unique identifier of this PDF Manager template."
-          },
-          "name": {
-            "type": "string",
-            "description": "Human-readable name of this PDF Manager template.",
-            "example": "Accepted Offers for Review"
-          },
-          "list_name": {
-            "type": "string",
-            "description": "Human-readable name of the list that is used when populating this template.",
-            "example": "Offer Accepted"
-          }
+    "pdf_manager_template": {
+      "type": "object",
+      "required": ["id", "name", "list_name"],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "Unique identifier of this PDF Manager template."
+        },
+        "name": {
+          "type": "string",
+          "description": "Human-readable name of this PDF Manager template.",
+          "example": "Accepted Offers for Review"
+        },
+        "list_name": {
+          "type": "string",
+          "description": "Human-readable name of the list that is used when populating this template.",
+          "example": "Offer Accepted"
         }
       }
     }
