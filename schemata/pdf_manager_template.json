@@ -27,9 +27,18 @@
               "required": ["id", "name", "list_name"],
               "type": "object",
               "properties": {
-                "id": { "type": "integer" },
-                "name": { "type": "string" },
-                "list_name": { "type": "string" }
+                "id": {
+                  "type": "integer",
+                  "example": 2
+                },
+                "name": {
+                  "type": "string",
+                  "example": "Accepted Offers for Review"
+                },
+                "list_name": {
+                  "type": "string",
+                  "example": "Offer Accepted"
+                }
               }
             }
           }
@@ -62,7 +71,8 @@
       "properties": {
         "id": {
           "type": "integer",
-          "description": "Unique identifier of this PDF Manager template."
+          "description": "Unique identifier of this PDF Manager template.",
+          "example": 2
         },
         "name": {
           "type": "string",

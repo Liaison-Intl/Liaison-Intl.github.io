@@ -34,7 +34,7 @@ title: PDF Manager Template
 <td><strong>pdf_manager_template:id</strong></td>
 <td><em>integer</em></td>
 <td>Unique identifier of this PDF Manager template.</td>
-<td><code>42</code></td>
+<td><code>2</code></td>
 </tr>
 <tr>
 <td><strong>pdf_manager_template:name</strong></td>
@@ -72,9 +72,9 @@ title: PDF Manager Template
   &quot;href&quot;: &quot;/api/v1/user_identities/1/pdf_manager_templates&quot;,
   &quot;pdf_manager_templates&quot;: [
     {
-      &quot;id&quot;: 42,
-      &quot;name&quot;: &quot;example&quot;,
-      &quot;list_name&quot;: &quot;example&quot;
+      &quot;id&quot;: 2,
+      &quot;name&quot;: &quot;Accepted Offers for Review&quot;,
+      &quot;list_name&quot;: &quot;Offer Accepted&quot;
     }
   ]
 }
@@ -101,7 +101,7 @@ title: PDF Manager Template
 <pre lang="json"><code>{
   &quot;href&quot;: &quot;/api/v1/user_identities/1/pdf_manager_templates/2&quot;,
   &quot;pdf_manager_template&quot;: {
-    &quot;id&quot;: 42,
+    &quot;id&quot;: 2,
     &quot;name&quot;: &quot;Accepted Offers for Review&quot;,
     &quot;list_name&quot;: &quot;Offer Accepted&quot;
   }
