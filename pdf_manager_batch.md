@@ -27,8 +27,8 @@ title: PDF Manager Batch
 <tr>
 <td><strong>href</strong></td>
 <td><em>string</em></td>
-<td>Hypertext reference to this resource.<br/> <strong>pattern:</strong> <code>/api/v1/user_identities/\d+/pdf_manager_batches</code></td>
-<td><code>&quot;/api/v1/user_identities/1/pdf_manager_batches&quot;</code></td>
+<td>Hypertext reference to this resource.<br/> <strong>pattern:</strong> <code>/api/v1/user_identities/\d+/pdf_manager_batches/\d+</code></td>
+<td><code>&quot;/api/v1/user_identities/1/pdf_manager_batches/2&quot;</code></td>
 </tr>
 <tr>
 <td><strong>pdf_manager_batch:id</strong></td>
@@ -93,7 +93,7 @@ title: PDF Manager Batch
 </code></pre>
 
 <pre lang="json"><code>{
-  &quot;href&quot;: &quot;/api/v1/user_identities/1/pdf_manager_batches&quot;,
+  &quot;href&quot;: &quot;/api/v1/user_identities/1/pdf_manager_batches/2&quot;,
   &quot;pdf_manager_batch&quot;: {
     &quot;id&quot;: 42,
     &quot;updated_at&quot;: &quot;2016-01-05T16:51:00Z&quot;,
@@ -130,14 +130,14 @@ title: PDF Manager Batch
   &quot;href&quot;: &quot;/api/v1/user_identities/1/pdf_manager_batches&quot;,
   &quot;pdf_manager_batches&quot;: [
     {
-      &quot;id&quot;: 42,
-      &quot;updated_at&quot;: &quot;2015-01-01T12:00:00Z&quot;,
-      &quot;state&quot;: &quot;example&quot;,
+      &quot;id&quot;: 2,
+      &quot;updated_at&quot;: &quot;2016-01-05T16:51:00Z&quot;,
+      &quot;state&quot;: &quot;queued&quot;,
       &quot;download_urls&quot;: null,
       &quot;pdf_manager_template&quot;: {
-        &quot;id&quot;: 42,
-        &quot;name&quot;: &quot;example&quot;,
-        &quot;href&quot;: &quot;example&quot;
+        &quot;id&quot;: 2,
+        &quot;name&quot;: &quot;Accepted Offers for Review&quot;,
+        &quot;href&quot;: &quot;/api/v1/user_identities/1/pdf_manager_templates/2&quot;
       }
     }
   ]
@@ -205,7 +205,7 @@ title: PDF Manager Batch
 </code></pre>
 
 <pre lang="json"><code>{
-  &quot;href&quot;: &quot;/api/v1/user_identities/1/pdf_manager_batches&quot;,
+  &quot;href&quot;: &quot;/api/v1/user_identities/1/pdf_manager_batches/2&quot;,
   &quot;pdf_manager_batch&quot;: {
     &quot;id&quot;: 42,
     &quot;updated_at&quot;: &quot;2016-01-05T16:51:00Z&quot;,

@@ -36,20 +36,39 @@
               "type": "object",
               "required": ["id", "updated_at", "state", "download_urls", "pdf_manager_template"],
               "properties": {
-                "id": { "type": "integer" },
-                "updated_at": { "type": "string", "format": "date-time", "pattern": "\\d\\d\\d\\d-\\d\\d-\\d\\dT\\d\\d:\\d\\d:\\d\\dZ" },
+                "id": {
+                  "type": "integer",
+                  "example": 2
+                },
+                "updated_at": {
+                  "type": "string",
+                  "format": "date-time",
+                  "pattern": "\\d\\d\\d\\d-\\d\\d-\\d\\dT\\d\\d:\\d\\d:\\d\\dZ",
+                  "example": "2016-01-05T16:51:00Z"
+                },
                 "state": {
                   "type": "string",
-                  "enum": ["initializing", "queued", "in_progress", "available", "success_with_errors", "empty_list", "failed"]
+                  "enum": ["initializing", "queued", "in_progress", "available", "success_with_errors", "empty_list", "failed"],
+                  "example": "queued"
                 },
                 "download_urls": { "type": "null" },
                 "pdf_manager_template": {
                   "type": "object",
                   "required": ["id", "name", "href"],
                   "properties": {
-                    "id": { "type": "integer" },
-                    "name": { "type": "string" },
-                    "href": { "type": "string", "pattern": "/api/v1/user_identities/\\d+/pdf_manager_templates/\\d+" }
+                    "id": {
+                      "type": "integer",
+                      "example": 2
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "Accepted Offers for Review"
+                    },
+                    "href": {
+                      "type": "string",
+                      "pattern": "/api/v1/user_identities/\\d+/pdf_manager_templates/\\d+",
+                      "example": "/api/v1/user_identities/1/pdf_manager_templates/2"
+                    }
                   }
                 }
               }
@@ -92,8 +111,8 @@
     "href": {
       "type": "string",
       "description": "Hypertext reference to this resource.",
-      "pattern": "/api/v1/user_identities/\\d+/pdf_manager_batches",
-      "example": "/api/v1/user_identities/1/pdf_manager_batches"
+      "pattern": "/api/v1/user_identities/\\d+/pdf_manager_batches/\\d+",
+      "example": "/api/v1/user_identities/1/pdf_manager_batches/2"
     },
     "pdf_manager_batch": {
       "type": "object",
