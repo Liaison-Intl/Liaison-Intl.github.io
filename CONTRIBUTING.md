@@ -1,6 +1,6 @@
 ## Modifying the documentation
 
-While some of the markdown files in this repository can be edited by hand, the endpoint documentation should only be re-generated (not edited by hand).  It is generated like so:
+While some of the markdown files in this repository can be edited by hand, the endpoint documentation should only be re-generated (not edited by hand).  It is generated as follows:
 
     script/generate-docs
 
