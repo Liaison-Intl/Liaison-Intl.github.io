@@ -14,7 +14,7 @@ To generate the documentation, you will need access to the current WebAdMIT sche
 
 ## Testing
 
-There's not a ton to test since this is just a static site with a few bits of JavaScript, but it can be easy for bad links to find their way in.  Run `test.sh` to check for these.
+There's not a ton to test since this is just a static site with a few bits of JavaScript, but it can be easy for bad links to find their way in.  Run `script/ci` to check for these.
 
 ## References
 
