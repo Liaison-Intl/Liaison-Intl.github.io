@@ -12,6 +12,10 @@ To generate the documentation, you will need access to the current WebAdMIT sche
 
   [new_issue]: https://github.com/Liaison-Intl/Liaison-Intl.github.io/issues/new
 
+## Testing
+
+There's not a ton to test since this is just a static site with a few bits of JavaScript, but it can be easy for bad links to find their way in.  Run `test.sh` to check for these.
+
 ## References
 
   * [prmd README](https://github.com/interagent/prmd#prmd-)
