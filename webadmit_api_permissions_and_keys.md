@@ -7,7 +7,9 @@ title: WebAdMIT API Permissions and Keys
 
 Access is controlled by permissions and API keys.
 
-WebAdMIT user accounts who need access to the Export Manager API need to be given the "API Access" permission for each of the **user identities** that they have in the WebAdMIT system and that they wish to access via the API. This permission can also be made part of a standard WebAdMIT Work Group.
+API access is based off of WebAdMIT [user identities](user_identity.html). All of a user's exports, programs, etc. that can be accessed via API are owned by one of that user's identities.
+
+WebAdMIT user accounts who need access to the API need to be given the "API Access" permission for each of the **user identities** that they have in the WebAdMIT system and that they wish to access via the API. This permission can also be made part of a standard WebAdMIT Work Group.
 
 ![Permission Sets](img/permission-sets.png)
 
