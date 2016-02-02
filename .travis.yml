@@ -1,5 +1,5 @@
 language: ruby
-# before_install:
-#   - pip install LinkChecker
+before_install:
+  - pip install --user LinkChecker
 script:
-  - bundle exec jekyll build
+  - script/ci
