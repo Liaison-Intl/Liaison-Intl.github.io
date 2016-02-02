@@ -16,3 +16,8 @@ WebAdMIT user accounts who need access to the API need to be given the "API Acce
 Users with API Access enabled on at least one of their WebAdMIT identities will be able to generate an API key in their Edit My Account section of WebAdMIT. This API key will then be associated with that user and **all** of their identities within WebAdMIT. If the key is compromised, it can be regenerated from this screen at any time. This API key must be passed in the HTTP header (key name of `x-api-key`) of all requests to the API, or requests will be rejected.
 
 ![Generate New API Key](img/generate-new-api-key.png)
+
+### Related Topics
+
+* [API Overview](v1.html)
+* [API Rate Limit](api_rate_limit.html)
