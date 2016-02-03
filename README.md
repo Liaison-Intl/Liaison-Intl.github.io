@@ -8,10 +8,10 @@ This site uses GitHub Pages.  GitHub Pages uses a static site generator called J
 
 To install Jekyll:
 
-  * Install [Ruby](https://www.ruby-lang.org/en/) by whatever method you prefer.  See `.ruby-version` for what version to use.
-  * Install gems by running `gem install bundler && bundle` in this directory
+  * Install [Ruby](https://www.ruby-lang.org/en/) by whatever method you prefer.  See `.ruby-version` to determine the correct version to use.
+  * Install gems by running `gem install bundler && bundle` in this directory.
 
-After installing, you can run Jekyll like so:
+After installing, you can run Jekyll as follows:
 
     jekyll serve
 

@@ -1,6 +1,6 @@
 ## Modifying the documentation
 
-While some of the markdown files in this repository can be edited by hand, the endpoint documentation should only be re-generated (not edited by hand).  It is generated like so:
+While some of the markdown files in this repository can be edited by hand, the endpoint documentation should only be re-generated (not edited by hand).  It is generated as follows:
 
     script/generate-docs
 
@@ -11,6 +11,10 @@ To generate the documentation, you will need access to the current WebAdMIT sche
 **NOTE:** Pull requests that directly modify endpoint documentation will be rejected.  However, we value your feedback; please [make an issue][new_issue] instead.
 
   [new_issue]: https://github.com/Liaison-Intl/Liaison-Intl.github.io/issues/new
+
+## Testing
+
+There's not a ton to test since this is just a static site with a few bits of JavaScript, but it can be easy for bad links to find their way in.  Run `script/ci` to check for these.
 
 ## References
 
