@@ -19,7 +19,7 @@ layout: default
     </div>
     <div class="col-md-4">
       <h2>Custom Fields</h2>
-      <p>Record arbitrary applicant information programmatcally using Custom Fields.  Fields such as University ID, University email, etc. can be magically filled in by back-office applications.</p>
+      <p>Record arbitrary applicant information programmatically using Custom Fields.  Fields such as University ID, University email, etc. can be magically filled in by back-office applications.</p>
       <p><a class="btn btn-default" href="custom_field.html" role="button">Read more &raquo;</a></p>
     </div>
     <div class="col-md-4">
