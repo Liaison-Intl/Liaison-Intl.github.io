@@ -136,6 +136,7 @@
           "example": "queued"
         },
         "download_urls": {
+          "comment": "FIXME: Include `items`.  See https://github.com/interagent/prmd/issues/275",
           "type": "array",
           "description": "When `state` is **not** `\"available\"` or `\"success_with_errors\"`, this is `[]`.  When `state` is `\"available\"` or `\"success_with_errors\"`, this is an array of *temporary* URIs for downloading that expire within 30 seconds.  The download URL can always be re-generated if it expires by calling this method again. When it is called again, a new URL will be issued.",
           "example": []
