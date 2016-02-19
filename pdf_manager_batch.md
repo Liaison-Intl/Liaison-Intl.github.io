@@ -50,9 +50,9 @@ title: PDF Manager Batch
 </tr>
 <tr>
 <td><strong>pdf_manager_batch:download_urls</strong></td>
-<td><em>nullable array</em></td>
-<td>When <code>state</code> is <strong>not</strong> <code>&quot;available&quot;</code> or <code>&quot;success_with_errors&quot;</code>, this is <code>null</code>.  When <code>state</code> is <code>&quot;available&quot;</code> or <code>&quot;success_with_errors&quot;</code>, this is an array of <em>temporary</em> URIs for downloading that expire within 30 seconds.  The download URL can always be re-generated if it expires by calling this method again. When it is called again, a new URL will be issued.</td>
-<td><code>null</code></td>
+<td><em>array</em></td>
+<td>When <code>state</code> is <strong>not</strong> <code>&quot;available&quot;</code> or <code>&quot;success_with_errors&quot;</code>, this is <code>[]</code>.  When <code>state</code> is <code>&quot;available&quot;</code> or <code>&quot;success_with_errors&quot;</code>, this is an array of <em>temporary</em> URIs for downloading that expire within 30 seconds.  The download URL can always be re-generated if it expires by calling this method again. When it is called again, a new URL will be issued.</td>
+<td><code>[]</code></td>
 </tr>
 <tr>
 <td><strong>pdf_manager_batch:pdf_manager_template:id</strong></td>
@@ -98,7 +98,9 @@ title: PDF Manager Batch
     &quot;id&quot;: 42,
     &quot;updated_at&quot;: &quot;2016-01-05T16:51:00Z&quot;,
     &quot;state&quot;: &quot;queued&quot;,
-    &quot;download_urls&quot;: null,
+    &quot;download_urls&quot;: [
+
+    ],
     &quot;pdf_manager_template&quot;: {
       &quot;id&quot;: 2,
       &quot;name&quot;: &quot;Accepted Offers for Review&quot;,
@@ -133,7 +135,6 @@ title: PDF Manager Batch
       &quot;id&quot;: 2,
       &quot;updated_at&quot;: &quot;2016-01-05T16:51:00Z&quot;,
       &quot;state&quot;: &quot;queued&quot;,
-      &quot;download_urls&quot;: null,
       &quot;pdf_manager_template&quot;: {
         &quot;id&quot;: 2,
         &quot;name&quot;: &quot;Accepted Offers for Review&quot;,
@@ -210,7 +211,9 @@ title: PDF Manager Batch
     &quot;id&quot;: 42,
     &quot;updated_at&quot;: &quot;2016-01-05T16:51:00Z&quot;,
     &quot;state&quot;: &quot;queued&quot;,
-    &quot;download_urls&quot;: null,
+    &quot;download_urls&quot;: [
+
+    ],
     &quot;pdf_manager_template&quot;: {
       &quot;id&quot;: 2,
       &quot;name&quot;: &quot;Accepted Offers for Review&quot;,
