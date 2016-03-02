@@ -147,7 +147,7 @@ title: PDF Manager Batch
 
 <h3>PDF Manager Batch Initiate Run</h3>
 
-<p>Initiate the creation of a batch from a template.  If you attempt to run the same export several times in close succession, you will receive the id of the already-running instance of that export. This is a safeguard to prevent many accidental simultaneous runs of the exact same export: one must finish before a new one can be initiated.</p>
+<p>Initiate the creation of a batch from a template.  If you attempt to run the same batch several times in close succession, you will receive the id of the already-running instance of that batch. This is a safeguard to prevent many accidental simultaneous runs of the exact same batch: one must finish before a new one can be initiated.</p>
 
 <pre><code>POST /api/v1/user_identities/:user_identity_id/pdf_manager_batches
 </code></pre>
@@ -163,7 +163,7 @@ title: PDF Manager Batch
 </tr>
 </thead><tbody>
 <tr>
-<td><strong>pdf_manager_template_id</strong></td>
+<td><strong>pdf_manager_batch:pdf_manager_template_id</strong></td>
 <td><em>integer</em></td>
 <td>Unique identifier of the template.</td>
 <td><code>2</code></td>
@@ -181,7 +181,7 @@ title: PDF Manager Batch
 </tr>
 </thead><tbody>
 <tr>
-<td><strong>callback</strong></td>
+<td><strong>pdf_manager_batch:callback</strong></td>
 <td><em>uri</em></td>
 <td>When the batch is completed, WebAdMIT will <code>POST</code> to this callback URL.  The <code>POST</code>ed JSON data uses the same schema as the GET request.<br/> <strong>pattern:</strong> <code>^https://</code></td>
 <td><code>&quot;https://example.com/my_callback&quot;</code></td>
@@ -195,8 +195,10 @@ title: PDF Manager Batch
   -H &quot;x-api-key: 0123456789abcdef0123456789abcdef&quot; \
  \
   -d &#39;{
-  &quot;pdf_manager_template_id&quot;: 2,
-  &quot;callback&quot;: &quot;https://example.com/my_callback&quot;
+  &quot;pdf_manager_batch&quot;: {
+    &quot;pdf_manager_template_id&quot;: 2,
+    &quot;callback&quot;: &quot;https://example.com/my_callback&quot;
+  }
 }&#39;
 </code></pre>
 
