@@ -49,10 +49,10 @@ title: PDF Manager Batch
 <td><code>&quot;queued&quot;</code></td>
 </tr>
 <tr>
-<td><strong>pdf_manager_batch:download_urls</strong></td>
+<td><strong>pdf_manager_batch:download_hrefs</strong></td>
 <td><em>array</em></td>
-<td>When <code>state</code> is <strong>not</strong> <code>&quot;available&quot;</code> or <code>&quot;success_with_errors&quot;</code>, this is <code>[]</code>.  When <code>state</code> is <code>&quot;available&quot;</code> or <code>&quot;success_with_errors&quot;</code>, this is an array of <em>temporary</em> URIs for downloading that expire within 30 seconds.  The download URL can always be re-generated if it expires by calling this method again. When it is called again, a new URL will be issued.</td>
-<td><code>[]</code></td>
+<td>When <code>state</code> is <code>&quot;available&quot;</code> or <code>&quot;success_with_errors&quot;</code>, this is an array of hrefs that can be requested with an API key for downloading the generated PDF files.  Otherwise, this is <code>[]</code>.</td>
+<td><code>[&quot;/api/v1/user_identities/1/pdf_manager_zip_files/2/download&quot;]</code></td>
 </tr>
 <tr>
 <td><strong>pdf_manager_batch:pdf_manager_template:id</strong></td>
@@ -98,8 +98,8 @@ title: PDF Manager Batch
     &quot;id&quot;: 42,
     &quot;updated_at&quot;: &quot;2016-01-05T16:51:00Z&quot;,
     &quot;state&quot;: &quot;queued&quot;,
-    &quot;download_urls&quot;: [
-
+    &quot;download_hrefs&quot;: [
+      &quot;/api/v1/user_identities/1/pdf_manager_zip_files/2/download&quot;
     ],
     &quot;pdf_manager_template&quot;: {
       &quot;id&quot;: 2,
@@ -147,7 +147,7 @@ title: PDF Manager Batch
 
 <h3>PDF Manager Batch Initiate Run</h3>
 
-<p>Initiate the creation of a batch from a template.  If you attempt to run the same export several times in close succession, you will receive the id of the already-running instance of that export. This is a safeguard to prevent many accidental simultaneous runs of the exact same export: one must finish before a new one can be initiated.</p>
+<p>Initiate the creation of a batch from a template.  If you attempt to run the same batch several times in close succession, you will receive the id of the already-running instance of that batch. This is a safeguard to prevent many accidental simultaneous runs of the exact same batch: one must finish before a new one can be initiated.</p>
 
 <pre><code>POST /api/v1/user_identities/:user_identity_id/pdf_manager_batches
 </code></pre>
@@ -163,7 +163,7 @@ title: PDF Manager Batch
 </tr>
 </thead><tbody>
 <tr>
-<td><strong>pdf_manager_template_id</strong></td>
+<td><strong>pdf_manager_batch:pdf_manager_template_id</strong></td>
 <td><em>integer</em></td>
 <td>Unique identifier of the template.</td>
 <td><code>2</code></td>
@@ -181,7 +181,7 @@ title: PDF Manager Batch
 </tr>
 </thead><tbody>
 <tr>
-<td><strong>callback</strong></td>
+<td><strong>pdf_manager_batch:callback</strong></td>
 <td><em>uri</em></td>
 <td>When the batch is completed, WebAdMIT will <code>POST</code> to this callback URL.  The <code>POST</code>ed JSON data uses the same schema as the GET request.<br/> <strong>pattern:</strong> <code>^https://</code></td>
 <td><code>&quot;https://example.com/my_callback&quot;</code></td>
@@ -195,8 +195,10 @@ title: PDF Manager Batch
   -H &quot;x-api-key: 0123456789abcdef0123456789abcdef&quot; \
  \
   -d &#39;{
-  &quot;pdf_manager_template_id&quot;: 2,
-  &quot;callback&quot;: &quot;https://example.com/my_callback&quot;
+  &quot;pdf_manager_batch&quot;: {
+    &quot;pdf_manager_template_id&quot;: 2,
+    &quot;callback&quot;: &quot;https://example.com/my_callback&quot;
+  }
 }&#39;
 </code></pre>
 
@@ -211,8 +213,8 @@ title: PDF Manager Batch
     &quot;id&quot;: 42,
     &quot;updated_at&quot;: &quot;2016-01-05T16:51:00Z&quot;,
     &quot;state&quot;: &quot;queued&quot;,
-    &quot;download_urls&quot;: [
-
+    &quot;download_hrefs&quot;: [
+      &quot;/api/v1/user_identities/1/pdf_manager_zip_files/2/download&quot;
     ],
     &quot;pdf_manager_template&quot;: {
       &quot;id&quot;: 2,

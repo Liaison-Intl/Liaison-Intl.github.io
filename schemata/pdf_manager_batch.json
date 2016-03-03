@@ -77,7 +77,7 @@
       }
     },
     {
-      "description": "Initiate the creation of a batch from a template.  If you attempt to run the same export several times in close succession, you will receive the id of the already-running instance of that export. This is a safeguard to prevent many accidental simultaneous runs of the exact same export: one must finish before a new one can be initiated.",
+      "description": "Initiate the creation of a batch from a template.  If you attempt to run the same batch several times in close succession, you will receive the id of the already-running instance of that batch. This is a safeguard to prevent many accidental simultaneous runs of the exact same batch: one must finish before a new one can be initiated.",
 
       "href": "/api/v1/user_identities/:user_identity_id/pdf_manager_batches",
       "method": "POST",
@@ -85,19 +85,25 @@
       "title": "Initiate Run",
       "http_header": { "x-api-key": "0123456789abcdef0123456789abcdef" },
       "schema": {
-        "required": ["pdf_manager_template_id"],
+        "type": "object",
         "properties": {
-          "pdf_manager_template_id": {
-            "type": "integer",
-            "description": "Unique identifier of the template.",
-            "example": 2
-          },
-          "callback": {
-            "type": "string",
-            "format": "uri",
-            "description": "When the batch is completed, WebAdMIT will `POST` to this callback URL.  The `POST`ed JSON data uses the same schema as the GET request.",
-            "pattern": "^https://",
-            "example": "https://example.com/my_callback"
+          "pdf_manager_batch": {
+            "type": "object",
+            "required": ["pdf_manager_template_id"],
+            "properties": {
+              "pdf_manager_template_id": {
+                "type": "integer",
+                "description": "Unique identifier of the template.",
+                "example": 2
+              },
+              "callback": {
+                "type": "string",
+                "format": "uri",
+                "description": "When the batch is completed, WebAdMIT will `POST` to this callback URL.  The `POST`ed JSON data uses the same schema as the GET request.",
+                "pattern": "^https://",
+                "example": "https://example.com/my_callback"
+              }
+            }
           }
         }
       }
@@ -116,7 +122,7 @@
     },
     "pdf_manager_batch": {
       "type": "object",
-      "required": ["id", "updated_at", "state", "download_urls", "pdf_manager_template"],
+      "required": ["id", "updated_at", "state", "download_hrefs", "pdf_manager_template"],
       "properties": {
         "id": {
           "type": "integer",
@@ -135,11 +141,11 @@
           "enum": ["initializing", "queued", "in_progress", "available", "success_with_errors", "empty_list", "failed"],
           "example": "queued"
         },
-        "download_urls": {
+        "download_hrefs": {
           "comment": "FIXME: Include `items`.  See https://github.com/interagent/prmd/issues/275",
           "type": "array",
-          "description": "When `state` is **not** `\"available\"` or `\"success_with_errors\"`, this is `[]`.  When `state` is `\"available\"` or `\"success_with_errors\"`, this is an array of *temporary* URIs for downloading that expire within 30 seconds.  The download URL can always be re-generated if it expires by calling this method again. When it is called again, a new URL will be issued.",
-          "example": []
+          "description": "When `state` is `\"available\"` or `\"success_with_errors\"`, this is an array of hrefs that can be requested with an API key for downloading the generated PDF files.  Otherwise, this is `[]`.",
+          "example": ["/api/v1/user_identities/1/pdf_manager_zip_files/2/download"]
         },
         "pdf_manager_template": {
           "type": "object",
