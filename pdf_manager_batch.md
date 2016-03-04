@@ -7,7 +7,7 @@ title: PDF Manager Batch
 
 <h2><a name="resource-pdf_manager_batch"></a>PDF Manager Batch</h2>
 
-<p>A <strong>PDF Manager batch</strong> represents the asynchronous execution and eventual population of a <strong>PDF Manager template</strong>.</p>
+<p>A <strong>PDF Manager batch</strong> represents the asynchronous execution and eventual population of a <strong>PDF Manager template</strong>, resulting in <strong>PDF Manager zip files</strong>.</p>
 
 <div class="alert alert-warning">
   <p><strong>This is a prototype resource.</strong></p>
@@ -132,6 +132,7 @@ title: PDF Manager Batch
   &quot;href&quot;: &quot;/api/v1/user_identities/1/pdf_manager_batches&quot;,
   &quot;pdf_manager_batches&quot;: [
     {
+      &quot;href&quot;: &quot;/api/v1/user_identities/1/pdf_manager_batches/2&quot;,
       &quot;id&quot;: 2,
       &quot;updated_at&quot;: &quot;2016-01-05T16:51:00Z&quot;,
       &quot;state&quot;: &quot;queued&quot;,
