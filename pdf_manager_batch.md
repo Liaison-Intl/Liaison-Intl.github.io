@@ -55,6 +55,12 @@ title: PDF Manager Batch
 <td><code>[&quot;/api/v1/user_identities/1/pdf_manager_zip_files/2/download&quot;]</code></td>
 </tr>
 <tr>
+<td><strong>pdf_manager_batch:pdf_manager_template:href</strong></td>
+<td><em>string</em></td>
+<td>Hypertext reference to the template.<br/> <strong>pattern:</strong> <code>/api/v1/user_identities/\d+/pdf_manager_templates/\d+</code></td>
+<td><code>&quot;/api/v1/user_identities/1/pdf_manager_templates/2&quot;</code></td>
+</tr>
+<tr>
 <td><strong>pdf_manager_batch:pdf_manager_template:id</strong></td>
 <td><em>integer</em></td>
 <td>Unique identifier of the template.</td>
@@ -65,12 +71,6 @@ title: PDF Manager Batch
 <td><em>string</em></td>
 <td>Human-readable name of this PDF Manager template.</td>
 <td><code>&quot;Accepted Offers for Review&quot;</code></td>
-</tr>
-<tr>
-<td><strong>pdf_manager_batch:pdf_manager_template:href</strong></td>
-<td><em>string</em></td>
-<td>Hypertext reference to the template.<br/> <strong>pattern:</strong> <code>/api/v1/user_identities/\d+/pdf_manager_templates/\d+</code></td>
-<td><code>&quot;/api/v1/user_identities/1/pdf_manager_templates/2&quot;</code></td>
 </tr>
 </tbody></table>
 
@@ -102,9 +102,9 @@ title: PDF Manager Batch
       &quot;/api/v1/user_identities/1/pdf_manager_zip_files/2/download&quot;
     ],
     &quot;pdf_manager_template&quot;: {
+      &quot;href&quot;: &quot;/api/v1/user_identities/1/pdf_manager_templates/2&quot;,
       &quot;id&quot;: 2,
-      &quot;name&quot;: &quot;Accepted Offers for Review&quot;,
-      &quot;href&quot;: &quot;/api/v1/user_identities/1/pdf_manager_templates/2&quot;
+      &quot;name&quot;: &quot;Accepted Offers for Review&quot;
     }
   }
 }
@@ -112,7 +112,7 @@ title: PDF Manager Batch
 
 <h3>PDF Manager Batch List</h3>
 
-<p>List existing batches.  The download hrefs are not displayed in this response because there could potentially be a large number of download hrefs.  You can use the results of this call and loop through each batch to get download hrefs for each one marked as <code>&quot;available&quot;</code> or <code>&quot;success_with_errors&quot;</code>.</p>
+<p>List existing batches.  As there could potentially be a large number of <code>download_hrefs</code>, they are not displayed in this response.</p>
 
 <pre><code>GET /api/v1/user_identities/:user_identity_id/pdf_manager_batches
 </code></pre>
@@ -137,9 +137,9 @@ title: PDF Manager Batch
       &quot;updated_at&quot;: &quot;2016-01-05T16:51:00Z&quot;,
       &quot;state&quot;: &quot;queued&quot;,
       &quot;pdf_manager_template&quot;: {
+        &quot;href&quot;: &quot;/api/v1/user_identities/1/pdf_manager_templates/2&quot;,
         &quot;id&quot;: 2,
-        &quot;name&quot;: &quot;Accepted Offers for Review&quot;,
-        &quot;href&quot;: &quot;/api/v1/user_identities/1/pdf_manager_templates/2&quot;
+        &quot;name&quot;: &quot;Accepted Offers for Review&quot;
       }
     }
   ]
@@ -184,7 +184,7 @@ title: PDF Manager Batch
 <tr>
 <td><strong>pdf_manager_batch:callback</strong></td>
 <td><em>uri</em></td>
-<td>When the batch is completed, WebAdMIT will <code>POST</code> to this callback URL.  The <code>POST</code>ed JSON data uses the same schema as the GET request.<br/> <strong>pattern:</strong> <code>^https://</code></td>
+<td>When the batch is completed, WebAdMIT will <code>POST</code> to this callback URL.  The JSON in the callback body uses the same schema as the GET request.<br/> <strong>pattern:</strong> <code>^https://</code></td>
 <td><code>&quot;https://example.com/my_callback&quot;</code></td>
 </tr>
 </tbody></table>
@@ -218,9 +218,9 @@ title: PDF Manager Batch
       &quot;/api/v1/user_identities/1/pdf_manager_zip_files/2/download&quot;
     ],
     &quot;pdf_manager_template&quot;: {
+      &quot;href&quot;: &quot;/api/v1/user_identities/1/pdf_manager_templates/2&quot;,
       &quot;id&quot;: 2,
-      &quot;name&quot;: &quot;Accepted Offers for Review&quot;,
-      &quot;href&quot;: &quot;/api/v1/user_identities/1/pdf_manager_templates/2&quot;
+      &quot;name&quot;: &quot;Accepted Offers for Review&quot;
     }
   }
 }
@@ -235,7 +235,7 @@ title: PDF Manager Batch
 
 <pre lang="json"><code>{
   &quot;errors&quot;: {
-    &quot;callback_url&quot;: [&quot;is not an HTTPS URL&quot;]
+    &quot;schema&quot;: [&quot;The property &#39;#/pdf_manager_batch/callback&#39; value \&quot;http://example.webadmit.org\&quot; did not match the regex &#39;^https://&#39;&quot;]
   }
 }
 </code></pre>

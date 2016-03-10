@@ -16,7 +16,7 @@
       "http_header": { "x-api-key": "0123456789abcdef0123456789abcdef" }
     },
     {
-      "description": "List existing batches.  The download hrefs are not displayed in this response because there could potentially be a large number of download hrefs.  You can use the results of this call and loop through each batch to get download hrefs for each one marked as `\"available\"` or `\"success_with_errors\"`.",
+      "description": "List existing batches.  As there could potentially be a large number of `download_hrefs`, they are not displayed in this response.",
       "href": "/api/v1/user_identities/:user_identity_id/pdf_manager_batches",
       "method": "GET",
       "rel": "instances",
@@ -60,6 +60,11 @@
                   "type": "object",
                   "required": ["id", "name", "href"],
                   "properties": {
+                    "href": {
+                      "type": "string",
+                      "pattern": "/api/v1/user_identities/\\d+/pdf_manager_templates/\\d+",
+                      "example": "/api/v1/user_identities/1/pdf_manager_templates/2"
+                    },
                     "id": {
                       "type": "integer",
                       "example": 2
@@ -67,11 +72,6 @@
                     "name": {
                       "type": "string",
                       "example": "Accepted Offers for Review"
-                    },
-                    "href": {
-                      "type": "string",
-                      "pattern": "/api/v1/user_identities/\\d+/pdf_manager_templates/\\d+",
-                      "example": "/api/v1/user_identities/1/pdf_manager_templates/2"
                     }
                   }
                 }
@@ -104,7 +104,7 @@
               "callback": {
                 "type": "string",
                 "format": "uri",
-                "description": "When the batch is completed, WebAdMIT will `POST` to this callback URL.  The `POST`ed JSON data uses the same schema as the GET request.",
+                "description": "When the batch is completed, WebAdMIT will `POST` to this callback URL.  The JSON in the callback body uses the same schema as the GET request.",
                 "pattern": "^https://",
                 "example": "https://example.com/my_callback"
               }
@@ -156,6 +156,12 @@
           "type": "object",
           "required": ["id", "name", "href"],
           "properties": {
+            "href": {
+              "type": "string",
+              "description": "Hypertext reference to the template.",
+              "pattern": "/api/v1/user_identities/\\d+/pdf_manager_templates/\\d+",
+              "example": "/api/v1/user_identities/1/pdf_manager_templates/2"
+            },
             "id": {
               "type": "integer",
               "description": "Unique identifier of the template.",
@@ -165,12 +171,6 @@
               "type": "string",
               "description": "Human-readable name of this PDF Manager template.",
               "example": "Accepted Offers for Review"
-            },
-            "href": {
-              "type": "string",
-              "description": "Hypertext reference to the template.",
-              "pattern": "/api/v1/user_identities/\\d+/pdf_manager_templates/\\d+",
-              "example": "/api/v1/user_identities/1/pdf_manager_templates/2"
             }
           }
         }
