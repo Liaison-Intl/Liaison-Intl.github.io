@@ -24,9 +24,14 @@
           "pdf_manager_templates": {
             "type": "array",
             "items": {
-              "required": ["id", "name", "list_name"],
+              "required": ["href", "id", "name", "list_name"],
               "type": "object",
               "properties": {
+                "href": {
+                  "type": "string",
+                  "pattern": "/api/v1/user_identities/\\d+/pdf_manager_templates/\\d+",
+                  "example": "/api/v1/user_identities/1/pdf_manager_templates/2"
+                },
                 "id": {
                   "type": "integer",
                   "example": 2
@@ -59,16 +64,16 @@
   "strictProperties": true,
 
   "properties": {
-    "href": {
-      "type": "string",
-      "description": "Hypertext reference to this resource.",
-      "pattern": "/api/v1/user_identities/\\d+/pdf_manager_templates/\\d+",
-      "example": "/api/v1/user_identities/1/pdf_manager_templates/2"
-    },
     "pdf_manager_template": {
       "type": "object",
-      "required": ["id", "name", "list_name"],
+      "required": ["href", "id", "name", "list_name"],
       "properties": {
+        "href": {
+          "type": "string",
+          "description": "Hypertext reference to this resource.",
+          "pattern": "/api/v1/user_identities/\\d+/pdf_manager_templates/\\d+",
+          "example": "/api/v1/user_identities/1/pdf_manager_templates/2"
+        },
         "id": {
           "type": "integer",
           "description": "Unique identifier of this PDF Manager template.",

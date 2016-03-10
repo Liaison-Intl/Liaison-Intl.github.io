@@ -25,7 +25,7 @@ title: PDF Manager Batch
 </tr>
 </thead><tbody>
 <tr>
-<td><strong>href</strong></td>
+<td><strong>pdf_manager_batch:href</strong></td>
 <td><em>string</em></td>
 <td>Hypertext reference to this resource.<br/> <strong>pattern:</strong> <code>/api/v1/user_identities/\d+/pdf_manager_batches/\d+</code></td>
 <td><code>&quot;/api/v1/user_identities/1/pdf_manager_batches/2&quot;</code></td>
@@ -93,8 +93,8 @@ title: PDF Manager Batch
 </code></pre>
 
 <pre lang="json"><code>{
-  &quot;href&quot;: &quot;/api/v1/user_identities/1/pdf_manager_batches/2&quot;,
   &quot;pdf_manager_batch&quot;: {
+    &quot;href&quot;: &quot;/api/v1/user_identities/1/pdf_manager_batches/2&quot;,
     &quot;id&quot;: 42,
     &quot;updated_at&quot;: &quot;2016-01-05T16:51:00Z&quot;,
     &quot;state&quot;: &quot;queued&quot;,
@@ -209,8 +209,8 @@ title: PDF Manager Batch
 </code></pre>
 
 <pre lang="json"><code>{
-  &quot;href&quot;: &quot;/api/v1/user_identities/1/pdf_manager_batches/2&quot;,
   &quot;pdf_manager_batch&quot;: {
+    &quot;href&quot;: &quot;/api/v1/user_identities/1/pdf_manager_batches/2&quot;,
     &quot;id&quot;: 42,
     &quot;updated_at&quot;: &quot;2016-01-05T16:51:00Z&quot;,
     &quot;state&quot;: &quot;queued&quot;,
