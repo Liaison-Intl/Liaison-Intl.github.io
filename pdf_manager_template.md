@@ -48,6 +48,12 @@ title: PDF Manager Template
 <td>Human-readable name of the list that is used when populating this template.</td>
 <td><code>&quot;Offer Accepted&quot;</code></td>
 </tr>
+<tr>
+<td><strong>pdf_manager_template:document_source_title</strong></td>
+<td><em>string</em></td>
+<td>Human-readable name of the document source that is used when populating this template.</td>
+<td><code>&quot;Full Application PDF&quot;</code></td>
+</tr>
 </tbody></table>
 
 <h3>PDF Manager Template List</h3>
@@ -75,7 +81,8 @@ title: PDF Manager Template
       &quot;href&quot;: &quot;/api/v1/user_identities/1/pdf_manager_templates/2&quot;,
       &quot;id&quot;: 2,
       &quot;name&quot;: &quot;Accepted Offers for Review&quot;,
-      &quot;list_name&quot;: &quot;Offer Accepted&quot;
+      &quot;list_name&quot;: &quot;Offer Accepted&quot;,
+      &quot;document_source_title&quot;: &quot;Full Application PDF&quot;
     }
   ]
 }
@@ -104,7 +111,8 @@ title: PDF Manager Template
     &quot;href&quot;: &quot;/api/v1/user_identities/1/pdf_manager_templates/2&quot;,
     &quot;id&quot;: 2,
     &quot;name&quot;: &quot;Accepted Offers for Review&quot;,
-    &quot;list_name&quot;: &quot;Offer Accepted&quot;
+    &quot;list_name&quot;: &quot;Offer Accepted&quot;,
+    &quot;document_source_title&quot;: &quot;Full Application PDF&quot;
   }
 }
 </code></pre>

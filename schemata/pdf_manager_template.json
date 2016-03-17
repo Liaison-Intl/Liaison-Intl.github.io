@@ -24,7 +24,7 @@
           "pdf_manager_templates": {
             "type": "array",
             "items": {
-              "required": ["href", "id", "name", "list_name"],
+              "required": ["href", "id", "name", "list_name", "document_source_title"],
               "type": "object",
               "properties": {
                 "href": {
@@ -43,6 +43,10 @@
                 "list_name": {
                   "type": "string",
                   "example": "Offer Accepted"
+                },
+                "document_source_title": {
+                  "type": "string",
+                  "example": "Full Application PDF"
                 }
               }
             }
@@ -66,7 +70,7 @@
   "properties": {
     "pdf_manager_template": {
       "type": "object",
-      "required": ["href", "id", "name", "list_name"],
+      "required": ["href", "id", "name", "list_name", "document_source_title"],
       "properties": {
         "href": {
           "type": "string",
@@ -88,6 +92,11 @@
           "type": "string",
           "description": "Human-readable name of the list that is used when populating this template.",
           "example": "Offer Accepted"
+        },
+        "document_source_title": {
+          "type": "string",
+          "description": "Human-readable name of the document source that is used when populating this template.",
+          "example": "Full Application PDF"
         }
       }
     }
