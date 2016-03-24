@@ -150,7 +150,7 @@
           "comment": "FIXME: Include `items`.  See https://github.com/interagent/prmd/issues/275",
           "type": "array",
           "description": "When `state` is `\"available\"` or `\"success_with_errors\"`, this is an array of hrefs that can be requested with an API key for downloading the generated PDF files.  Otherwise, this is `[]`.",
-          "example": ["/api/v1/user_identities/1/pdf_manager_zip_files/2/download"]
+          "example": ["/api/v1/user_identities/1/pdf_manager_zip_files/2/download", "/api/v1/user_identities/1/pdf_manager_zip_files/3/download"]
         },
         "pdf_manager_template": {
           "type": "object",

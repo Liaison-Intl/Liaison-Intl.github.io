@@ -52,7 +52,7 @@ title: PDF Manager Batch
 <td><strong>pdf_manager_batch:download_hrefs</strong></td>
 <td><em>array</em></td>
 <td>When <code>state</code> is <code>&quot;available&quot;</code> or <code>&quot;success_with_errors&quot;</code>, this is an array of hrefs that can be requested with an API key for downloading the generated PDF files.  Otherwise, this is <code>[]</code>.</td>
-<td><code>[&quot;/api/v1/user_identities/1/pdf_manager_zip_files/2/download&quot;]</code></td>
+<td><code>[&quot;/api/v1/user_identities/1/pdf_manager_zip_files/2/download&quot;,&quot;/api/v1/user_identities/1/pdf_manager_zip_files/3/download&quot;]</code></td>
 </tr>
 <tr>
 <td><strong>pdf_manager_batch:pdf_manager_template:href</strong></td>
@@ -99,7 +99,8 @@ title: PDF Manager Batch
     &quot;updated_at&quot;: &quot;2016-01-05T16:51:00Z&quot;,
     &quot;state&quot;: &quot;queued&quot;,
     &quot;download_hrefs&quot;: [
-      &quot;/api/v1/user_identities/1/pdf_manager_zip_files/2/download&quot;
+      &quot;/api/v1/user_identities/1/pdf_manager_zip_files/2/download&quot;,
+      &quot;/api/v1/user_identities/1/pdf_manager_zip_files/3/download&quot;
     ],
     &quot;pdf_manager_template&quot;: {
       &quot;href&quot;: &quot;/api/v1/user_identities/1/pdf_manager_templates/2&quot;,
@@ -215,7 +216,8 @@ title: PDF Manager Batch
     &quot;updated_at&quot;: &quot;2016-01-05T16:51:00Z&quot;,
     &quot;state&quot;: &quot;queued&quot;,
     &quot;download_hrefs&quot;: [
-      &quot;/api/v1/user_identities/1/pdf_manager_zip_files/2/download&quot;
+      &quot;/api/v1/user_identities/1/pdf_manager_zip_files/2/download&quot;,
+      &quot;/api/v1/user_identities/1/pdf_manager_zip_files/3/download&quot;
     ],
     &quot;pdf_manager_template&quot;: {
       &quot;href&quot;: &quot;/api/v1/user_identities/1/pdf_manager_templates/2&quot;,
