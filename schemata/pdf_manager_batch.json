@@ -54,7 +54,7 @@
                 "state": {
                   "type": "string",
                   "enum": ["initializing", "queued", "in_progress", "available", "success_with_errors", "empty_list", "failed"],
-                  "example": "queued"
+                  "example": "success_with_errors"
                 },
                 "pdf_manager_template": {
                   "type": "object",
@@ -144,7 +144,7 @@
           "type": "string",
           "description": "Current state of this batch.  When `\"available\"`, the batch is ready for download.",
           "enum": ["initializing", "queued", "in_progress", "available", "success_with_errors", "empty_list", "failed"],
-          "example": "queued"
+          "example": "success_with_errors"
         },
         "download_hrefs": {
           "comment": "FIXME: Include `items`.  See https://github.com/interagent/prmd/issues/275",
