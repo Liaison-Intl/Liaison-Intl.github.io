@@ -45,7 +45,7 @@ title: PDF Manager Batch
 <tr>
 <td><strong>pdf_manager_batch:state</strong></td>
 <td><em>string</em></td>
-<td>Current state of this batch.  When <code>&quot;available&quot;</code>, the batch is ready for download.<br/> <strong>one of:</strong><code>&quot;initializing&quot;</code> or <code>&quot;queued&quot;</code> or <code>&quot;in_progress&quot;</code> or <code>&quot;available&quot;</code> or <code>&quot;success_with_errors&quot;</code> or <code>&quot;empty_list&quot;</code> or <code>&quot;failed&quot;</code></td>
+<td>Current state of this batch.<br/> <strong>one of:</strong><code>&quot;initializing&quot;</code> or <code>&quot;queued&quot;</code> or <code>&quot;in_progress&quot;</code> or <code>&quot;available&quot;</code> or <code>&quot;success_with_errors&quot;</code> or <code>&quot;empty_list&quot;</code> or <code>&quot;failed&quot;</code></td>
 <td><code>&quot;success_with_errors&quot;</code></td>
 </tr>
 <tr>

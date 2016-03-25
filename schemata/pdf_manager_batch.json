@@ -142,7 +142,7 @@
         },
         "state": {
           "type": "string",
-          "description": "Current state of this batch.  When `\"available\"`, the batch is ready for download.",
+          "description": "Current state of this batch.",
           "enum": ["initializing", "queued", "in_progress", "available", "success_with_errors", "empty_list", "failed"],
           "example": "success_with_errors"
         },
