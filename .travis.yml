@@ -1,5 +1,5 @@
 language: ruby
 before_install:
-  - pip install --user LinkChecker
+  - pip install --user 'LinkChecker==9.3'
 script:
   - script/ci
