@@ -1,1 +1,4 @@
+gem install bundler -v '1.12.5'
+bundle
 pip install --user 'LinkChecker==9.3'
+pip install --user 'requests==2.9.2'
