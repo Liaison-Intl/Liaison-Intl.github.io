@@ -1,0 +1,90 @@
+{
+  "$schema": "http://json-schema.org/draft-04/hyper-schema",
+  "id": "/schemata/applicant",
+
+  "title": "Applicant",
+  "description": "An **applicant** applies to one or more **programs** through **designations**.  **Programs** render a **decision** for the **designation**.",
+
+  "links": [
+    {
+      "description": "Display the applicant with the given CAS ID.",
+      "href": "/api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:cas_id",
+      "method": "GET",
+      "rel": "self",
+      "title": "Show",
+      "http_header": { "x-api-key": "0123456789abcdef0123456789abcdef" }
+    },
+    {
+      "description": "Update the applicant with the given CAS ID.  **NOTE:** Currently, we only allow decisions to be updated when the `local_status` is `null`.",
+      "href": "/api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:cas_id",
+      "method": "PATCH",
+      "rel": "update",
+      "title": "Update",
+      "http_header": { "x-api-key": "0123456789abcdef0123456789abcdef" },
+      "schema": {
+        "type": "object",
+        "properties": {
+          "applicant": {
+            "type": "object",
+            "properties": {
+              "decision_id": {
+                "type": "integer",
+                "description": "The unique identifier for the decision to set.",
+                "example": 42
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+
+  "type": "object",
+  "properties": {
+    "applicant": {
+      "type": "object",
+      "properties": {
+        "href": {
+          "type": "string",
+          "description": "Hypertext reference to this resource.",
+          "pattern": "/api/v1/user_identities/\\d+/programs/\\d+/applicants_by_cas_id/\\d+",
+          "example": "/api/v1/user_identities/1/programs/2/applicants_by_cas_id/3"
+        },
+        "cas_id": {
+          "type": "string",
+          "description": "The CAS ID for this applicant.  This identifier is used across Liaison systems to uniquely identify an applicant.  Think of it as having similar properties to a social security number (SSN), except that it's randomly assigned.",
+          "example": "3"
+        },
+        "decision": {
+          "type": ["object", "null"],
+          "properties": {
+            "id": {
+              "type": "integer",
+              "description": "Unique identifier of this decision."
+            },
+            "name": {
+              "type": "string",
+              "description": "Human-readable name for this decision.",
+              "example": "Offer Accepted"
+            }
+          }
+        },
+        "local_status": {
+          "type": ["object", "null"],
+          "properties": {
+            "id": {
+              "type": "integer",
+              "description": "Unique identifier of this local status.",
+              "example": 123456
+            },
+            "title": {
+              "type": "string",
+              "description": "Human-readable title for this local status.",
+              "example": "Accepted Offer"
+            }
+          }
+        }
+      }
+    }
+  }
+}
