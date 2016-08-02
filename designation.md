@@ -163,6 +163,20 @@ title: Designation
 }
 </code></pre>
 
+<h3>Errors</h3>
+
+<h4>Response Example</h4>
+
+<pre><code>HTTP/1.1 422 Unprocessable Entity
+</code></pre>
+
+<pre lang="json"><code>{
+  &quot;errors&quot;: {
+    &quot;decision_id&quot;: [&quot;`-1` is not a valid decision_id for this association.&quot;, &quot;could not be updated because a local_status is present&quot;]
+  }
+}
+</code></pre>
+
 <h3>Not Found</h3>
 
 <h4>Response Example</h4>
