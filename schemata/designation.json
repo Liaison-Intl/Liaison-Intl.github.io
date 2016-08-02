@@ -1,22 +1,22 @@
 {
   "$schema": "http://json-schema.org/draft-04/hyper-schema",
-  "id": "/schemata/applicant",
+  "id": "/schemata/designation",
 
-  "title": "Applicant",
-  "description": "An **applicant** applies to one or more **programs** through **designations**.  **Programs** render a **decision** for the **designation**.",
+  "title": "Designation",
+  "description": "An applicant applies to one or more **programs** through **designations**.  **Programs** render a **decision** for the **designation**.",
 
   "links": [
     {
-      "description": "Display the applicant with the given CAS ID.",
-      "href": "/api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:cas_id",
+      "description": "Display the designation for the applicant with the given CAS ID and program ID.",
+      "href": "/api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:cas_id/designation",
       "method": "GET",
       "rel": "self",
       "title": "Show",
       "http_header": { "x-api-key": "0123456789abcdef0123456789abcdef" }
     },
     {
-      "description": "Update the applicant with the given CAS ID.  **NOTE:** Currently, we only allow decisions to be updated when the `local_status` is `null`.",
-      "href": "/api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:cas_id",
+      "description": "Update the designation with the given CAS ID and program ID.  **NOTE:** Currently, we only allow decisions to be updated when the `local_status` is `null`.",
+      "href": "/api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:cas_id/designation",
       "method": "PATCH",
       "rel": "update",
       "title": "Update",
@@ -24,7 +24,7 @@
       "schema": {
         "type": "object",
         "properties": {
-          "applicant": {
+          "designation": {
             "type": "object",
             "properties": {
               "decision_id": {
@@ -41,19 +41,24 @@
 
   "type": "object",
   "properties": {
-    "applicant": {
+    "designation": {
       "type": "object",
       "properties": {
         "href": {
           "type": "string",
           "description": "Hypertext reference to this resource.",
-          "pattern": "/api/v1/user_identities/\\d+/programs/\\d+/applicants_by_cas_id/\\d+",
-          "example": "/api/v1/user_identities/1/programs/2/applicants_by_cas_id/3"
+          "pattern": "/api/v1/user_identities/\\d+/programs/\\d+/applicants_by_cas_id/\\d+/designation",
+          "example": "/api/v1/user_identities/1/programs/2/applicants_by_cas_id/3/designation"
         },
-        "cas_id": {
-          "type": "string",
-          "description": "The CAS ID for this applicant.  This identifier is used across Liaison systems to uniquely identify an applicant.  Think of it as having similar properties to a social security number (SSN), except that it's randomly assigned.",
-          "example": "3"
+        "applicant": {
+          "type": "object",
+          "properties": {
+            "cas_id": {
+              "type": "string",
+              "description": "The CAS ID for the applicant.  This identifier is used across Liaison systems to uniquely identify an applicant.  Think of it as having similar properties to a social security number (SSN), except that it's randomly assigned.",
+              "example": "3"
+            }
+          }
         },
         "decision": {
           "type": ["object", "null"],
