@@ -27,12 +27,6 @@ title: Designation
 <td><code>&quot;/api/v1/user_identities/1/programs/2/applicants_by_cas_id/3/designation&quot;</code></td>
 </tr>
 <tr>
-<td><strong>designation:applicant:cas_id</strong></td>
-<td><em>string</em></td>
-<td>The CAS ID for the applicant.  This identifier is used across Liaison systems to uniquely identify an applicant.  Think of it as having similar properties to a social security number (SSN), except that it&#39;s randomly assigned.</td>
-<td><code>&quot;3&quot;</code></td>
-</tr>
-<tr>
 <td><strong>designation:decision</strong></td>
 <td><em>nullable object</em></td>
 <td></td>
@@ -97,9 +91,6 @@ title: Designation
 <pre lang="json"><code>{
   &quot;designation&quot;: {
     &quot;href&quot;: &quot;/api/v1/user_identities/1/programs/2/applicants_by_cas_id/3/designation&quot;,
-    &quot;applicant&quot;: {
-      &quot;cas_id&quot;: &quot;3&quot;
-    },
     &quot;decision&quot;: {
       &quot;href&quot;: &quot;/api/v1/user_identities/42/decisions&quot;,
       &quot;id&quot;: 42,
@@ -159,9 +150,6 @@ title: Designation
 <pre lang="json"><code>{
   &quot;designation&quot;: {
     &quot;href&quot;: &quot;/api/v1/user_identities/1/programs/2/applicants_by_cas_id/3/designation&quot;,
-    &quot;applicant&quot;: {
-      &quot;cas_id&quot;: &quot;3&quot;
-    },
     &quot;decision&quot;: {
       &quot;href&quot;: &quot;/api/v1/user_identities/42/decisions&quot;,
       &quot;id&quot;: 42,

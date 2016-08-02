@@ -50,16 +50,6 @@
           "pattern": "/api/v1/user_identities/\\d+/programs/\\d+/applicants_by_cas_id/\\d+/designation",
           "example": "/api/v1/user_identities/1/programs/2/applicants_by_cas_id/3/designation"
         },
-        "applicant": {
-          "type": "object",
-          "properties": {
-            "cas_id": {
-              "type": "string",
-              "description": "The CAS ID for the applicant.  This identifier is used across Liaison systems to uniquely identify an applicant.  Think of it as having similar properties to a social security number (SSN), except that it's randomly assigned.",
-              "example": "3"
-            }
-          }
-        },
         "decision": {
           "type": ["object", "null"],
           "properties": {
