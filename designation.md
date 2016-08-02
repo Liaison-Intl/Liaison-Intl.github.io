@@ -37,12 +37,6 @@ title: Designation
 <td><code>null</code></td>
 </tr>
 <tr>
-<td><strong>designation:decision:href</strong></td>
-<td><em>string</em></td>
-<td>Hypertext reference to this resource.<br/> <strong>pattern:</strong> <code>/api/v1/user_identities/\d+/decisions</code></td>
-<td><code>&quot;/api/v1/user_identities/42/decisions&quot;</code></td>
-</tr>
-<tr>
 <td><strong>designation:decision:id</strong></td>
 <td><em>integer</em></td>
 <td>Unique identifier of this decision.</td>
@@ -96,7 +90,6 @@ title: Designation
   &quot;designation&quot;: {
     &quot;href&quot;: &quot;/api/v1/user_identities/1/programs/2/applicants_by_cas_id/3/designation&quot;,
     &quot;decision&quot;: {
-      &quot;href&quot;: &quot;/api/v1/user_identities/42/decisions&quot;,
       &quot;id&quot;: 42,
       &quot;name&quot;: &quot;Offer Accepted&quot;
     },
@@ -155,7 +148,6 @@ title: Designation
   &quot;designation&quot;: {
     &quot;href&quot;: &quot;/api/v1/user_identities/1/programs/2/applicants_by_cas_id/3/designation&quot;,
     &quot;decision&quot;: {
-      &quot;href&quot;: &quot;/api/v1/user_identities/42/decisions&quot;,
       &quot;id&quot;: 42,
       &quot;name&quot;: &quot;Offer Accepted&quot;
     },

@@ -56,12 +56,12 @@ title: Custom Field Answer (Select)
 
 <p>Display an existing custom field answer.</p>
 
-<pre><code>GET /api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:cas_id/custom_field_answers/:custom_field_id
+<pre><code>GET /api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:applicant_cas_id/custom_field_answers/:custom_field_id
 </code></pre>
 
 <h4>Curl Example</h4>
 
-<pre lang="bash"><code>$ curl -n https://api.webadmit.org/api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:cas_id/custom_field_answers/:custom_field_id \
+<pre lang="bash"><code>$ curl -n https://api.webadmit.org/api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:applicant_cas_id/custom_field_answers/:custom_field_id \
   -H &quot;x-api-key: 0123456789abcdef0123456789abcdef&quot;
 </code></pre>
 
@@ -85,7 +85,7 @@ title: Custom Field Answer (Select)
 
 <p>Store a <strong>custom field</strong> value.  If a value has not previously been stored, this <em>creates</em> an answer.  Otherwise, this <em>updates</em> an existing answer.</p>
 
-<pre><code>PUT /api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:cas_id/custom_field_answers/:custom_field_id
+<pre><code>PUT /api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:applicant_cas_id/custom_field_answers/:custom_field_id
 </code></pre>
 
 <h4>Required Parameters</h4>
@@ -114,7 +114,7 @@ title: Custom Field Answer (Select)
 
 <h4>Curl Example</h4>
 
-<pre lang="bash"><code>$ curl -n -X PUT https://api.webadmit.org/api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:cas_id/custom_field_answers/:custom_field_id \
+<pre lang="bash"><code>$ curl -n -X PUT https://api.webadmit.org/api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:applicant_cas_id/custom_field_answers/:custom_field_id \
   -H &quot;Content-Type: application/json&quot; \
   -H &quot;x-api-key: 0123456789abcdef0123456789abcdef&quot; \
  \
@@ -146,12 +146,12 @@ title: Custom Field Answer (Select)
 
 <p>Clear an existing custom field answer.  (Same semantics as <code>PUT</code> with <code>&quot;value&quot;: null</code>.)  This is a &quot;soft delete&quot; that tracks who made the change.</p>
 
-<pre><code>DELETE /api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:cas_id/custom_field_answers/:custom_field_id
+<pre><code>DELETE /api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:applicant_cas_id/custom_field_answers/:custom_field_id
 </code></pre>
 
 <h4>Curl Example</h4>
 
-<pre lang="bash"><code>$ curl -n -X DELETE https://api.webadmit.org/api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:cas_id/custom_field_answers/:custom_field_id \
+<pre lang="bash"><code>$ curl -n -X DELETE https://api.webadmit.org/api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:applicant_cas_id/custom_field_answers/:custom_field_id \
   -H &quot;Content-Type: application/json&quot; \
   -H &quot;x-api-key: 0123456789abcdef0123456789abcdef&quot;
 </code></pre>

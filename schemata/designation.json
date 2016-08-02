@@ -53,12 +53,6 @@
         "decision": {
           "type": ["object", "null"],
           "properties": {
-            "href": {
-              "type": "string",
-              "description": "Hypertext reference to this resource.",
-              "pattern": "/api/v1/user_identities/\\d+/decisions",
-              "example": "/api/v1/user_identities/42/decisions"
-            },
             "id": {
               "type": "integer",
               "description": "Unique identifier of this decision.",
