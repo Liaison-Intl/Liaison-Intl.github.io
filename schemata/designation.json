@@ -8,7 +8,7 @@
   "links": [
     {
       "description": "Display the designation for the applicant with the given CAS ID and program ID.",
-      "href": "/api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:cas_id/designation",
+      "href": "/api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:applicant_cas_id/designation",
       "method": "GET",
       "rel": "self",
       "title": "Show",
@@ -16,7 +16,7 @@
     },
     {
       "description": "Update the designation with the given CAS ID and program ID.  **NOTE:** Currently, we only allow decisions to be updated when the `local_status` is `null`.",
-      "href": "/api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:cas_id/designation",
+      "href": "/api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:applicant_cas_id/designation",
       "method": "PATCH",
       "rel": "update",
       "title": "Update",
@@ -63,9 +63,16 @@
         "decision": {
           "type": ["object", "null"],
           "properties": {
+            "href": {
+              "type": "string",
+              "description": "Hypertext reference to this resource.",
+              "pattern": "/api/v1/user_identities/\\d+/decisions",
+              "example": "/api/v1/user_identities/42/decisions"
+            },
             "id": {
               "type": "integer",
-              "description": "Unique identifier of this decision."
+              "description": "Unique identifier of this decision.",
+              "example": 42
             },
             "name": {
               "type": "string",
@@ -76,6 +83,7 @@
         },
         "local_status": {
           "type": ["object", "null"],
+          "description": "For programs using WebAdMIT to manage their admissions process, a local status is a way for those programs to enter their workflow into WebAdMIT.  Typically, these programs will tie a decision code to a local status to a decision.  Decisions are used for reporting at a national level (or school-wide level for UniCAS), but local status is for an individual program's process.",
           "properties": {
             "id": {
               "type": "integer",
@@ -85,7 +93,7 @@
             "title": {
               "type": "string",
               "description": "Human-readable title for this local status.",
-              "example": "Accepted Offer"
+              "example": "Deposit Made"
             }
           }
         }

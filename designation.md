@@ -39,6 +39,12 @@ title: Designation
 <td><code>null</code></td>
 </tr>
 <tr>
+<td><strong>designation:decision:href</strong></td>
+<td><em>string</em></td>
+<td>Hypertext reference to this resource.<br/> <strong>pattern:</strong> <code>/api/v1/user_identities/\d+/decisions</code></td>
+<td><code>&quot;/api/v1/user_identities/42/decisions&quot;</code></td>
+</tr>
+<tr>
 <td><strong>designation:decision:id</strong></td>
 <td><em>integer</em></td>
 <td>Unique identifier of this decision.</td>
@@ -53,7 +59,7 @@ title: Designation
 <tr>
 <td><strong>designation:local_status</strong></td>
 <td><em>nullable object</em></td>
-<td></td>
+<td>For programs using WebAdMIT to manage their admissions process, a local status is a way for those programs to enter their workflow into WebAdMIT.  Typically, these programs will tie a decision code to a local status to a decision.  Decisions are used for reporting at a national level (or school-wide level for UniCAS), but local status is for an individual program&#39;s process.</td>
 <td><code>null</code></td>
 </tr>
 <tr>
@@ -66,7 +72,7 @@ title: Designation
 <td><strong>designation:local_status:title</strong></td>
 <td><em>string</em></td>
 <td>Human-readable title for this local status.</td>
-<td><code>&quot;Accepted Offer&quot;</code></td>
+<td><code>&quot;Deposit Made&quot;</code></td>
 </tr>
 </tbody></table>
 
@@ -74,12 +80,12 @@ title: Designation
 
 <p>Display the designation for the applicant with the given CAS ID and program ID.</p>
 
-<pre><code>GET /api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:cas_id/designation
+<pre><code>GET /api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:applicant_cas_id/designation
 </code></pre>
 
 <h4>Curl Example</h4>
 
-<pre lang="bash"><code>$ curl -n https://api.webadmit.org/api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:cas_id/designation \
+<pre lang="bash"><code>$ curl -n https://api.webadmit.org/api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:applicant_cas_id/designation \
   -H &quot;x-api-key: 0123456789abcdef0123456789abcdef&quot;
 </code></pre>
 
@@ -95,12 +101,13 @@ title: Designation
       &quot;cas_id&quot;: &quot;3&quot;
     },
     &quot;decision&quot;: {
+      &quot;href&quot;: &quot;/api/v1/user_identities/42/decisions&quot;,
       &quot;id&quot;: 42,
       &quot;name&quot;: &quot;Offer Accepted&quot;
     },
     &quot;local_status&quot;: {
       &quot;id&quot;: 123456,
-      &quot;title&quot;: &quot;Accepted Offer&quot;
+      &quot;title&quot;: &quot;Deposit Made&quot;
     }
   }
 }
@@ -110,7 +117,7 @@ title: Designation
 
 <p>Update the designation with the given CAS ID and program ID.  <strong>NOTE:</strong> Currently, we only allow decisions to be updated when the <code>local_status</code> is <code>null</code>.</p>
 
-<pre><code>PATCH /api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:cas_id/designation
+<pre><code>PATCH /api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:applicant_cas_id/designation
 </code></pre>
 
 <h4>Optional Parameters</h4>
@@ -133,7 +140,7 @@ title: Designation
 
 <h4>Curl Example</h4>
 
-<pre lang="bash"><code>$ curl -n -X PATCH https://api.webadmit.org/api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:cas_id/designation \
+<pre lang="bash"><code>$ curl -n -X PATCH https://api.webadmit.org/api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:applicant_cas_id/designation \
   -H &quot;Content-Type: application/json&quot; \
   -H &quot;x-api-key: 0123456789abcdef0123456789abcdef&quot; \
  \
@@ -156,12 +163,13 @@ title: Designation
       &quot;cas_id&quot;: &quot;3&quot;
     },
     &quot;decision&quot;: {
+      &quot;href&quot;: &quot;/api/v1/user_identities/42/decisions&quot;,
       &quot;id&quot;: 42,
       &quot;name&quot;: &quot;Offer Accepted&quot;
     },
     &quot;local_status&quot;: {
       &quot;id&quot;: 123456,
-      &quot;title&quot;: &quot;Accepted Offer&quot;
+      &quot;title&quot;: &quot;Deposit Made&quot;
     }
   }
 }

@@ -35,7 +35,7 @@
         "properties": {
           "id": {
             "type": "integer",
-            "description": "Unique identifier of this decision."
+            "description": "Unique identifier of this decision.  **NOTE:** This identifier changes between cycles."
           },
           "name": {
             "type": "string",

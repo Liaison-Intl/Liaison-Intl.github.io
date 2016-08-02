@@ -29,7 +29,7 @@ title: Decision
 <tr>
 <td><strong>decisions/id</strong></td>
 <td><em>integer</em></td>
-<td>Unique identifier of this decision.</td>
+<td>Unique identifier of this decision.  <strong>NOTE:</strong> This identifier changes between cycles.</td>
 <td><code>42</code></td>
 </tr>
 <tr>
