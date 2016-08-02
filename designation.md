@@ -53,7 +53,7 @@ title: Designation
 <tr>
 <td><strong>designation:local_status</strong></td>
 <td><em>nullable object</em></td>
-<td>For programs using WebAdMIT to manage their admissions process, a local status is a way for those programs to enter their workflow into WebAdMIT.  Typically, these programs will tie a decision code to a local status to a decision.  Decisions are used for reporting at a national level (or school-wide level for UniCAS), but local status is for an individual program&#39;s process.</td>
+<td>For programs using WebAdMIT to manage their admissions process, a local status is a way for those programs to enter their workflow into WebAdMIT.  Typically, these programs will tie a decision to a local status.  Decisions are used for reporting at a national level (or school-wide level for UniCAS), but local statuses are for an individual program&#39;s process.</td>
 <td><code>null</code></td>
 </tr>
 <tr>
@@ -72,7 +72,7 @@ title: Designation
 
 <h3>Designation Show</h3>
 
-<p>Display the designation for the applicant with the given CAS ID and program ID.</p>
+<p>Display the designation for the applicant with the given applicant CAS ID and program ID.</p>
 
 <pre><code>GET /api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:applicant_cas_id/designation
 </code></pre>
@@ -106,7 +106,7 @@ title: Designation
 
 <h3>Designation Update</h3>
 
-<p>Update the designation with the given CAS ID and program ID.  <strong>NOTE:</strong> Currently, we only allow decisions to be updated when the <code>local_status</code> is <code>null</code>.</p>
+<p>Update the designation with the given applicant CAS ID and program ID.  <strong>NOTE:</strong> Currently, we only allow decisions to be updated when the <code>local_status</code> is <code>null</code>.</p>
 
 <pre><code>PATCH /api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:applicant_cas_id/designation
 </code></pre>
