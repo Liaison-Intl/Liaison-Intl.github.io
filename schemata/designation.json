@@ -21,6 +21,32 @@
       "rel": "update",
       "title": "Update",
       "http_header": { "x-api-key": "0123456789abcdef0123456789abcdef" },
+      "targetSchema": {
+        "properties": {
+          "href": {
+            "type": "string",
+            "description": "Hypertext reference to this resource.",
+            "pattern": "/api/v1/user_identities/\\d+/programs/\\d+/applicants_by_cas_id/\\d+/designation",
+            "example": "/api/v1/user_identities/1/programs/2/applicants_by_cas_id/4/designation"
+          },
+          "decision": {
+            "type": ["object", "null"],
+            "properties": {
+              "id": {
+                "type": "integer",
+                "example": 43
+              },
+              "name": {
+                "type": "string",
+                "example": "Matriculated"
+              }
+            }
+          },
+          "local_status": {
+            "type": "null"
+          }
+        }
+      },
       "schema": {
         "type": "object",
         "properties": {
@@ -30,7 +56,7 @@
               "decision_id": {
                 "type": "integer",
                 "description": "The unique identifier for the decision to set.",
-                "example": 42
+                "example": 43
               }
             }
           }

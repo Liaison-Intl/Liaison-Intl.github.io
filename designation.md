@@ -122,7 +122,7 @@ title: Designation
 <td><strong>designation:decision_id</strong></td>
 <td><em>integer</em></td>
 <td>The unique identifier for the decision to set.</td>
-<td><code>42</code></td>
+<td><code>43</code></td>
 </tr>
 </tbody></table>
 
@@ -134,7 +134,7 @@ title: Designation
  \
   -d &#39;{
   &quot;designation&quot;: {
-    &quot;decision_id&quot;: 42
+    &quot;decision_id&quot;: 43
   }
 }&#39;
 </code></pre>
@@ -145,17 +145,12 @@ title: Designation
 </code></pre>
 
 <pre lang="json"><code>{
-  &quot;designation&quot;: {
-    &quot;href&quot;: &quot;/api/v1/user_identities/1/programs/2/applicants_by_cas_id/3/designation&quot;,
-    &quot;decision&quot;: {
-      &quot;id&quot;: 42,
-      &quot;name&quot;: &quot;Offer Accepted&quot;
-    },
-    &quot;local_status&quot;: {
-      &quot;id&quot;: 123456,
-      &quot;title&quot;: &quot;Deposit Made&quot;
-    }
-  }
+  &quot;href&quot;: &quot;/api/v1/user_identities/1/programs/2/applicants_by_cas_id/4/designation&quot;,
+  &quot;decision&quot;: {
+    &quot;id&quot;: 43,
+    &quot;name&quot;: &quot;Matriculated&quot;
+  },
+  &quot;local_status&quot;: null
 }
 </code></pre>
 
