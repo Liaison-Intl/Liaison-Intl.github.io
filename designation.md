@@ -31,6 +31,12 @@ title: Designation
 <td><code>&quot;/api/v1/user_identities/1/programs/2/applicants_by_cas_id/3/designation&quot;</code></td>
 </tr>
 <tr>
+<td><strong>designation:decisions_href</strong></td>
+<td><em>string</em></td>
+<td>Hypertext reference for valid decisions.<br/> <strong>pattern:</strong> <code>/api/v1/user_identities/\d+/decisions</code></td>
+<td><code>&quot;/api/v1/user_identities/1/decisions&quot;</code></td>
+</tr>
+<tr>
 <td><strong>designation:decision</strong></td>
 <td><em>nullable object</em></td>
 <td></td>
@@ -89,6 +95,7 @@ title: Designation
 <pre lang="json"><code>{
   &quot;designation&quot;: {
     &quot;href&quot;: &quot;/api/v1/user_identities/1/programs/2/applicants_by_cas_id/3/designation&quot;,
+    &quot;decisions_href&quot;: &quot;/api/v1/user_identities/1/decisions&quot;,
     &quot;decision&quot;: {
       &quot;id&quot;: 42,
       &quot;name&quot;: &quot;Offer Accepted&quot;
@@ -146,6 +153,7 @@ title: Designation
 
 <pre lang="json"><code>{
   &quot;href&quot;: &quot;/api/v1/user_identities/1/programs/2/applicants_by_cas_id/4/designation&quot;,
+  &quot;decisions_href&quot;: &quot;/api/v1/user_identities/1/decisions&quot;,
   &quot;decision&quot;: {
     &quot;id&quot;: 43,
     &quot;name&quot;: &quot;Matriculated&quot;

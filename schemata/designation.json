@@ -29,6 +29,12 @@
             "pattern": "/api/v1/user_identities/\\d+/programs/\\d+/applicants_by_cas_id/\\d+/designation",
             "example": "/api/v1/user_identities/1/programs/2/applicants_by_cas_id/4/designation"
           },
+          "decisions_href": {
+            "type": "string",
+            "description": "Hypertext reference for valid decisions.",
+            "pattern": "/api/v1/user_identities/\\d+/decisions",
+            "example": "/api/v1/user_identities/1/decisions"
+          },
           "decision": {
             "type": ["object", "null"],
             "properties": {
@@ -75,6 +81,12 @@
           "description": "Hypertext reference to this resource.",
           "pattern": "/api/v1/user_identities/\\d+/programs/\\d+/applicants_by_cas_id/\\d+/designation",
           "example": "/api/v1/user_identities/1/programs/2/applicants_by_cas_id/3/designation"
+        },
+        "decisions_href": {
+          "type": "string",
+          "description": "Hypertext reference for valid decisions.",
+          "pattern": "/api/v1/user_identities/\\d+/decisions",
+          "example": "/api/v1/user_identities/1/decisions"
         },
         "decision": {
           "type": ["object", "null"],
