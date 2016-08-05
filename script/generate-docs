@@ -67,6 +67,8 @@ RUBY
 }
 
 read_config
+generate_markdown_from_json_schema 'Decision' 'decision.json' 'prototype.md' 'not_found.md' > 'decision.md'
+generate_markdown_from_json_schema 'Designation' 'designation.json' 'prototype.md' 'designation_errors.md not_found.md' > 'designation.md'
 generate_markdown_from_json_schema 'User Identity' 'user_identity.json' 'user_identity_extended_description.md' '' > 'user_identity.md'
 generate_markdown_from_json_schema 'Organization' 'organization.json' 'prototype.md' 'not_found.md' > 'organization.md'
 generate_markdown_from_json_schema 'Program' 'program.json' '' 'not_found.md' > 'program.md'

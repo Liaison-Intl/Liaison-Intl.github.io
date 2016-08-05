@@ -8,7 +8,7 @@
   "links": [
     {
       "description": "Display an existing custom field answer.",
-      "href": "/api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:cas_id/custom_field_answers/:custom_field_id",
+      "href": "/api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:applicant_cas_id/custom_field_answers/:custom_field_id",
       "method": "GET",
       "rel": "self",
       "title": "Show",
@@ -16,7 +16,7 @@
     },
     {
       "description": "Store a **custom field** value.  If a value has not previously been stored, this *creates* an answer.  Otherwise, this *updates* an existing answer.",
-      "href": "/api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:cas_id/custom_field_answers/:custom_field_id",
+      "href": "/api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:applicant_cas_id/custom_field_answers/:custom_field_id",
       "method": "PUT",
       "rel": "update",
       "title": "Store",
@@ -47,7 +47,7 @@
     },
     {
       "description": "Clear an existing custom field answer.  (Same semantics as `PUT` with `\"value\": null`.)  This is a \"soft delete\" that tracks who made the change.",
-      "href": "/api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:cas_id/custom_field_answers/:custom_field_id",
+      "href": "/api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:applicant_cas_id/custom_field_answers/:custom_field_id",
       "method": "DELETE",
       "rel": "destroy",
       "title": "Destroy",
