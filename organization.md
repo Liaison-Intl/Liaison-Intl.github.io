@@ -57,7 +57,7 @@ title: Organization
 <tr>
 <td><strong>organizations/cas3</strong></td>
 <td><em>boolean</em></td>
-<td>Whether or not this organization is using CAS3 (as opposed the older CAS2, for example).</td>
+<td>Whether or not this organization is using CAS3 (as opposed to the older CAS2, for example).</td>
 <td><code>true</code></td>
 </tr>
 <tr>

@@ -55,7 +55,7 @@
           },
           "cas3": {
             "type": "boolean",
-            "description": "Whether or not this organization is using CAS3 (as opposed the older CAS2, for example).",
+            "description": "Whether or not this organization is using CAS3 (as opposed to the older CAS2, for example).",
             "example": true
           },
           "config_portal_identifier": {
