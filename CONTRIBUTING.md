@@ -8,7 +8,9 @@ We are using [JSON Schema](http://json-schema.org/) to both generate documentati
 
 To generate the documentation, you will need access to the current WebAdMIT schemata.  To do this, you will need to configure the path to WebAdMIT in `config/webadmit_path.txt`.  For an example of how to do this, see `config/webadmit_path.sample.txt`.
 
-**NOTE:** Pull requests that directly modify endpoint documentation will be rejected.  However, we value your feedback; please [make an issue][new_issue] instead.
+**NOTE:** Pull requests that directly modify endpoint documentation shouldn't be made.  Please modify the schemata instead.
+
+Third parties: we value your feedback; please [make an issue][new_issue] if you find any problems.
 
   [new_issue]: https://github.com/Liaison-Intl/Liaison-Intl.github.io/issues/new
 
