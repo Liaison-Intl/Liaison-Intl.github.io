@@ -1,5 +1,7 @@
 # developer.webadmit.org
 
+[![Build Status](https://travis-ci.org/Liaison-Intl/Liaison-Intl.github.io.svg?branch=master)](https://travis-ci.org/Liaison-Intl/Liaison-Intl.github.io)
+
 Public API documentation for WebAdMIT.  Hosted with GitHub Pages.
 
 ## Getting started
