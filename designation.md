@@ -110,7 +110,7 @@ title: Designation
 
 <h3>Designation Update</h3>
 
-<p>Update the designation with the given applicant CAS ID and program ID.  <strong>NOTE:</strong> Currently, we only allow decisions to be updated when the <code>local_status</code> is <code>null</code>.</p>
+<p>Update the designation with the given applicant CAS ID and program ID.  <strong>WARNING:</strong> The decision provided to this endpoint is used even if it conflicts with the local status.   It is possible to change a decision so that it does not match the local status.  (Example: a local status of &quot;Offer Accepted&quot; and a decision of &quot;Withdrawn&quot;.)</p>
 
 <pre><code>PATCH /api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:applicant_cas_id/designation
 </code></pre>
@@ -171,7 +171,7 @@ title: Designation
 
 <pre lang="json"><code>{
   &quot;errors&quot;: {
-    &quot;decision_id&quot;: [&quot;`-1` is not a valid decision_id for this association.&quot;, &quot;could not be updated because a local_status is present&quot;]
+    &quot;decision_id&quot;: [&quot;`-1` is not a valid decision_id for this association.&quot;]
   }
 }
 </code></pre>

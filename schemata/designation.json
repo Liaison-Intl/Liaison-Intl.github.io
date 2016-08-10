@@ -15,7 +15,7 @@
       "http_header": { "x-api-key": "0123456789abcdef0123456789abcdef" }
     },
     {
-      "description": "Update the designation with the given applicant CAS ID and program ID.  **NOTE:** Currently, we only allow decisions to be updated when the `local_status` is `null`.",
+      "description": "Update the designation with the given applicant CAS ID and program ID.  **WARNING:** The decision provided to this endpoint is used even if it conflicts with the local status.   It is possible to change a decision so that it does not match the local status.  (Example: a local status of \"Offer Accepted\" and a decision of \"Withdrawn\".)",
       "href": "/api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:applicant_cas_id/designation",
       "method": "PATCH",
       "rel": "update",
