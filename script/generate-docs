@@ -55,7 +55,7 @@ title: $title
 
 EOF
 
-  ruby -r <<RUBY
+  bundle exec ruby -r <<RUBY
 require 'github/markup'
 # Work around a [bug][] in prmd that erroneously continues a line when there is a header but no data.
 #
