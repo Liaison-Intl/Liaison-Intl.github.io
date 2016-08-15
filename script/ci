@@ -9,5 +9,7 @@ set -o errexit
 #     sudo easy_install pip
 #     sudo pip install LinkChecker
 #
+script/generate-docs
+git diff
 bundle exec jekyll build
 linkchecker '_site/index.html'
