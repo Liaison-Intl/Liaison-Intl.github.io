@@ -60,7 +60,7 @@
             "type": "object",
             "properties": {
               "decision_id": {
-                "type": "integer",
+                "type": ["integer", "null"],
                 "description": "The unique identifier for the decision to set.",
                 "example": 43
               }
