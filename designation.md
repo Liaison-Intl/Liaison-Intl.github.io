@@ -127,7 +127,7 @@ title: Designation
 </thead><tbody>
 <tr>
 <td><strong>designation:decision_id</strong></td>
-<td><em>integer</em></td>
+<td><em>nullable integer</em></td>
 <td>The unique identifier for the decision to set.</td>
 <td><code>43</code></td>
 </tr>
