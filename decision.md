@@ -85,6 +85,8 @@ title: Decision
 }
 </code></pre>
 
+<p>While <code>404 Not Found</code> is most often associated with resources that don&#39;t exist when making a <code>GET</code> request, please note that <code>404 Not Found</code> is also the response during <code>POST</code>, <code>PUT</code>, and <code>PATCH</code> requests if any resources specified by parameters cannot be found.</p>
+
 <h3>Unauthorized</h3>
 
 <h4>Response Example</h4>

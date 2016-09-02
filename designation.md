@@ -171,10 +171,14 @@ title: Designation
 
 <pre lang="json"><code>{
   &quot;errors&quot;: {
-    &quot;decision_id&quot;: [&quot;`-1` is not a valid decision_id for this association.&quot;]
+    &quot;schema&quot;: [
+      &quot;The property &#39;#/designation/decision_id&#39; of type String did not match the following type: integer&quot;
+    ]
   }
 }
 </code></pre>
+
+<p>The request body did not match the expected request schema.  Please check your parameters and try again.</p>
 
 <h3>Not Found</h3>
 
@@ -187,6 +191,8 @@ title: Designation
   &quot;message&quot;: &quot;Not Found&quot;
 }
 </code></pre>
+
+<p>While <code>404 Not Found</code> is most often associated with resources that don&#39;t exist when making a <code>GET</code> request, please note that <code>404 Not Found</code> is also the response during <code>POST</code>, <code>PUT</code>, and <code>PATCH</code> requests if any resources specified by parameters cannot be found.</p>
 
 <h3>Unauthorized</h3>
 
