@@ -3,7 +3,6 @@
   "id": "/schemata/pdf_manager_template",
 
   "title": "PDF Manager Template",
-  "stability": "prototype",
   "description": "A **PDF Manager template** contains the configuration that determines the contents of a **PDF Manager batch**.  It is configured in the user interface and only *readable* in the API.",
 
   "links": [

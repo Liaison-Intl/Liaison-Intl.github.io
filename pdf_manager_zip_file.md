@@ -7,11 +7,6 @@ title: PDF Manager Zip File
 
 <p>A <strong>PDF Manager batch</strong> has many <strong>PDF Manager zip files</strong> that can be downloaded.</p>
 
-<div class="alert alert-warning">
-  <p><strong>This is a prototype resource.</strong></p>
-  <p>A prototype resource is experimental, and major changes are likely. In time, a prototype resource may or may not advance to production.</p>
-</div>
-
 <h3>PDF Manager Zip File Download</h3>
 
 <p>Securely download a PDF Manager zip file via redirect.</p>
