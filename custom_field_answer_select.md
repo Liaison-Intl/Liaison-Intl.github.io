@@ -5,7 +5,7 @@ title: Custom Field Answer (Select)
 
 <!-- WARNING: This is an automatically generated file.  Do not modify directly.  See script/generate-docs. -->
 
-<h2><a name="resource-custom_field_answer_select"></a>Custom Field Answer (Select)</h2>
+<h2><a name="resource-custom_field_answer_select">Custom Field Answer (Select)</a></h2>
 
 <p>A <strong>custom field answer</strong> stores arbitrary data about an applicant, answering the question posed by a <strong>custom field</strong>.</p>
 
@@ -21,28 +21,28 @@ title: Custom Field Answer (Select)
 </tr>
 </thead><tbody>
 <tr>
-<td><strong>custom_field_answer:href</strong></td>
-<td><em>string</em></td>
-<td>Hypertext reference to this resource.<br/> <strong>pattern:</strong> <code>/api/v1/user_identities/\d+/programs/\d+/applicants_by_cas_id/\d+/custom_field_answers/\d+</code></td>
-<td><code>&quot;/api/v1/user_identities/1/programs/2/applicants_by_cas_id/3/custom_field_answers/4&quot;</code></td>
-</tr>
-<tr>
 <td><strong>custom_field_answer:custom_field_id</strong></td>
 <td><em>integer</em></td>
 <td>Unique identifier of the <strong>custom field</strong> that this answers.</td>
 <td><code>4</code></td>
 </tr>
 <tr>
-<td><strong>custom_field_answer:label</strong></td>
-<td><em>string</em></td>
-<td>Human-readable label of the <strong>custom field</strong> that this answers.</td>
-<td><code>&quot;Preferred house&quot;</code></td>
-</tr>
-<tr>
 <td><strong>custom_field_answer:field_type</strong></td>
 <td><em>string</em></td>
 <td>Type of data that the <strong>custom field</strong> stores.<br/> <strong>one of:</strong><code>&quot;select&quot;</code></td>
 <td><code>&quot;select&quot;</code></td>
+</tr>
+<tr>
+<td><strong>custom_field_answer:href</strong></td>
+<td><em>string</em></td>
+<td>Hypertext reference to this resource.<br/> <strong>pattern:</strong> <code>/api/v1/user_identities/\d+/programs/\d+/applicants_by_cas_id/\d+/custom_field_answers/\d+</code></td>
+<td><code>&quot;/api/v1/user_identities/1/programs/2/applicants_by_cas_id/3/custom_field_answers/4&quot;</code></td>
+</tr>
+<tr>
+<td><strong>custom_field_answer:label</strong></td>
+<td><em>string</em></td>
+<td>Human-readable label of the <strong>custom field</strong> that this answers.</td>
+<td><code>&quot;Preferred house&quot;</code></td>
 </tr>
 <tr>
 <td><strong>custom_field_answer:value</strong></td>
@@ -52,7 +52,7 @@ title: Custom Field Answer (Select)
 </tr>
 </tbody></table>
 
-<h3>Custom Field Answer (Select) Show</h3>
+<h3><a name="link-GET-custom_field_answer_select-/api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:applicant_cas_id/custom_field_answers/:custom_field_id">Custom Field Answer (Select) Show</a></h3>
 
 <p>Display an existing custom field answer.</p>
 
@@ -81,7 +81,7 @@ title: Custom Field Answer (Select)
 }
 </code></pre>
 
-<h3>Custom Field Answer (Select) Store</h3>
+<h3><a name="link-PUT-custom_field_answer_select-/api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:applicant_cas_id/custom_field_answers/:custom_field_id">Custom Field Answer (Select) Store</a></h3>
 
 <p>Store a <strong>custom field</strong> value.  If a value has not previously been stored, this <em>creates</em> an answer.  Otherwise, this <em>updates</em> an existing answer.</p>
 
@@ -115,15 +115,14 @@ title: Custom Field Answer (Select)
 <h4>Curl Example</h4>
 
 <pre lang="bash"><code>$ curl -n -X PUT https://api.webadmit.org/api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:applicant_cas_id/custom_field_answers/:custom_field_id \
-  -H &quot;Content-Type: application/json&quot; \
-  -H &quot;x-api-key: 0123456789abcdef0123456789abcdef&quot; \
- \
   -d &#39;{
   &quot;custom_field_answer&quot;: {
     &quot;field_type&quot;: &quot;select&quot;,
     &quot;value&quot;: &quot;Gryffindor&quot;
   }
-}&#39;
+}&#39; \
+  -H &quot;Content-Type: application/json&quot; \
+  -H &quot;x-api-key: 0123456789abcdef0123456789abcdef&quot;
 </code></pre>
 
 <h4>Response Example</h4>
@@ -142,7 +141,7 @@ title: Custom Field Answer (Select)
 }
 </code></pre>
 
-<h3>Custom Field Answer (Select) Destroy</h3>
+<h3><a name="link-DELETE-custom_field_answer_select-/api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:applicant_cas_id/custom_field_answers/:custom_field_id">Custom Field Answer (Select) Destroy</a></h3>
 
 <p>Clear an existing custom field answer.  (Same semantics as <code>PUT</code> with <code>&quot;value&quot;: null</code>.)  This is a &quot;soft delete&quot; that tracks who made the change.</p>
 

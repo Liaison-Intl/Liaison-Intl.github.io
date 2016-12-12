@@ -5,7 +5,9 @@ title: Decision
 
 <!-- WARNING: This is an automatically generated file.  Do not modify directly.  See script/generate-docs. -->
 
-<h2><a name="resource-decision"></a>Decision</h2>
+<h2><a name="resource-decision">Decision</a></h2>
+
+<p>Stability: <code>prototype</code></p>
 
 <p>An association has a set of valid <strong>decisions</strong> for an applicant.</p>
 
@@ -25,12 +27,6 @@ title: Decision
 </tr>
 </thead><tbody>
 <tr>
-<td><strong>href</strong></td>
-<td><em>string</em></td>
-<td>Hypertext reference to this resource.<br/> <strong>pattern:</strong> <code>/api/v1/user_identities/\d+/decisions</code></td>
-<td><code>&quot;/api/v1/user_identities/1/decisions&quot;</code></td>
-</tr>
-<tr>
 <td><strong>decisions/id</strong></td>
 <td><em>integer</em></td>
 <td>Unique identifier of this decision.  <strong>NOTE:</strong> This identifier changes between cycles.</td>
@@ -42,9 +38,15 @@ title: Decision
 <td>Human-readable name for this decision.</td>
 <td><code>&quot;Offer Accepted&quot;</code></td>
 </tr>
+<tr>
+<td><strong>href</strong></td>
+<td><em>string</em></td>
+<td>Hypertext reference to this resource.<br/> <strong>pattern:</strong> <code>/api/v1/user_identities/\d+/decisions</code></td>
+<td><code>&quot;/api/v1/user_identities/1/decisions&quot;</code></td>
+</tr>
 </tbody></table>
 
-<h3>Decision List</h3>
+<h3><a name="link-GET-decision-/api/v1/user_identities/:user_identity_id/decisions">Decision List</a></h3>
 
 <p>List valid decisions for the association that this user identity belongs to.</p>
 

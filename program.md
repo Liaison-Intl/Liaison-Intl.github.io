@@ -5,7 +5,7 @@ title: Program
 
 <!-- WARNING: This is an automatically generated file.  Do not modify directly.  See script/generate-docs. -->
 
-<h2><a name="resource-program"></a>Program</h2>
+<h2><a name="resource-program">Program</a></h2>
 
 <p>An applicant applies to a <strong>program</strong> at an <strong>organization</strong>.</p>
 
@@ -46,7 +46,7 @@ title: Program
 </tr>
 </tbody></table>
 
-<h3>Program List</h3>
+<h3><a name="link-GET-program-/api/v1/user_identities/:user_identity_id/programs">Program List</a></h3>
 
 <p>List existing programs.</p>
 
