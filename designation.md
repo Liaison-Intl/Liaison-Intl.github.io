@@ -180,6 +180,20 @@ title: Designation
 
 <p>The request body did not match the expected request schema.  Please check your parameters and try again.</p>
 
+<pre><code>HTTP/1.1 422 Unprocessable Entity
+</code></pre>
+
+<pre lang="json"><code>{
+  &quot;errors&quot;: {
+    &quot;decision_id&quot;: [
+      &quot;Cannot set the decision_id when the local_status_id is not null&quot;
+    ]
+  }
+}
+</code></pre>
+
+<p>You&#39;ll get this error when you&#39;re trying to set a decision_id to a designation which already has a local status assigned. If you want to be able to force the decision_id please contact Liaison to turn on the &quot;Disassociate Decision Codes from Local Status&quot; feature which will allow you to set the decision even if the local_status is present.</p>
+
 <h3>Not Found</h3>
 
 <h4>Response Example</h4>
