@@ -45,12 +45,6 @@ title: Custom Field
 <td><code>[&quot;Gryffindor&quot;,&quot;Hufflepuff&quot;,&quot;Ravenclaw&quot;,&quot;Slytherin&quot;]</code></td>
 </tr>
 <tr>
-<td><strong>custom_fields/options</strong></td>
-<td><em>nullable array</em></td>
-<td>When <code>field_type</code> is <code>&quot;select&quot;</code>, this defines the list of allowed values for the field.  Otherwise, this is <code>null</code>.</td>
-<td><code>[&quot;Gryffindor&quot;,&quot;Hufflepuff&quot;,&quot;Ravenclaw&quot;,&quot;Slytherin&quot;]</code></td>
-</tr>
-<tr>
 <td><strong>href</strong></td>
 <td><em>string</em></td>
 <td>Hypertext reference to this resource.<br/> <strong>pattern:</strong> <code>/api/v1/user_identities/\d+/programs/\d+/custom_fields</code></td>

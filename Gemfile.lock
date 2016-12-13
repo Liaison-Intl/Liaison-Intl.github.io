@@ -1,3 +1,11 @@
+GIT
+  remote: git@github.com:Liaison-Intl/prmd.git
+  revision: 8cb419a9b12bbf3356fd904a0628679630a85dfd
+  specs:
+    prmd (0.13.0)
+      erubis (~> 2.7)
+      json_schema (~> 0.3, >= 0.3.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -139,9 +147,6 @@ GEM
       sawyer (~> 0.8.0, >= 0.5.3)
     pathutil (0.14.0)
       forwardable-extended (~> 2.6)
-    prmd (0.13.0)
-      erubis (~> 2.7)
-      json_schema (~> 0.3, >= 0.3.1)
     public_suffix (2.0.4)
     rb-fsevent (0.9.8)
     rb-inotify (0.9.7)
@@ -169,7 +174,7 @@ DEPENDENCIES
   github-markup
   github-pages
   jekyll
-  prmd
+  prmd!
 
 RUBY VERSION
    ruby 2.3.1p112
