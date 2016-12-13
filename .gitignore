@@ -1,17 +1,4 @@
 _site
 config/webadmit_path.txt
-*.bz2
-*.log
-*.rdb
-*.swp
-*~
-.bundle
 .DS_Store
-.env
-.env.local
-.idea/
-.powenv
-.powrc
-.sass-cache
-.yardoc/
 tmp/*
