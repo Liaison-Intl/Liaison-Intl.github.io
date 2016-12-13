@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:Liaison-Intl/prmd.git
+  remote: https://github.com/Liaison-Intl/prmd.git
   revision: 8cb419a9b12bbf3356fd904a0628679630a85dfd
   specs:
     prmd (0.13.0)
