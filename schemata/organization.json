@@ -3,7 +3,7 @@
   "id": "/schemata/organization",
 
   "title": "Organization",
-  "stability": "prototype",
+  "stability": "production",
   "description": "An applicant applies to a **program** at an **organization**.",
 
   "links": [

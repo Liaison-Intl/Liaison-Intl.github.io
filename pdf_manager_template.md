@@ -9,10 +9,6 @@ title: PDF Manager Template
 
 <p>A <strong>PDF Manager template</strong> contains the configuration that determines the contents of a <strong>PDF Manager batch</strong>.  It is configured in the user interface and only <em>readable</em> in the API.</p>
 
-<div class="alert alert-warning">
-  <p><strong>This is a prototype resource.</strong></p>
-  <p>A prototype resource is experimental, and major changes are likely. In time, a prototype resource may or may not advance to production.</p>
-</div>
 
 <h3>Attributes</h3>
 

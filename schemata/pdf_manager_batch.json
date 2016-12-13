@@ -3,7 +3,7 @@
   "id": "/schemata/pdf_manager_batch",
 
   "title": "PDF Manager Batch",
-  "stability": "prototype",
+  "stability": "production",
   "description": "A **PDF Manager batch** represents the asynchronous execution and eventual population of a **PDF Manager template**, resulting in **PDF Manager zip files**.",
 
   "links": [
