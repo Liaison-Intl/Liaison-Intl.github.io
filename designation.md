@@ -186,13 +186,13 @@ title: Designation
 <pre lang="json"><code>{
   &quot;errors&quot;: {
     &quot;decision_id&quot;: [
-      &quot;Cannot set the decision_id when the local_status_id is not null&quot;
+      &quot;Can&#39;t set the decision_id when the local_status is not null&quot;
     ]
   }
 }
 </code></pre>
 
-<p>You&#39;ll get this error when you&#39;re trying to set a decision_id to a designation which already has a local status assigned. If you want to be able to force the decision_id please contact Liaison to turn on the &quot;Disassociate Decision Codes from Local Status&quot; feature which will allow you to set the decision even if the local_status is present.</p>
+<p>You&#39;ll get this error when you&#39;re trying to set a <code>decision_id</code> to a designation which already has a local status assigned. If you want to be able to force the <code>decision_id</code> please contact Liaison to turn on the &quot;Disassociate Decision Codes from Local Status&quot; feature which will allow you to set the decision even if the <code>local_status</code> is present.</p>
 
 <h3>Not Found</h3>
 
