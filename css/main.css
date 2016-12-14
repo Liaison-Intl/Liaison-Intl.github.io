@@ -22,3 +22,11 @@ body {
   margin: 0 auto;
   padding: 4px;
 }
+
+a[name] {
+  color: #333;
+}
+
+a[name]:hover {
+  text-decoration: none;
+}
