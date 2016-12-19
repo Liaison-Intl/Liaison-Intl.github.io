@@ -91,4 +91,5 @@ generate_markdown_from_json_schema 'PDF Manager Template' 'pdf_manager_template.
 generate_markdown_from_json_schema 'PDF Manager Batch' 'pdf_manager_batch.json' '' 'pdf_manager_batch_errors.md not_found.md' > 'pdf_manager_batch.md'
 generate_markdown_from_json_schema 'Export' 'export.json' '' 'not_found.md' > 'export.md'
 generate_markdown_from_json_schema 'Export' 'export_by_user_identity.json' '' 'not_found.md' > 'export_by_user_identity.md'
+generate_markdown_from_json_schema 'Export Files check status in batch' 'export_files_check_batch.json' '' 'not_found.md' > 'export_files_check_batch.md'
 generate_markdown_from_json_schema 'Social Security Numbers' 'social_security_numbers.json' 'prototype.md' 'ssn_forbidden.md not_found.md' > 'social_security_numbers.md'
