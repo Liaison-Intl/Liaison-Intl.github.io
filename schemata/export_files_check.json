@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/hyper-schema",
   "id": "/schemata/export_files_check",
 
-  "title": "Export Files (check status)",
+  "title": "Export/Report Files (check status)",
   "stability": "production",
   "description": "Retrieve the status of a running export file initiated with the previous POST. Required parameters are the **id** of the export (e.g. export template) and the id of the running instance of that export (e.g. export file) that you wish to check the status of. You may continue to issue this call over a reasonable polling interval until the file becomes ready for download.  Once the status of the file becomes \"Available\", a download URL for the file will also be returned from the API.  This URL is secure and time-sensitive, expiring less than 30 seconds from when it is issued. It is the expectation that software using this API will immediately download the file once given the URL. The download URL can always be re-generated if it expires by re-calling this method – a new URL will be issued.",
 

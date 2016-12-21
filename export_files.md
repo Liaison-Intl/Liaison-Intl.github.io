@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Export Files initiate a run
+title: Export/Report Files initiate a run
 ---
 
 <!-- WARNING: This is an automatically generated file.  Do not modify directly.  See script/generate-docs. -->
 
-<h2><a name="resource-export_files"></a>Export Files (initiate a run)</h2>
+<h2><a name="resource-export_files"></a>Export/Report Files (initiate a run)</h2>
 
 <p>Initiate the background execution of a specific export (e.g. export template). Required parameters are the identity that the export belongs to, and the id of the export that you wish to run. This will create an instance of a running export_file, which is what you can monitor to determine when the export is ready to be downloaded. The id in the response from this call is the handle to that running export_file and what is used in future calls to check on the status of the run.</p>
 
@@ -54,7 +54,7 @@ title: Export Files initiate a run
 </tr>
 </tbody></table>
 
-<h3>Export Files (initiate a run)</h3>
+<h3>Export/Report Files (initiate a run)</h3>
 
 <p>Initiate the background execution of a specific export.</p>
 
