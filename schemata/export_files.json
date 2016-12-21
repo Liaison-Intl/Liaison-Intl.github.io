@@ -62,7 +62,6 @@
             "type": "string",
             "format": "uri",
             "description": "For requests using the optional “callback” parameter, you should build your request as follows: /api/v1/user_identities/:user_identity_id/exports/:export_id/ export_files?callback=http://someurl.com/your_callback.cgi When the file is ready, WebAdMIT will POST to the callback URL that you specify with the following form POST parameters: export_file[id] export_file[export_id] export_file[status] An example of the body of a POST to a callback when a file is ready is as follows: export_file[id]=99752&export_file[export_id]=123316&export_file[status]=Available This gives you the export_file_id of the file that’s ready for download once it is available (you will use the export_id and the export_file_id POSTed here to form the next API call in item 5 below to actually get the URL to download the now-ready file). We recommend the use of the public RequestBin (http://requestb.in/) service in order to test out how this particular call works.",
-            "pattern": "^http://",
             "example": "http://someurl.com/your_callback.cgi"
           }
         }
