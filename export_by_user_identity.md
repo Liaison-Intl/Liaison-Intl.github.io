@@ -5,7 +5,9 @@ title: Export/Report
 
 <!-- WARNING: This is an automatically generated file.  Do not modify directly.  See script/generate-docs. -->
 
-<h2><a name="resource-export_by_user_identity"></a>Export/Report</h2>
+<h2><a name="resource-export_by_user_identity">Export/Report</a></h2>
+
+<p>Stability: <code>production</code></p>
 
 <p>Retrieve details on all exports (e.g. export templates) that a user has access to within a specific identity. The id returned for each export is the value that needs to be provided in order to run that export.</p>
 
@@ -21,10 +23,10 @@ title: Export/Report
 </tr>
 </thead><tbody>
 <tr>
-<td><strong>href</strong></td>
+<td><strong>exports/format</strong></td>
 <td><em>string</em></td>
-<td>Hypertext reference to this resource.<br/> <strong>pattern:</strong> <code>/api/v1/user_identities/\d+/exports</code></td>
-<td><code>&quot;/api/v1/user_identities/24567/exports&quot;</code></td>
+<td>Format of the file.<br/> <strong>one of:</strong><code>&quot;Comma-Separated Values&quot;</code> or <code>&quot;Microsoft Excel&quot;</code> or <code>&quot;Website HTML&quot;</code> or <code>&quot;Fixed Width Report&quot;</code> or <code>&quot;Comma-Separated Values in Multiple Files&quot;</code></td>
+<td><code>&quot;Comma-Separated Values&quot;</code></td>
 </tr>
 <tr>
 <td><strong>exports/id</strong></td>
@@ -33,22 +35,10 @@ title: Export/Report
 <td><code>29897</code></td>
 </tr>
 <tr>
-<td><strong>exports/name</strong></td>
-<td><em>string</em></td>
-<td>Human-readable name for this export.</td>
-<td><code>&quot;Nightly Banner Export&quot;</code></td>
-</tr>
-<tr>
 <td><strong>exports/list_type</strong></td>
 <td><em>nullable string</em></td>
 <td>Type of the list used for this export.<br/> <strong>one of:</strong><code>&quot;all&quot;</code> or <code>&quot;clipboard&quot;</code> or <code>&quot;search&quot;</code></td>
 <td><code>&quot;all&quot;</code></td>
-</tr>
-<tr>
-<td><strong>exports/format</strong></td>
-<td><em>string</em></td>
-<td>Format of the file.<br/> <strong>one of:</strong><code>&quot;Comma-Separated Values&quot;</code> or <code>&quot;Microsoft Excel&quot;</code> or <code>&quot;Website HTML&quot;</code> or <code>&quot;Fixed Width Report&quot;</code> or <code>&quot;Comma-Separated Values in Multiple Files&quot;</code></td>
-<td><code>&quot;Comma-Separated Values&quot;</code></td>
 </tr>
 <tr>
 <td><strong>exports/mime_type</strong></td>
@@ -56,9 +46,21 @@ title: Export/Report
 <td>MIME type of the file.<br/> <strong>one of:</strong><code>&quot;text/csv;charset=iso-8859-1&quot;</code> or <code>&quot;application/vnd.ms-excel&quot;</code> or <code>&quot;text/html&quot;</code> or <code>&quot;text/plain&quot;</code> or <code>&quot;application/zip&quot;</code></td>
 <td><code>&quot;text/csv;charset=iso-8859-1&quot;</code></td>
 </tr>
+<tr>
+<td><strong>exports/name</strong></td>
+<td><em>string</em></td>
+<td>Human-readable name for this export.</td>
+<td><code>&quot;Nightly Banner Export&quot;</code></td>
+</tr>
+<tr>
+<td><strong>href</strong></td>
+<td><em>string</em></td>
+<td>Hypertext reference to this resource.<br/> <strong>pattern:</strong> <code>/api/v1/user_identities/\d+/exports</code></td>
+<td><code>&quot;/api/v1/user_identities/24567/exports&quot;</code></td>
+</tr>
 </tbody></table>
 
-<h3>Export/Report List</h3>
+<h3><a name="link-GET-export_by_user_identity-/api/v1/user_identities/:user_identity_id/exports">Export/Report List</a></h3>
 
 <p>The response is the collection of exports belonging to a specific identity in the current user’s WebAdMIT profile, including the List that each export is tied to.</p>
 

@@ -5,7 +5,9 @@ title: Export/Report Files initiate a run
 
 <!-- WARNING: This is an automatically generated file.  Do not modify directly.  See script/generate-docs. -->
 
-<h2><a name="resource-export_files"></a>Export/Report Files (initiate a run)</h2>
+<h2><a name="resource-export_files">Export/Report Files (initiate a run)</a></h2>
+
+<p>Stability: <code>production</code></p>
 
 <p>Initiate the background execution of a specific export (e.g. export template). Required parameters are the identity that the export belongs to, and the id of the export that you wish to run. This will create an instance of a running export_file, which is what you can monitor to determine when the export is ready to be downloaded. The id in the response from this call is the handle to that running export_file and what is used in future calls to check on the status of the run.</p>
 
@@ -23,16 +25,10 @@ title: Export/Report Files initiate a run
 </tr>
 </thead><tbody>
 <tr>
-<td><strong>href</strong></td>
-<td><em>string</em></td>
-<td>Hypertext reference to this resource.<br/> <strong>pattern:</strong> <code>/api/v1/user_identities/\d+/export_files</code></td>
-<td><code>&quot;/api/v1/user_identities/37442/export_files&quot;</code></td>
-</tr>
-<tr>
-<td><strong>export_files/id</strong></td>
+<td><strong>export_files/export_id</strong></td>
 <td><em>integer</em></td>
-<td>Unique identifier of this export file.</td>
-<td><code>74780</code></td>
+<td>Unique identifier of the associated export.</td>
+<td><code>86446</code></td>
 </tr>
 <tr>
 <td><strong>export_files/href</strong></td>
@@ -41,10 +37,10 @@ title: Export/Report Files initiate a run
 <td><code>&quot;/api/v1/exports/86466/export_files/74780&quot;</code></td>
 </tr>
 <tr>
-<td><strong>export_files/export_id</strong></td>
+<td><strong>export_files/id</strong></td>
 <td><em>integer</em></td>
-<td>Unique identifier of the associated export.</td>
-<td><code>86446</code></td>
+<td>Unique identifier of this export file.</td>
+<td><code>74780</code></td>
 </tr>
 <tr>
 <td><strong>export_files/status</strong></td>
@@ -52,9 +48,15 @@ title: Export/Report Files initiate a run
 <td>Current status of this export file.<br/> <strong>one of:</strong><code>&quot;initializing&quot;</code> or <code>&quot;queued&quot;</code> or <code>&quot;in_progress&quot;</code> or <code>&quot;available&quot;</code> or <code>&quot;success_with_errors&quot;</code> or <code>&quot;empty_list&quot;</code> or <code>&quot;failed&quot;</code></td>
 <td><code>&quot;available&quot;</code></td>
 </tr>
+<tr>
+<td><strong>href</strong></td>
+<td><em>string</em></td>
+<td>Hypertext reference to this resource.<br/> <strong>pattern:</strong> <code>/api/v1/user_identities/\d+/export_files</code></td>
+<td><code>&quot;/api/v1/user_identities/37442/export_files&quot;</code></td>
+</tr>
 </tbody></table>
 
-<h3>Export/Report Files (initiate a run)</h3>
+<h3><a name="link-POST-export_files-/api/v1/user_identities/:user_identity_id/exports/:export_id/export_files">Export/Report Files (initiate a run) </a></h3>
 
 <p>Initiate the background execution of a specific export.</p>
 
@@ -82,12 +84,11 @@ title: Export/Report Files initiate a run
 <h4>Curl Example</h4>
 
 <pre lang="bash"><code>$ curl -n -X POST https://api.webadmit.org/api/v1/user_identities/:user_identity_id/exports/:export_id/export_files \
-  -H &quot;Content-Type: application/json&quot; \
-  -H &quot;x-api-key: 0123456789abcdef0123456789abcdef&quot; \
- \
   -d &#39;{
   &quot;callback&quot;: &quot;http://someurl.com/your_callback.cgi&quot;
-}&#39;
+}&#39; \
+  -H &quot;Content-Type: application/json&quot; \
+  -H &quot;x-api-key: 0123456789abcdef0123456789abcdef&quot;
 </code></pre>
 
 <h4>Response Example</h4>
