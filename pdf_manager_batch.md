@@ -5,7 +5,9 @@ title: PDF Manager Batch
 
 <!-- WARNING: This is an automatically generated file.  Do not modify directly.  See script/generate-docs. -->
 
-<h2><a name="resource-pdf_manager_batch"></a>PDF Manager Batch</h2>
+<h2><a name="resource-pdf_manager_batch">PDF Manager Batch</a></h2>
+
+<p>Stability: <code>production</code></p>
 
 <p>A <strong>PDF Manager batch</strong> represents the asynchronous execution and eventual population of a <strong>PDF Manager template</strong>, resulting in <strong>PDF Manager zip files</strong>.</p>
 
@@ -21,6 +23,12 @@ title: PDF Manager Batch
 </tr>
 </thead><tbody>
 <tr>
+<td><strong>pdf_manager_batch:download_hrefs</strong></td>
+<td><em>array</em></td>
+<td>When <code>state</code> is <code>&quot;available&quot;</code> or <code>&quot;success_with_errors&quot;</code>, this is an array of hrefs that can be requested with an API key for downloading the generated PDF files.  Otherwise, this is <code>[]</code>.</td>
+<td><code>[&quot;/api/v1/user_identities/1/pdf_manager_zip_files/2/download&quot;,&quot;/api/v1/user_identities/1/pdf_manager_zip_files/3/download&quot;]</code></td>
+</tr>
+<tr>
 <td><strong>pdf_manager_batch:href</strong></td>
 <td><em>string</em></td>
 <td>Hypertext reference to this resource.<br/> <strong>pattern:</strong> <code>/api/v1/user_identities/\d+/pdf_manager_batches/\d+</code></td>
@@ -31,24 +39,6 @@ title: PDF Manager Batch
 <td><em>integer</em></td>
 <td>Unique identifier of this batch.</td>
 <td><code>42</code></td>
-</tr>
-<tr>
-<td><strong>pdf_manager_batch:updated_at</strong></td>
-<td><em>date-time</em></td>
-<td>Time that this batch was last updated.<br/> <strong>pattern:</strong> <code>\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\dZ</code></td>
-<td><code>&quot;2016-01-05T16:51:00Z&quot;</code></td>
-</tr>
-<tr>
-<td><strong>pdf_manager_batch:state</strong></td>
-<td><em>string</em></td>
-<td>Current state of this batch.<br/> <strong>one of:</strong><code>&quot;initializing&quot;</code> or <code>&quot;queued&quot;</code> or <code>&quot;in_progress&quot;</code> or <code>&quot;available&quot;</code> or <code>&quot;success_with_errors&quot;</code> or <code>&quot;empty_list&quot;</code> or <code>&quot;failed&quot;</code></td>
-<td><code>&quot;success_with_errors&quot;</code></td>
-</tr>
-<tr>
-<td><strong>pdf_manager_batch:download_hrefs</strong></td>
-<td><em>array</em></td>
-<td>When <code>state</code> is <code>&quot;available&quot;</code> or <code>&quot;success_with_errors&quot;</code>, this is an array of hrefs that can be requested with an API key for downloading the generated PDF files.  Otherwise, this is <code>[]</code>.</td>
-<td><code>[&quot;/api/v1/user_identities/1/pdf_manager_zip_files/2/download&quot;,&quot;/api/v1/user_identities/1/pdf_manager_zip_files/3/download&quot;]</code></td>
 </tr>
 <tr>
 <td><strong>pdf_manager_batch:pdf_manager_template:href</strong></td>
@@ -68,9 +58,21 @@ title: PDF Manager Batch
 <td>Human-readable name of this PDF Manager template.</td>
 <td><code>&quot;Accepted Offers for Review&quot;</code></td>
 </tr>
+<tr>
+<td><strong>pdf_manager_batch:state</strong></td>
+<td><em>string</em></td>
+<td>Current state of this batch.<br/> <strong>one of:</strong><code>&quot;initializing&quot;</code> or <code>&quot;queued&quot;</code> or <code>&quot;in_progress&quot;</code> or <code>&quot;available&quot;</code> or <code>&quot;success_with_errors&quot;</code> or <code>&quot;empty_list&quot;</code> or <code>&quot;failed&quot;</code></td>
+<td><code>&quot;success_with_errors&quot;</code></td>
+</tr>
+<tr>
+<td><strong>pdf_manager_batch:updated_at</strong></td>
+<td><em>date-time</em></td>
+<td>Time that this batch was last updated.<br/> <strong>pattern:</strong> <code>\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\dZ</code></td>
+<td><code>&quot;2016-01-05T16:51:00Z&quot;</code></td>
+</tr>
 </tbody></table>
 
-<h3>PDF Manager Batch Show</h3>
+<h3><a name="link-GET-pdf_manager_batch-/api/v1/user_identities/:user_identity_id/pdf_manager_batches/:pdf_manager_batch_id">PDF Manager Batch Show</a></h3>
 
 <p>Display existing batch with download URL.</p>
 
@@ -107,7 +109,7 @@ title: PDF Manager Batch
 }
 </code></pre>
 
-<h3>PDF Manager Batch List</h3>
+<h3><a name="link-GET-pdf_manager_batch-/api/v1/user_identities/:user_identity_id/pdf_manager_batches">PDF Manager Batch List</a></h3>
 
 <p>List existing batches.  As there could potentially be a large number of <code>download_hrefs</code>, they are not displayed in this response.</p>
 
@@ -143,7 +145,7 @@ title: PDF Manager Batch
 }
 </code></pre>
 
-<h3>PDF Manager Batch Initiate Run</h3>
+<h3><a name="link-POST-pdf_manager_batch-/api/v1/user_identities/:user_identity_id/pdf_manager_batches">PDF Manager Batch Initiate Run</a></h3>
 
 <p>Initiate the creation of a batch from a template.  If you attempt to run the same batch several times in close succession, you will receive the id of the already-running instance of that batch. This is a safeguard to prevent many accidental simultaneous runs of the exact same batch: one must finish before a new one can be initiated.</p>
 
@@ -189,15 +191,14 @@ title: PDF Manager Batch
 <h4>Curl Example</h4>
 
 <pre lang="bash"><code>$ curl -n -X POST https://api.webadmit.org/api/v1/user_identities/:user_identity_id/pdf_manager_batches \
-  -H &quot;Content-Type: application/json&quot; \
-  -H &quot;x-api-key: 0123456789abcdef0123456789abcdef&quot; \
- \
   -d &#39;{
   &quot;pdf_manager_batch&quot;: {
     &quot;pdf_manager_template_id&quot;: 2,
     &quot;callback&quot;: &quot;https://example.com/my_callback&quot;
   }
-}&#39;
+}&#39; \
+  -H &quot;Content-Type: application/json&quot; \
+  -H &quot;x-api-key: 0123456789abcdef0123456789abcdef&quot;
 </code></pre>
 
 <h4>Response Example</h4>

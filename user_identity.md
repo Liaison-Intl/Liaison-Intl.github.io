@@ -5,7 +5,7 @@ title: User Identity
 
 <!-- WARNING: This is an automatically generated file.  Do not modify directly.  See script/generate-docs. -->
 
-<h2><a name="resource-user_identity"></a>User Identity</h2>
+<h2><a name="resource-user_identity">User Identity</a></h2>
 
 <p>All permissions in WebAdMIT cascade from the concept of a <strong>user identity</strong>.</p>
 
@@ -39,22 +39,22 @@ In general, configuration entities such as Lists, Exports, Email Templates, and 
 <td><code>&quot;/api/v1/user_identities&quot;</code></td>
 </tr>
 <tr>
-<td><strong>user_identities/id</strong></td>
-<td><em>integer</em></td>
-<td>Unique identifier for this user identity.</td>
-<td><code>42</code></td>
-</tr>
-<tr>
-<td><strong>user_identities/type</strong></td>
-<td><em>string</em></td>
-<td>Type of access granted by this user identity.<br/> <strong>one of:</strong><code>&quot;Admissions User&quot;</code> or <code>&quot;Association User&quot;</code> or <code>&quot;Institution User&quot;</code></td>
-<td><code>&quot;Admissions User&quot;</code></td>
-</tr>
-<tr>
 <td><strong>user_identities/association</strong></td>
 <td><em>nullable string</em></td>
 <td>Human-readable name of the association that this user identity belongs to, or <code>null</code> if not applicable.</td>
 <td><code>&quot;SOPHAS&quot;</code></td>
+</tr>
+<tr>
+<td><strong>user_identities/cycle</strong></td>
+<td><em>nullable string</em></td>
+<td>Academic cycle that this user identity can access, or <code>null</code> if not applicable.<br/> <strong>pattern:</strong> <code>^\d{4} - \d{4}$</code></td>
+<td><code>&quot;2014 - 2015&quot;</code></td>
+</tr>
+<tr>
+<td><strong>user_identities/id</strong></td>
+<td><em>integer</em></td>
+<td>Unique identifier for this user identity.</td>
+<td><code>42</code></td>
 </tr>
 <tr>
 <td><strong>user_identities/institution</strong></td>
@@ -69,14 +69,14 @@ In general, configuration entities such as Lists, Exports, Email Templates, and 
 <td><code>&quot;Demo University School of Public Health&quot;</code></td>
 </tr>
 <tr>
-<td><strong>user_identities/cycle</strong></td>
-<td><em>nullable string</em></td>
-<td>Academic cycle that this user identity can access, or <code>null</code> if not applicable.<br/> <strong>pattern:</strong> <code>^\d{4} - \d{4}$</code></td>
-<td><code>&quot;2014 - 2015&quot;</code></td>
+<td><strong>user_identities/type</strong></td>
+<td><em>string</em></td>
+<td>Type of access granted by this user identity.<br/> <strong>one of:</strong><code>&quot;Admissions User&quot;</code> or <code>&quot;Association User&quot;</code> or <code>&quot;Institution User&quot;</code></td>
+<td><code>&quot;Admissions User&quot;</code></td>
 </tr>
 </tbody></table>
 
-<h3>User Identity List</h3>
+<h3><a name="link-GET-user_identity-/api/v1/user_identities">User Identity List</a></h3>
 
 <p>Retrieve details on all user identities that are part of a user&#39;s WebAdMIT profile and that have the &quot;API Access&quot; permission assigned to them.  The <code>id</code> associated with each identity will not change, and only becomes something new when a new identity is created – for example at the start of a new academic cycle.</p>
 

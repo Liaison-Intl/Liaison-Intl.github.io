@@ -5,7 +5,9 @@ title: PDF Manager Template
 
 <!-- WARNING: This is an automatically generated file.  Do not modify directly.  See script/generate-docs. -->
 
-<h2><a name="resource-pdf_manager_template"></a>PDF Manager Template</h2>
+<h2><a name="resource-pdf_manager_template">PDF Manager Template</a></h2>
+
+<p>Stability: <code>production</code></p>
 
 <p>A <strong>PDF Manager template</strong> contains the configuration that determines the contents of a <strong>PDF Manager batch</strong>.  It is configured in the user interface and only <em>readable</em> in the API.</p>
 
@@ -21,6 +23,12 @@ title: PDF Manager Template
 </tr>
 </thead><tbody>
 <tr>
+<td><strong>pdf_manager_template:document_source_title</strong></td>
+<td><em>string</em></td>
+<td>Human-readable name of the document source that is used when populating this template.</td>
+<td><code>&quot;Full Application PDF&quot;</code></td>
+</tr>
+<tr>
 <td><strong>pdf_manager_template:href</strong></td>
 <td><em>string</em></td>
 <td>Hypertext reference to this resource.<br/> <strong>pattern:</strong> <code>/api/v1/user_identities/\d+/pdf_manager_templates/\d+</code></td>
@@ -33,26 +41,20 @@ title: PDF Manager Template
 <td><code>2</code></td>
 </tr>
 <tr>
-<td><strong>pdf_manager_template:name</strong></td>
-<td><em>string</em></td>
-<td>Human-readable name of this PDF Manager template.</td>
-<td><code>&quot;Accepted Offers for Review&quot;</code></td>
-</tr>
-<tr>
 <td><strong>pdf_manager_template:list_name</strong></td>
 <td><em>string</em></td>
 <td>Human-readable name of the list that is used when populating this template.</td>
 <td><code>&quot;Offer Accepted&quot;</code></td>
 </tr>
 <tr>
-<td><strong>pdf_manager_template:document_source_title</strong></td>
+<td><strong>pdf_manager_template:name</strong></td>
 <td><em>string</em></td>
-<td>Human-readable name of the document source that is used when populating this template.</td>
-<td><code>&quot;Full Application PDF&quot;</code></td>
+<td>Human-readable name of this PDF Manager template.</td>
+<td><code>&quot;Accepted Offers for Review&quot;</code></td>
 </tr>
 </tbody></table>
 
-<h3>PDF Manager Template List</h3>
+<h3><a name="link-GET-pdf_manager_template-/api/v1/user_identities/:user_identity_id/pdf_manager_templates">PDF Manager Template List</a></h3>
 
 <p>List existing PDF Manager templates.</p>
 
@@ -84,7 +86,7 @@ title: PDF Manager Template
 }
 </code></pre>
 
-<h3>PDF Manager Template Show</h3>
+<h3><a name="link-GET-pdf_manager_template-/api/v1/user_identities/:user_identity_id/pdf_manager_templates/:pdf_manager_template_id">PDF Manager Template Show</a></h3>
 
 <p>Display an existing PDF Manager template.</p>
 

@@ -5,7 +5,7 @@ title: Designation
 
 <!-- WARNING: This is an automatically generated file.  Do not modify directly.  See script/generate-docs. -->
 
-<h2><a name="resource-designation"></a>Designation</h2>
+<h2><a name="resource-designation">Designation</a></h2>
 
 <p>An applicant applies to one or more <strong>programs</strong> through <strong>designations</strong>.  <strong>Programs</strong> render a <strong>decision</strong> for the <strong>designation</strong>.</p>
 
@@ -25,18 +25,6 @@ title: Designation
 </tr>
 </thead><tbody>
 <tr>
-<td><strong>designation:href</strong></td>
-<td><em>string</em></td>
-<td>Hypertext reference to this resource.<br/> <strong>pattern:</strong> <code>/api/v1/user_identities/\d+/programs/\d+/applicants_by_cas_id/\d+/designation</code></td>
-<td><code>&quot;/api/v1/user_identities/1/programs/2/applicants_by_cas_id/3/designation&quot;</code></td>
-</tr>
-<tr>
-<td><strong>designation:decisions_href</strong></td>
-<td><em>string</em></td>
-<td>Hypertext reference for valid decisions.<br/> <strong>pattern:</strong> <code>/api/v1/user_identities/\d+/decisions</code></td>
-<td><code>&quot;/api/v1/user_identities/1/decisions&quot;</code></td>
-</tr>
-<tr>
 <td><strong>designation:decision</strong></td>
 <td><em>nullable object</em></td>
 <td></td>
@@ -53,6 +41,18 @@ title: Designation
 <td><em>string</em></td>
 <td>Human-readable name for this decision.</td>
 <td><code>&quot;Offer Accepted&quot;</code></td>
+</tr>
+<tr>
+<td><strong>designation:decisions_href</strong></td>
+<td><em>string</em></td>
+<td>Hypertext reference for valid decisions.<br/> <strong>pattern:</strong> <code>/api/v1/user_identities/\d+/decisions</code></td>
+<td><code>&quot;/api/v1/user_identities/1/decisions&quot;</code></td>
+</tr>
+<tr>
+<td><strong>designation:href</strong></td>
+<td><em>string</em></td>
+<td>Hypertext reference to this resource.<br/> <strong>pattern:</strong> <code>/api/v1/user_identities/\d+/programs/\d+/applicants_by_cas_id/\d+/designation</code></td>
+<td><code>&quot;/api/v1/user_identities/1/programs/2/applicants_by_cas_id/3/designation&quot;</code></td>
 </tr>
 <tr>
 <td><strong>designation:local_status</strong></td>
@@ -74,7 +74,7 @@ title: Designation
 </tr>
 </tbody></table>
 
-<h3>Designation Show</h3>
+<h3><a name="link-GET-designation-/api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:applicant_cas_id/designation">Designation Show</a></h3>
 
 <p>Display the designation for the applicant with the given applicant CAS ID and program ID.</p>
 
@@ -108,7 +108,7 @@ title: Designation
 }
 </code></pre>
 
-<h3>Designation Update</h3>
+<h3><a name="link-PATCH-designation-/api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:applicant_cas_id/designation">Designation Update</a></h3>
 
 <p>Update the designation with the given applicant CAS ID and program ID.  <strong>WARNING:</strong> The decision provided to this endpoint is used even if it conflicts with the local status.   It is possible to change a decision so that it does not match the local status.  (Example: a local status of &quot;Offer Accepted&quot; and a decision of &quot;Withdrawn&quot;.)</p>
 
@@ -136,14 +136,13 @@ title: Designation
 <h4>Curl Example</h4>
 
 <pre lang="bash"><code>$ curl -n -X PATCH https://api.webadmit.org/api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:applicant_cas_id/designation \
-  -H &quot;Content-Type: application/json&quot; \
-  -H &quot;x-api-key: 0123456789abcdef0123456789abcdef&quot; \
- \
   -d &#39;{
   &quot;designation&quot;: {
     &quot;decision_id&quot;: 43
   }
-}&#39;
+}&#39; \
+  -H &quot;Content-Type: application/json&quot; \
+  -H &quot;x-api-key: 0123456789abcdef0123456789abcdef&quot;
 </code></pre>
 
 <h4>Response Example</h4>

@@ -5,7 +5,9 @@ title: Organization
 
 <!-- WARNING: This is an automatically generated file.  Do not modify directly.  See script/generate-docs. -->
 
-<h2><a name="resource-organization"></a>Organization</h2>
+<h2><a name="resource-organization">Organization</a></h2>
+
+<p>Stability: <code>production</code></p>
 
 <p>An applicant applies to a <strong>program</strong> at an <strong>organization</strong>.</p>
 
@@ -27,24 +29,6 @@ title: Organization
 <td><code>&quot;/api/v1/user_identities/1/organizations&quot;</code></td>
 </tr>
 <tr>
-<td><strong>organizations/id</strong></td>
-<td><em>integer</em></td>
-<td>Unique identifier of this organization.</td>
-<td><code>42</code></td>
-</tr>
-<tr>
-<td><strong>organizations/name</strong></td>
-<td><em>string</em></td>
-<td>Human-readable name of this organization.</td>
-<td><code>&quot;Demo University School of Public Health&quot;</code></td>
-</tr>
-<tr>
-<td><strong>organizations/cycle_name</strong></td>
-<td><em>nullable string</em></td>
-<td>Academic cycle of this organization, or <code>null</code> if not applicable.<br/> <strong>pattern:</strong> <code>^\d{4} - \d{4}$</code></td>
-<td><code>&quot;2014 - 2015&quot;</code></td>
-</tr>
-<tr>
 <td><strong>organizations/association_name</strong></td>
 <td><em>nullable string</em></td>
 <td>Human-readable name of the association that this organization belongs to, or <code>null</code> if not applicable.</td>
@@ -62,9 +46,27 @@ title: Organization
 <td>Organization identifier that is specific to Config Portal.  May not be unique if <code>cas3</code> is <code>false</code>.</td>
 <td><code>&quot;2235&quot;</code></td>
 </tr>
+<tr>
+<td><strong>organizations/cycle_name</strong></td>
+<td><em>nullable string</em></td>
+<td>Academic cycle of this organization, or <code>null</code> if not applicable.<br/> <strong>pattern:</strong> <code>^\d{4} - \d{4}$</code></td>
+<td><code>&quot;2014 - 2015&quot;</code></td>
+</tr>
+<tr>
+<td><strong>organizations/id</strong></td>
+<td><em>integer</em></td>
+<td>Unique identifier of this organization.</td>
+<td><code>42</code></td>
+</tr>
+<tr>
+<td><strong>organizations/name</strong></td>
+<td><em>string</em></td>
+<td>Human-readable name of this organization.</td>
+<td><code>&quot;Demo University School of Public Health&quot;</code></td>
+</tr>
 </tbody></table>
 
-<h3>Organization List</h3>
+<h3><a name="link-GET-organization-/api/v1/user_identities/:user_identity_id/organizations">Organization List</a></h3>
 
 <p>List existing organizations for this <strong>user identity</strong>.</p>
 
