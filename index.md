@@ -15,7 +15,7 @@ layout: default
     <div class="col-md-4">
       <h2>Applicant Data</h2>
       <p>Use our Export API to extract applicant data from WebAdMIT for analysis, processing, or other integration with on-campus systems.</p>
-      <p><a class="btn btn-default" href="http://help.webadmit.org/webadmit2016/documents/WebAdMIT_Export_Manager_API.pdf" role="button">Download PDF &raquo;</a></p>
+      <p><a class="btn btn-default" href="export_by_user_identity.html" role="button">Read more &raquo;</a></p>
     </div>
     <div class="col-md-4">
       <h2>Custom Fields</h2>
