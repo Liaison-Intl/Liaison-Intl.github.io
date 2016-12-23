@@ -9,7 +9,7 @@ title: Export/Report Files check status
 
 <p>Stability: <code>production</code></p>
 
-<p>Retrieve the status of a running export file initiated with the previous POST. Required parameters are the <strong>id</strong> of the export (e.g. export template) and the id of the running instance of that export (e.g. export file) that you wish to check the status of. You may continue to issue this call over a reasonable polling interval until the file becomes ready for download.  Once the status of the file becomes &quot;Available&quot;, a download URL for the file will also be returned from the API.  This URL is secure and time-sensitive, expiring less than 30 seconds from when it is issued. It is the expectation that software using this API will immediately download the file once given the URL. The download URL can always be re-generated if it expires by re-calling this method – a new URL will be issued.</p>
+<p>Retrieve the status of a running export file initiated with the previous POST. Required parameters are the <strong>id</strong> of the export (e.g. export template) and the id of the running instance of that export (e.g. export file) that you wish to check the status of. You may continue to issue this call over a reasonable polling interval until the file becomes ready for download.  Once the status of the file becomes &quot;available&quot;, a download URL for the file will also be returned from the API.  This URL is secure and time-sensitive, expiring less than 30 seconds from when it is issued. It is the expectation that software using this API will immediately download the file once given the URL. The download URL can always be re-generated if it expires by re-calling this method – a new URL will be issued.</p>
 
 
 <h3>Attributes</h3>
@@ -56,7 +56,7 @@ title: Export/Report Files check status
 
 <h3><a name="link-GET-export_files_check-/api/v1/exports/:export_id/export_files/:export_file_id">Export/Report Files (check status) Show</a></h3>
 
-<p>The response is the status of the running instance of the export the user is checking on, including the id of that export_file (the running instance), the export id (the export template), the status of the execution, and the actual (time-sensitive) URL to download the file if it is ready. Possible status values are &quot;Queued&quot;, &quot;In Progress&quot;, &quot;Available&quot;, or &quot;Failed&quot;.</p>
+<p>The response is the status of the running instance of the export the user is checking on, including the id of that export_file (the running instance), the export id (the export template), the status of the execution, and the actual (time-sensitive) URL to download the file if it is ready.</p>
 
 <pre><code>GET /api/v1/exports/:export_id/export_files/:export_file_id
 </code></pre>

@@ -9,9 +9,9 @@ title: Export/Report Files initiate a run
 
 <p>Stability: <code>production</code></p>
 
-<p>Initiate the background execution of a specific export (e.g. export template). Required parameters are the identity that the export belongs to, and the id of the export that you wish to run. This will create an instance of a running export_file, which is what you can monitor to determine when the export is ready to be downloaded. The id in the response from this call is the handle to that running export_file and what is used in future calls to check on the status of the run.</p>
+<p>Initiate the background execution of a specific export (e.g. export template). Required parameters are the identity that the export belongs to, and the <strong>id</strong> of the export that you wish to run. This will create an instance of a running <strong>export_file</strong>, which is what you can monitor to determine when the export is ready to be downloaded. The <strong>id</strong> in the response from this call is the handle to that running export_file and what is used in future calls to check on the status of the run.</p>
 
-<p>Important note: this id representing the handle to the running instance of the export is not always uniquely generated with each run – if you attempt to run the same export several times in close succession, you will receive back the id of the already-running instance of that export. This is a safeguard to prevent many accidental simultaneous runs of the exact same export – one must finish before a new one can be initiated.</p>
+<p><em>Important note: this <strong>id</strong> representing the handle to the running instance of the export is not always uniquely generated with each run – if you attempt to run the same export several times in close succession, you will receive back the id of the already-running instance of that export. This is a safeguard to prevent many accidental simultaneous runs of the exact same export – one must finish before a new one can be initiated.</em></p>
 
 
 <h3>Attributes</h3>
