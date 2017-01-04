@@ -5,7 +5,9 @@ title: Social Security Numbers
 
 <!-- WARNING: This is an automatically generated file.  Do not modify directly.  See script/generate-docs. -->
 
-<h2><a name="resource-social_security_numbers"></a>Social Security Numbers</h2>
+<h2><a name="resource-social_security_numbers">Social Security Numbers</a></h2>
+
+<p>Stability: <code>prototype</code></p>
 
 <p>A <strong>user identity</strong> may have one <strong>organization</strong>. An <strong>organization</strong> may have none or one <strong>Social Security Numbers document</strong>.</p>
 
@@ -31,12 +33,6 @@ title: Social Security Numbers
 <td><code>&quot;/api/v1/user_identities/1/social_security_numbers&quot;</code></td>
 </tr>
 <tr>
-<td><strong>social_security_numbers:url</strong></td>
-<td><em>string</em></td>
-<td>Hypertext reference to download the document.</td>
-<td><code>&quot;http://private.webadmit-file-repository.com/document/12345&quot;</code></td>
-</tr>
-<tr>
 <td><strong>social_security_numbers:organization:id</strong></td>
 <td><em>integer</em></td>
 <td>Unique identifier of the organization.</td>
@@ -48,9 +44,15 @@ title: Social Security Numbers
 <td>Name of the organization.</td>
 <td><code>&quot;Harvard T.H. Chan School of Public Health&quot;</code></td>
 </tr>
+<tr>
+<td><strong>social_security_numbers:url</strong></td>
+<td><em>string</em></td>
+<td>Hypertext reference to download the document.</td>
+<td><code>&quot;http://private.webadmit-file-repository.com/document/12345&quot;</code></td>
+</tr>
 </tbody></table>
 
-<h3>Social Security Numbers Show</h3>
+<h3><a name="link-GET-social_security_numbers-/api/v1/user_identities/:user_identity_id/social_security_numbers">Social Security Numbers Show</a></h3>
 
 <p>Display existing SSNs.</p>
 
