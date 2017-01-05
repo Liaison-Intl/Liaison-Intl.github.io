@@ -94,4 +94,3 @@ generate_markdown_from_json_schema 'Export/Report' 'export_by_user_identity.json
 generate_markdown_from_json_schema 'Export/Report Files check status in batch' 'export_files_check_batch.json' '' 'not_found.md' > 'export_files_check_batch.md'
 generate_markdown_from_json_schema 'Export/Report Files check status' 'export_files_check.json' '' 'not_found.md' > 'export_files_check.md'
 generate_markdown_from_json_schema 'Export/Report Files initiate a run' 'export_files.json' '' 'not_found.md' > 'export_files.md'
-generate_markdown_from_json_schema 'Social Security Numbers' 'social_security_numbers.json' 'prototype.md' 'ssn_forbidden.md not_found.md' > 'social_security_numbers.md'
