@@ -4,7 +4,7 @@
 
   "title": "Export/Report",
   "stability": "production",
-  "description": "Retrieve details on all exports (e.g. export templates) that a user has access to within a specific identity. The id returned for each export is the value that needs to be provided in order to run that export.",
+  "description": "Retrieve details on all exports (e.g. export templates) that a user has access to within a specific identity. The **id** returned for each export is the value that needs to be provided in order to run that export.",
 
   "links": [
     {

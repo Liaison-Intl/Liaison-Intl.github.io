@@ -9,7 +9,7 @@ title: Export/Report
 
 <p>Stability: <code>production</code></p>
 
-<p>Retrieve details on all exports (e.g. export templates) that a user has access to within a specific identity. The id returned for each export is the value that needs to be provided in order to run that export.</p>
+<p>Retrieve details on all exports (e.g. export templates) that a user has access to within a specific identity. The <strong>id</strong> returned for each export is the value that needs to be provided in order to run that export.</p>
 
 
 <h3>Attributes</h3>
