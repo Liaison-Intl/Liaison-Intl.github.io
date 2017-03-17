@@ -28,9 +28,9 @@ title: Program
 </tr>
 <tr>
 <td><strong>programs/id</strong></td>
-<td><em>integer</em></td>
+<td><em>bigint</em></td>
 <td>Unique identifier of this program.</td>
-<td><code>42</code></td>
+<td><code>42023191739237</code></td>
 </tr>
 <tr>
 <td><strong>programs/name</strong></td>
@@ -68,7 +68,7 @@ title: Program
   &quot;href&quot;: &quot;/api/v1/user_identities/1/programs&quot;,
   &quot;programs&quot;: [
     {
-      &quot;id&quot;: 42,
+      &quot;id&quot;: 4202319173923742,
       &quot;name&quot;: &quot;Potions&quot;,
       &quot;organization_name&quot;: &quot;Hogwarts School of Witchcraft and Wizardry&quot;
     }

@@ -34,7 +34,7 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "integer",
+            "type": "bigint",
             "description": "Unique identifier of this organization."
           },
           "name": {

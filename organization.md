@@ -54,9 +54,9 @@ title: Organization
 </tr>
 <tr>
 <td><strong>organizations/id</strong></td>
-<td><em>integer</em></td>
+<td><em>bigint</em></td>
 <td>Unique identifier of this organization.</td>
-<td><code>42</code></td>
+<td><code>42023191739237</code></td>
 </tr>
 <tr>
 <td><strong>organizations/name</strong></td>
@@ -88,7 +88,7 @@ title: Organization
   &quot;href&quot;: &quot;/api/v1/user_identities/1/organizations&quot;,
   &quot;organizations&quot;: [
     {
-      &quot;id&quot;: 42,
+      &quot;id&quot;: 42023191739237,
       &quot;name&quot;: &quot;Demo University School of Public Health&quot;,
       &quot;cycle_name&quot;: &quot;2014 - 2015&quot;,
       &quot;association_name&quot;: &quot;SOPHAS&quot;,
