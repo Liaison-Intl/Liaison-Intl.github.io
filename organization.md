@@ -54,7 +54,7 @@ title: Organization
 </tr>
 <tr>
 <td><strong>organizations/id</strong></td>
-<td><em>bigint</em></td>
+<td><em>integer</em></td>
 <td>Unique identifier of this organization.</td>
 <td><code>42023191739237</code></td>
 </tr>
