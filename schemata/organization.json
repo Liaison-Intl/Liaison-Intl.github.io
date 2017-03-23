@@ -35,7 +35,8 @@
         "properties": {
           "id": {
             "type": "integer",
-            "description": "Unique identifier of this organization."
+            "description": "Unique identifier of this organization.",
+            "example": 42023191739237
           },
           "name": {
             "type": "string",
