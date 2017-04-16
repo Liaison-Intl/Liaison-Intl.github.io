@@ -13,6 +13,8 @@ script/generate-docs
 lines_changed_count=$(git diff | wc -l)
 if [ $lines_changed_count -ne 0 ]; then
   echo "[fatal] Lines show as changed.  This likely means the schemata and generated docs are out of sync."
+  echo "[fatal] Output from git diff:"
+  git diff | cat
   exit 1
 fi
 bundle exec jekyll build

@@ -48,7 +48,7 @@ title: Custom Field
 <td><strong>href</strong></td>
 <td><em>string</em></td>
 <td>Hypertext reference to this resource.<br/> <strong>pattern:</strong> <code>/api/v1/user_identities/\d+/programs/\d+/custom_fields</code></td>
-<td><code>&quot;/api/v1/user_identities/1/programs/2/custom_fields&quot;</code></td>
+<td><code>&quot;/api/v1/user_identities/1/programs/42023191739237/custom_fields&quot;</code></td>
 </tr>
 </tbody></table>
 
@@ -71,7 +71,7 @@ title: Custom Field
 </code></pre>
 
 <pre lang="json"><code>{
-  &quot;href&quot;: &quot;/api/v1/user_identities/1/programs/2/custom_fields&quot;,
+  &quot;href&quot;: &quot;/api/v1/user_identities/1/programs/42023191739237/custom_fields&quot;,
   &quot;custom_fields&quot;: [
     {
       &quot;id&quot;: 4,

@@ -27,7 +27,7 @@
             "type": "string",
             "description": "Hypertext reference to this resource.",
             "pattern": "/api/v1/user_identities/\\d+/programs/\\d+/applicants_by_cas_id/\\d+/designation",
-            "example": "/api/v1/user_identities/1/programs/2/applicants_by_cas_id/4/designation"
+            "example": "/api/v1/user_identities/1/programs/42023191739237/applicants_by_cas_id/4/designation"
           },
           "decisions_href": {
             "type": "string",
@@ -80,7 +80,7 @@
           "type": "string",
           "description": "Hypertext reference to this resource.",
           "pattern": "/api/v1/user_identities/\\d+/programs/\\d+/applicants_by_cas_id/\\d+/designation",
-          "example": "/api/v1/user_identities/1/programs/2/applicants_by_cas_id/3/designation"
+          "example": "/api/v1/user_identities/1/programs/42023191739237/applicants_by_cas_id/3/designation"
         },
         "decisions_href": {
           "type": "string",
