@@ -4,7 +4,7 @@
 
   "title": "Decision",
   "stability": "prototype",
-  "description": "An association has a set of valid **decisions** for an applicant.",
+  "description": "An **association** has a set of valid **decisions** for an applicant.",
 
   "links": [
     {
