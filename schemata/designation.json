@@ -61,7 +61,7 @@
             "properties": {
               "decision_id": {
                 "type": ["integer", "null"],
-                "description": "The unique identifier for the decision to set.",
+                "description": "The unique identifier for the decision to set. If the designation is in received status and the preliminary_data_handling feature is on, the code will prevent changes to the decision code.",
                 "example": 43
               }
             }
