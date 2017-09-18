@@ -128,7 +128,7 @@ title: Designation
 <tr>
 <td><strong>designation:decision_id</strong></td>
 <td><em>nullable integer</em></td>
-<td>The unique identifier for the decision to set.</td>
+<td>The unique identifier for the decision to set. If the designation is in received status and the preliminary_data_handling feature is on, the code will prevent changes to the decision code.</td>
 <td><code>43</code></td>
 </tr>
 </tbody></table>
