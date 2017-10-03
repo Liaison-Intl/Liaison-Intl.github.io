@@ -1,6 +1,33 @@
 ### Not Found
 
-#### Response Example
+#### Specific error messages
+
+When the user_identity is not found
+
+```json
+{
+  "errors": {
+    "schema": [
+      "User identity '999' not found."
+    ]
+  }
+}
+```
+
+When the program is not found
+
+```json
+{
+  "errors": {
+    "schema": [
+      "Program '99999999999' not found."
+    ]
+  }
+}
+```
+
+
+#### Generic error message (legacy error)
 
 ```
 HTTP/1.1 404 Not Found

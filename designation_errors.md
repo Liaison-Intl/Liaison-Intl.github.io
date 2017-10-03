@@ -48,31 +48,7 @@ When an applicants in a "Received" application status and the feature preliminar
 }
 ```
 
-#### Not found
-
-When the user_identity is not found
-
-```json
-{
-  "errors": {
-    "schema": [
-      "User identity '999' not found."
-    ]
-  }
-}
-```
-
-When the program is not found
-
-```json
-{
-  "errors": {
-    "schema": [
-      "Program '99999999999' not found."
-    ]
-  }
-}
-```
+#### Designation related (Not found messages)
 
 When the applicant is not found
 
