@@ -11,10 +11,6 @@ title: Decision
 
 <p>An association has a set of valid <strong>decisions</strong> for an applicant.</p>
 
-<div class="alert alert-warning">
-  <p><strong>This is a prototype resource.</strong></p>
-  <p>A prototype resource is experimental, and major changes are likely. In time, a prototype resource may or may not advance to production.</p>
-</div>
 
 <h3>Attributes</h3>
 
@@ -77,7 +73,31 @@ title: Decision
 
 <h3>Not Found</h3>
 
-<h4>Response Example</h4>
+<h4>Specific error messages</h4>
+
+<p>When the user_identity is not found</p>
+
+<pre lang="json"><code>{
+  &quot;errors&quot;: {
+    &quot;schema&quot;: [
+      &quot;User identity &#39;999&#39; not found.&quot;
+    ]
+  }
+}
+</code></pre>
+
+<p>When the program is not found</p>
+
+<pre lang="json"><code>{
+  &quot;errors&quot;: {
+    &quot;schema&quot;: [
+      &quot;Program &#39;99999999999&#39; not found.&quot;
+    ]
+  }
+}
+</code></pre>
+
+<h4>Generic error message (legacy error)</h4>
 
 <pre><code>HTTP/1.1 404 Not Found
 </code></pre>

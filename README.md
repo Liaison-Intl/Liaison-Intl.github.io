@@ -22,3 +22,7 @@ And then visit [http://127.0.0.1:4000/](http://127.0.0.1:4000/).
 ## Modifying the documentation
 
 See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Editing the Menu
+
+The menu and other site layout is in the layout directory.
