@@ -202,7 +202,33 @@ title: Designation
 }
 </code></pre>
 
-<h4>Not found</h4>
+<h4>Designation related (Not found messages)</h4>
+
+<p>When the applicant is not found</p>
+
+<pre lang="json"><code>{
+  &quot;errors&quot;: {
+    &quot;schema&quot;: [
+      &quot;Applicant &#39;9999999&#39; not found.&quot;
+    ]
+  }
+}
+</code></pre>
+
+<p>When the decision is not found</p>
+
+<pre lang="json"><code>{
+  &quot;errors&quot;: {
+    &quot;schema&quot;: [
+      &quot;Decision &#39;99&#39; not found.&quot;
+    ]
+  }
+}
+</code></pre>
+
+<h3>Not Found</h3>
+
+<h4>Specific error messages</h4>
 
 <p>When the user_identity is not found</p>
 
@@ -226,27 +252,17 @@ title: Designation
 }
 </code></pre>
 
-<p>When the applicant is not found</p>
+<h4>Generic error message (legacy error)</h4>
+
+<pre><code>HTTP/1.1 404 Not Found
+</code></pre>
 
 <pre lang="json"><code>{
-  &quot;errors&quot;: {
-    &quot;schema&quot;: [
-      &quot;Applicant &#39;9999999&#39; not found.&quot;
-    ]
-  }
+  &quot;message&quot;: &quot;Not Found&quot;
 }
 </code></pre>
 
-<p>When the decision is not found</p>
-
-<pre lang="json"><code>{
-  &quot;errors&quot;: {
-    &quot;schema&quot;: [
-      &quot;Decision &#39;99&#39; not found.&quot;
-    ]
-  }
-}
-</code></pre>
+<p>While <code>404 Not Found</code> is most often associated with resources that don&#39;t exist when making a <code>GET</code> request, please note that <code>404 Not Found</code> is also the response during <code>POST</code>, <code>PUT</code>, and <code>PATCH</code> requests if any resources specified by parameters cannot be found.</p>
 
 <h3>Unauthorized</h3>
 

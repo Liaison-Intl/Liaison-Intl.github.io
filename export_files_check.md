@@ -85,7 +85,31 @@ title: Export/Report Files check status
 
 <h3>Not Found</h3>
 
-<h4>Response Example</h4>
+<h4>Specific error messages</h4>
+
+<p>When the user_identity is not found</p>
+
+<pre lang="json"><code>{
+  &quot;errors&quot;: {
+    &quot;schema&quot;: [
+      &quot;User identity &#39;999&#39; not found.&quot;
+    ]
+  }
+}
+</code></pre>
+
+<p>When the program is not found</p>
+
+<pre lang="json"><code>{
+  &quot;errors&quot;: {
+    &quot;schema&quot;: [
+      &quot;Program &#39;99999999999&#39; not found.&quot;
+    ]
+  }
+}
+</code></pre>
+
+<h4>Generic error message (legacy error)</h4>
 
 <pre><code>HTTP/1.1 404 Not Found
 </code></pre>
