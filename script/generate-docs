@@ -24,7 +24,13 @@ generate_markdown_from_json_schema() {
     extended_description_filename='/dev/null'
   fi
 
-  footer_filenames=$4
+  if [ -f "$4" ]; then
+    prototype_filename="$4"
+  else
+    prototype_filename='/dev/null'
+  fi
+
+  footer_filenames=$5
 
   if [ -d "$webadmit_path" ]; then
     cp "$webadmit_path/schemata/meta.json" schemata
@@ -64,7 +70,12 @@ extended_description = File.read('$extended_description_filename')
 # The "extra backlash" bug is [fixed][] in v0.11.x but there is another bug that duplicates attributes that started around v0.10.x that is preventing us from upgrading.  @benjaminoakes has spoken with @geemus about this directly.
 #
 #   [fixed]: https://github.com/interagent/prmd/commit/687d20b61a0d08ae16bbe76e59678ee5f4026464
-puts GitHub::Markup.render("tmp/schema.md").sub('<h3>Attributes</h3>', "#{extended_description}\n<h3>Attributes</h3>").gsub(/ \\\s*\n<\/code><\/pre>/m, "\n</code></pre>")
+render = GitHub::Markup.render("tmp/schema.md").sub('<h3>Attributes</h3>', "#{extended_description}\n<h3>Attributes</h3>")
+
+prototype_description = File.read('$prototype_filename')
+render = render.sub('<p>Stability: <code>prototype</code></p>', "<p>Stability: <code>prototype</code></p>\n#{prototype_description}")
+
+puts render.gsub(/ \\\s*\n<\/code><\/pre>/m, "\n</code></pre>")
 RUBY
 
   echo # Without a trailing newline, Jekyll won't serve the file!
@@ -76,21 +87,23 @@ read_config
 if [ ! -d "$webadmit_path" ]; then
   echo "[warn] '$webadmit_path' is not a directory.  Using cached schemata."
 fi
-generate_markdown_from_json_schema 'Decision' 'decision.json' '' 'not_found.md' > 'decision.md'
-generate_markdown_from_json_schema 'Designation' 'designation.json' '' 'designation_errors.md not_found.md' > 'designation.md'
-generate_markdown_from_json_schema 'User Identity' 'user_identity.json' 'user_identity_extended_description.md' '' > 'user_identity.md'
-generate_markdown_from_json_schema 'Organization' 'organization.json' '' 'not_found.md' > 'organization.md'
-generate_markdown_from_json_schema 'Program' 'program.json' '' 'not_found.md' > 'program.md'
-generate_markdown_from_json_schema 'Custom Field' 'custom_field.json' '' 'not_found.md' > 'custom_field.md'
-generate_markdown_from_json_schema 'Custom Field Answer (Boolean)' 'custom_field_answer_boolean.json' '' 'not_found.md' > 'custom_field_answer_boolean.md'
-generate_markdown_from_json_schema 'Custom Field Answer (Number)' 'custom_field_answer_number.json' '' 'not_found.md' > 'custom_field_answer_number.md'
-generate_markdown_from_json_schema 'Custom Field Answer (Date)' 'custom_field_answer_date.json' '' 'not_found.md' > 'custom_field_answer_date.md'
-generate_markdown_from_json_schema 'Custom Field Answer (String)' 'custom_field_answer_string.json' '' 'not_found.md' > 'custom_field_answer_string.md'
-generate_markdown_from_json_schema 'Custom Field Answer (Select)' 'custom_field_answer_select.json' '' 'custom_field_answer_select_errors.md not_found.md' > 'custom_field_answer_select.md'
-generate_markdown_from_json_schema 'PDF Manager Template' 'pdf_manager_template.json' '' 'not_found.md' > 'pdf_manager_template.md'
-generate_markdown_from_json_schema 'PDF Manager Batch' 'pdf_manager_batch.json' '' 'pdf_manager_batch_errors.md not_found.md' > 'pdf_manager_batch.md'
-generate_markdown_from_json_schema 'Export/Report' 'export.json' '' 'not_found.md' > 'export.md'
-generate_markdown_from_json_schema 'Export/Report' 'export_by_user_identity.json' '' 'not_found.md' > 'export_by_user_identity.md'
-generate_markdown_from_json_schema 'Export/Report Files check status in batch' 'export_files_check_batch.json' '' 'not_found.md' > 'export_files_check_batch.md'
-generate_markdown_from_json_schema 'Export/Report Files check status' 'export_files_check.json' '' 'not_found.md' > 'export_files_check.md'
-generate_markdown_from_json_schema 'Export/Report Files initiate a run' 'export_files.json' '' 'not_found.md' > 'export_files.md'
+generate_markdown_from_json_schema 'Decision' 'decision.json' '' '' 'not_found.md' > 'decision.md'
+generate_markdown_from_json_schema 'Designation' 'designation.json' '' '' 'designation_errors.md not_found.md' > 'designation.md'
+generate_markdown_from_json_schema 'User Identity' 'user_identity.json' 'user_identity_extended_description.md' '' '' > 'user_identity.md'
+generate_markdown_from_json_schema 'Organization' 'organization.json' '' '' 'not_found.md' > 'organization.md'
+generate_markdown_from_json_schema 'Program' 'program.json' '' '' 'not_found.md' > 'program.md'
+generate_markdown_from_json_schema 'Custom Field' 'custom_field.json' '' '' 'not_found.md' > 'custom_field.md'
+generate_markdown_from_json_schema 'Custom Field Answer (Boolean)' 'custom_field_answer_boolean.json' '' '' 'not_found.md' > 'custom_field_answer_boolean.md'
+generate_markdown_from_json_schema 'Custom Field Answer (Number)' 'custom_field_answer_number.json' '' '' 'not_found.md' > 'custom_field_answer_number.md'
+generate_markdown_from_json_schema 'Custom Field Answer (Date)' 'custom_field_answer_date.json' '' '' 'not_found.md' > 'custom_field_answer_date.md'
+generate_markdown_from_json_schema 'Custom Field Answer (String)' 'custom_field_answer_string.json' '' '' 'not_found.md' > 'custom_field_answer_string.md'
+generate_markdown_from_json_schema 'Custom Field Answer (Select)' 'custom_field_answer_select.json' '' '' 'custom_field_answer_select_errors.md not_found.md' > 'custom_field_answer_select.md'
+generate_markdown_from_json_schema 'PDF Manager Template' 'pdf_manager_template.json' '' '' 'not_found.md' > 'pdf_manager_template.md'
+generate_markdown_from_json_schema 'PDF Manager Batch' 'pdf_manager_batch.json' '' '' 'pdf_manager_batch_errors.md not_found.md' > 'pdf_manager_batch.md'
+generate_markdown_from_json_schema 'Export/Report' 'export.json' '' '' 'not_found.md' > 'export.md'
+generate_markdown_from_json_schema 'Export/Report' 'export_by_user_identity.json' '' '' 'not_found.md' > 'export_by_user_identity.md'
+generate_markdown_from_json_schema 'Export/Report Files check status in batch' 'export_files_check_batch.json' '' '' 'not_found.md' > 'export_files_check_batch.md'
+generate_markdown_from_json_schema 'Export/Report Files check status' 'export_files_check.json' '' '' 'not_found.md' > 'export_files_check.md'
+generate_markdown_from_json_schema 'Export/Report Files initiate a run' 'export_files.json' '' '' 'not_found.md' > 'export_files.md'
+generate_markdown_from_json_schema 'Applicant Details' 'applicant_details.json' '' 'prototype.md' 'not_found.md' > 'applicant_details.md'
+

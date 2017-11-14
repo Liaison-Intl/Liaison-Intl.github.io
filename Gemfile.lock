@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/Liaison-Intl/prmd.git
-  revision: 8cb419a9b12bbf3356fd904a0628679630a85dfd
+  revision: 20b43706b0421b02021f49a5658e2f38fadb3194
   specs:
     prmd (0.13.0)
       erubis (~> 2.7)
