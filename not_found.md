@@ -26,6 +26,29 @@ When the program is not found
 }
 ```
 
+<p>When the applicant is not found</p>
+
+<pre lang="json"><code>{
+  &quot;errors&quot;: {
+    &quot;schema&quot;: [
+      &quot;Applicant &#39;88888888888&#39; not found.&quot;
+    ]
+  }
+}
+</code></pre>
+
+<p>When the custom field is not found</p>
+
+<pre lang="json"><code>{
+  &quot;errors&quot;: {
+    &quot;schema&quot;: [
+      &quot;CustomeField &#39;42&#39; not found.&quot;
+    ]
+  }
+}
+</code></pre>
+
+While these error messages are most often associated with resources that don't exist when making a `GET` request, please note that the same messages are also the response during `POST`, `PUT`, and `PATCH` requests if any resources specified by parameters cannot be found.
 
 #### Generic error message (legacy error)
 
@@ -39,4 +62,4 @@ HTTP/1.1 404 Not Found
 }
 ```
 
-While `404 Not Found` is most often associated with resources that don't exist when making a `GET` request, please note that `404 Not Found` is also the response during `POST`, `PUT`, and `PATCH` requests if any resources specified by parameters cannot be found.
+Liaison is currently phasing out this error message in favor of more descriptive messages.  If you encounter this message, please contact your Liaison representative with a detail description of the API request you made and one of our engineers will update the API.
