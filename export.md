@@ -25,7 +25,7 @@ title: Export/Report
 <tr>
 <td><strong>exports/format</strong></td>
 <td><em>string</em></td>
-<td>Format of the file.<br/> <strong>one of:</strong><code>&quot;Comma-Separated Values&quot;</code> or <code>&quot;Microsoft Excel&quot;</code> or <code>&quot;Website HTML&quot;</code> or <code>&quot;Fixed Width Report&quot;</code> or <code>&quot;Comma-Separated Values in Multiple Files&quot;</code></td>
+<td>Format of the file.<br/> <strong>one of:</strong><code>&quot;Comma-Separated Values&quot;</code> or <code>&quot;Microsoft Excel&quot;</code> or <code>&quot;Fixed Width Report&quot;</code> or <code>&quot;Comma-Separated Values in Multiple Files&quot;</code></td>
 <td><code>&quot;Comma-Separated Values&quot;</code></td>
 </tr>
 <tr>
