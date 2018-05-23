@@ -25,7 +25,7 @@ title: Export/Report
 <tr>
 <td><strong>exports/format</strong></td>
 <td><em>string</em></td>
-<td>Format of the file.<br/> <strong>one of:</strong><code>&quot;Comma-Separated Values&quot;</code> or <code>&quot;Microsoft Excel&quot;</code> or <code>&quot;Website HTML&quot;</code> or <code>&quot;Fixed Width Report&quot;</code> or <code>&quot;Comma-Separated Values in Multiple Files&quot;</code></td>
+<td>Format of the file.<br/> <strong>one of:</strong><code>&quot;Comma-Separated Values&quot;</code> or <code>&quot;Microsoft Excel&quot;</code> or <code>&quot;Fixed Width Report&quot;</code> or <code>&quot;Comma-Separated Values in Multiple Files&quot;</code></td>
 <td><code>&quot;Comma-Separated Values&quot;</code></td>
 </tr>
 <tr>
@@ -99,44 +99,28 @@ title: Export/Report
 <p>When the user_identity is not found</p>
 
 <pre lang="json"><code>{
-  &quot;errors&quot;: {
-    &quot;schema&quot;: [
-      &quot;User identity &#39;999&#39; not found.&quot;
-    ]
-  }
+  &quot;message&quot;: &quot;User identity &#39;999&#39; not found.&quot;
 }
 </code></pre>
 
 <p>When the program is not found</p>
 
 <pre lang="json"><code>{
-  &quot;errors&quot;: {
-    &quot;schema&quot;: [
-      &quot;Program &#39;99999999999&#39; not found.&quot;
-    ]
-  }
+  &quot;message&quot;: &quot;Program &#39;99999999999&#39; not found.&quot;
 }
 </code></pre>
 
 <p>When the applicant is not found</p>
 
 <pre lang="json"><code>{
-  &quot;errors&quot;: {
-    &quot;schema&quot;: [
-      &quot;Applicant &#39;88888888888&#39; not found.&quot;
-    ]
-  }
+  &quot;message&quot;: &quot;Applicant &#39;99999999999&#39; not found.&quot;
 }
 </code></pre>
 
 <p>When the custom field is not found</p>
 
 <pre lang="json"><code>{
-  &quot;errors&quot;: {
-    &quot;schema&quot;: [
-      &quot;CustomeField &#39;42&#39; not found.&quot;
-    ]
-  }
+  &quot;message&quot;: &quot;CustomeField &#39;99999999999&#39; not found.&quot;
 }
 </code></pre>
 

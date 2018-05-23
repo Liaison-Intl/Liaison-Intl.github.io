@@ -45,7 +45,7 @@
                 },
                 "format": {
                   "type": "string",
-                  "enum": ["Comma-Separated Values", "Microsoft Excel", "Website HTML", "Fixed Width Report", "Comma-Separated Values in Multiple Files"],
+                  "enum": ["Comma-Separated Values", "Microsoft Excel", "Fixed Width Report", "Comma-Separated Values in Multiple Files"],
                   "description": "Format of the file.",
                   "example": "Comma-Separated Values"
                 },
@@ -97,7 +97,7 @@
           },
           "format": {
             "type": "string",
-            "enum": ["Comma-Separated Values", "Microsoft Excel", "Website HTML", "Fixed Width Report", "Comma-Separated Values in Multiple Files"],
+            "enum": ["Comma-Separated Values", "Microsoft Excel", "Fixed Width Report", "Comma-Separated Values in Multiple Files"],
             "description": "Format of the file.",
             "example": "Comma-Separated Values"
           },

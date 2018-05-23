@@ -233,44 +233,28 @@ title: Designation
 <p>When the user_identity is not found</p>
 
 <pre lang="json"><code>{
-  &quot;errors&quot;: {
-    &quot;schema&quot;: [
-      &quot;User identity &#39;999&#39; not found.&quot;
-    ]
-  }
+  &quot;message&quot;: &quot;User identity &#39;999&#39; not found.&quot;
 }
 </code></pre>
 
 <p>When the program is not found</p>
 
 <pre lang="json"><code>{
-  &quot;errors&quot;: {
-    &quot;schema&quot;: [
-      &quot;Program &#39;99999999999&#39; not found.&quot;
-    ]
-  }
+  &quot;message&quot;: &quot;Program &#39;99999999999&#39; not found.&quot;
 }
 </code></pre>
 
 <p>When the applicant is not found</p>
 
 <pre lang="json"><code>{
-  &quot;errors&quot;: {
-    &quot;schema&quot;: [
-      &quot;Applicant &#39;88888888888&#39; not found.&quot;
-    ]
-  }
+  &quot;message&quot;: &quot;Applicant &#39;99999999999&#39; not found.&quot;
 }
 </code></pre>
 
 <p>When the custom field is not found</p>
 
 <pre lang="json"><code>{
-  &quot;errors&quot;: {
-    &quot;schema&quot;: [
-      &quot;CustomeField &#39;42&#39; not found.&quot;
-    ]
-  }
+  &quot;message&quot;: &quot;CustomeField &#39;99999999999&#39; not found.&quot;
 }
 </code></pre>
 

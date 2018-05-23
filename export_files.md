@@ -45,7 +45,7 @@ title: Export/Report Files initiate a run
 <tr>
 <td><strong>export_files/status</strong></td>
 <td><em>string</em></td>
-<td>Current status of this export file.<br/> <strong>one of:</strong><code>&quot;initializing&quot;</code> or <code>&quot;queued&quot;</code> or <code>&quot;in_progress&quot;</code> or <code>&quot;available&quot;</code> or <code>&quot;success_with_errors&quot;</code> or <code>&quot;empty_list&quot;</code> or <code>&quot;failed&quot;</code></td>
+<td>Current status of this export file.<br/> <strong>one of:</strong><code>&quot;Initializing&quot;</code> or <code>&quot;Queued&quot;</code> or <code>&quot;In Progress&quot;</code> or <code>&quot;Available&quot;</code> or <code>&quot;Success With Errors&quot;</code> or <code>&quot;Empty List&quot;</code> or <code>&quot;Failed&quot;</code></td>
 <td><code>&quot;available&quot;</code></td>
 </tr>
 <tr>
@@ -116,44 +116,28 @@ title: Export/Report Files initiate a run
 <p>When the user_identity is not found</p>
 
 <pre lang="json"><code>{
-  &quot;errors&quot;: {
-    &quot;schema&quot;: [
-      &quot;User identity &#39;999&#39; not found.&quot;
-    ]
-  }
+  &quot;message&quot;: &quot;User identity &#39;999&#39; not found.&quot;
 }
 </code></pre>
 
 <p>When the program is not found</p>
 
 <pre lang="json"><code>{
-  &quot;errors&quot;: {
-    &quot;schema&quot;: [
-      &quot;Program &#39;99999999999&#39; not found.&quot;
-    ]
-  }
+  &quot;message&quot;: &quot;Program &#39;99999999999&#39; not found.&quot;
 }
 </code></pre>
 
 <p>When the applicant is not found</p>
 
 <pre lang="json"><code>{
-  &quot;errors&quot;: {
-    &quot;schema&quot;: [
-      &quot;Applicant &#39;88888888888&#39; not found.&quot;
-    ]
-  }
+  &quot;message&quot;: &quot;Applicant &#39;99999999999&#39; not found.&quot;
 }
 </code></pre>
 
 <p>When the custom field is not found</p>
 
 <pre lang="json"><code>{
-  &quot;errors&quot;: {
-    &quot;schema&quot;: [
-      &quot;CustomeField &#39;42&#39; not found.&quot;
-    ]
-  }
+  &quot;message&quot;: &quot;CustomeField &#39;99999999999&#39; not found.&quot;
 }
 </code></pre>
 
