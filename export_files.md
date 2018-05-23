@@ -97,15 +97,12 @@ title: Export/Report Files initiate a run
 </code></pre>
 
 <pre lang="json"><code>{
-  &quot;href&quot;: &quot;/api/v1/user_identities/37442/exports/56791/export_files&quot;,
-  &quot;export_files&quot;: [
-    {
-      &quot;id&quot;: 74780,
-      &quot;href&quot;: &quot;/api/v1/exports/86466/export_files/74780&quot;,
-      &quot;export_id&quot;: 86446,
-      &quot;status&quot;: &quot;available&quot;
-    }
-  ]
+  &quot;export_files&quot;: {
+    &quot;id&quot;: 74780,
+    &quot;href&quot;: &quot;/api/v1/exports/86466/export_files/74780&quot;,
+    &quot;export_id&quot;: 86446,
+    &quot;status&quot;: &quot;available&quot;
+  }
 }
 </code></pre>
 
