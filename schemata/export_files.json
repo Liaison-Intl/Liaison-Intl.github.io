@@ -16,40 +16,31 @@
       "http_header": { "x-api-key": "0123456789abcdef0123456789abcdef" },
       "targetSchema": {
         "properties": {
-          "href": {
-            "type": "string",
-            "description": "Hypertext reference to this resource.",
-            "pattern": "/api/v1/user_identities/\\d+/exports/\\d+/export_files",
-            "example": "/api/v1/user_identities/37442/exports/56791/export_files"
-          },
           "export_files": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "required": ["id", "href", "export_id", "status"],
-              "properties": {
-                "id": {
-                  "type": "integer",
-                  "example": 74780,
-                  "description": "Unique identifier of this export file."
-                },
-                "href": {
-                  "type": "string",
-                  "description": "Hypertext reference to this resource.",
-                  "pattern": "/api/v1/exports/\\d+/export_files/\\d+",
-                  "example": "/api/v1/exports/86466/export_files/74780"
-                },
-                "export_id": {
-                  "type": "integer",
-                  "example": 86446,
-                  "description": "Unique identifier of the associated export."
-                },
-                "status": {
-                  "type": "string",
-                  "description": "Current status of this export file.",
-                  "enum": ["Initializing", "Queued", "In Progress", "Available", "Success With Errors", "Empty List", "Failed"],
-                  "example": "available"
-                }
+            "type": "object",
+            "required": ["id", "href", "export_id", "status"],
+            "properties": {
+              "id": {
+                "type": "integer",
+                "example": 74780,
+                "description": "Unique identifier of this export file."
+              },
+              "href": {
+                "type": "string",
+                "description": "Hypertext reference to this resource.",
+                "pattern": "/api/v1/exports/\\d+/export_files/\\d+",
+                "example": "/api/v1/exports/86466/export_files/74780"
+              },
+              "export_id": {
+                "type": "integer",
+                "example": 86446,
+                "description": "Unique identifier of the associated export."
+              },
+              "status": {
+                "type": "string",
+                "description": "Current status of this export file.",
+                "enum": ["Initializing", "Queued", "In Progress", "Available", "Success With Errors", "Empty List", "Failed"],
+                "example": "available"
               }
             }
           }
