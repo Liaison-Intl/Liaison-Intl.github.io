@@ -43,8 +43,8 @@ title: Export/Report Files check status in batch
 <tr>
 <td><strong>export_files/status</strong></td>
 <td><em>string</em></td>
-<td>Current status of this export file.<br/> <strong>one of:</strong><code>&quot;initializing&quot;</code> or <code>&quot;queued&quot;</code> or <code>&quot;in_progress&quot;</code> or <code>&quot;available&quot;</code> or <code>&quot;success_with_errors&quot;</code> or <code>&quot;empty_list&quot;</code> or <code>&quot;failed&quot;</code></td>
-<td><code>&quot;available&quot;</code></td>
+<td>Current status of this export file.<br/> <strong>one of:</strong><code>&quot;Initializing&quot;</code> or <code>&quot;Queued&quot;</code> or <code>&quot;In Progress&quot;</code> or <code>&quot;Available&quot;</code> or <code>&quot;Success With Errors&quot;</code> or <code>&quot;Empty List&quot;</code> or <code>&quot;Failed&quot;</code></td>
+<td><code>&quot;Available&quot;</code></td>
 </tr>
 <tr>
 <td><strong>href</strong></td>
@@ -79,7 +79,7 @@ title: Export/Report Files check status in batch
       &quot;id&quot;: 74780,
       &quot;href&quot;: &quot;/api/v1/exports/86466/export_files/74780&quot;,
       &quot;export_id&quot;: 86446,
-      &quot;status&quot;: &quot;available&quot;
+      &quot;status&quot;: &quot;Available&quot;
     }
   ]
 }
