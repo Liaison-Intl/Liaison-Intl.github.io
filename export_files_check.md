@@ -49,8 +49,8 @@ title: Export/Report Files check status
 <tr>
 <td><strong>export_files:status</strong></td>
 <td><em>string</em></td>
-<td>Current status of this export file.<br/> <strong>one of:</strong><code>&quot;initializing&quot;</code> or <code>&quot;queued&quot;</code> or <code>&quot;in_progress&quot;</code> or <code>&quot;available&quot;</code> or <code>&quot;success_with_errors&quot;</code> or <code>&quot;empty_list&quot;</code> or <code>&quot;failed&quot;</code></td>
-<td><code>&quot;available&quot;</code></td>
+<td>Current status of this export file.<br/> <strong>one of:</strong><code>&quot;Initializing&quot;</code> or <code>&quot;Queued&quot;</code> or <code>&quot;In Progress&quot;</code> or <code>&quot;Available&quot;</code> or <code>&quot;Success With Errors&quot;</code> or <code>&quot;Empty List&quot;</code> or <code>&quot;Failed&quot;</code></td>
+<td><code>&quot;Available&quot;</code></td>
 </tr>
 </tbody></table>
 
@@ -77,7 +77,7 @@ title: Export/Report Files check status
     &quot;id&quot;: 74780,
     &quot;href&quot;: &quot;/api/v1/exports/86466/export_files/74780&quot;,
     &quot;export_id&quot;: 86446,
-    &quot;status&quot;: &quot;available&quot;,
+    &quot;status&quot;: &quot;Available&quot;,
     &quot;download_url&quot;: &quot;https://webadmit-production.s3.amazonaws.com/export_files/reports/000/074/780/d19d6c0a34b7062c4496530f3d5dbfb_original.txt?AWSAccessKeyId=AKIAIT7746URBGHSHEA&amp;Expires=1425359248&amp;Signature=y2jwr78kbVt44xz%2BfaEnp5dXKU%3D&amp;response-content-disposition=attachment%3B%20filename%3DTest-API-Export.csv&amp;response-content-type=text%2Fcsv%3Bcharset%3Diso-8859-1&quot;
   }
 }
