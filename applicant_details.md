@@ -1,19 +1,29 @@
 ---
 layout: default
-title: Decision
+title: Applicant Details
 ---
 
 <!-- WARNING: This is an automatically generated file.  Do not modify directly.  See script/generate-docs. -->
 
-<h2><a name="resource-decision">Decision</a></h2>
+<h2><a name="resource-applicant_details">Applicant Details</a></h2>
 
 <p>Stability: <code>prototype</code></p>
+<div class="alert alert-warning">
+  <p><strong>This is a prototype resource.</strong></p>
+  <p>A prototype resource is experimental, and major changes are likely. In time, a prototype resource may or may not advance to production.</p>
+</div>
 
 
-<p>An association has a set of valid <strong>decisions</strong> for an applicant.</p>
+<p>Applicant details stores information about the applicant, only some of this information is editable.</p>
 
+<h3><a name="link-PUT-applicant_details-/api/v1/user_identities/:user_identity_id/applicant_details">Applicant Details Update Applicant Details</a></h3>
 
-<h3>Attributes</h3>
+<p>Update a batch of Applicant Details, this endpoint is <strong>limited to 1000 Applicants per call</strong>.</p>
+
+<pre><code>PUT /api/v1/user_identities/:user_identity_id/applicant_details
+</code></pre>
+
+<h4>Required Parameters</h4>
 
 <table><thead>
 <tr>
@@ -24,35 +34,43 @@ title: Decision
 </tr>
 </thead><tbody>
 <tr>
-<td><strong>decisions/id</strong></td>
-<td><em>integer</em></td>
-<td>Unique identifier of this decision.  <strong>NOTE:</strong> This identifier changes between cycles.</td>
-<td><code>42</code></td>
-</tr>
-<tr>
-<td><strong>decisions/name</strong></td>
+<td><strong>applicants:applicant_cas_id</strong></td>
 <td><em>string</em></td>
-<td>Human-readable name for this decision.</td>
-<td><code>&quot;Offer Accepted&quot;</code></td>
-</tr>
-<tr>
-<td><strong>href</strong></td>
-<td><em>string</em></td>
-<td>Hypertext reference to this resource.<br/> <strong>pattern:</strong> <code>/api/v1/user_identities/\d+/decisions</code></td>
-<td><code>&quot;/api/v1/user_identities/1/decisions&quot;</code></td>
+<td>Unique identifier of the applicant.</td>
+<td><code>&quot;123456789&quot;</code></td>
 </tr>
 </tbody></table>
 
-<h3><a name="link-GET-decision-/api/v1/user_identities/:user_identity_id/decisions">Decision List</a></h3>
+<h4>Optional Parameters</h4>
 
-<p>List valid decisions for the association that this user identity belongs to.</p>
-
-<pre><code>GET /api/v1/user_identities/:user_identity_id/decisions
-</code></pre>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>applicants:redirect_eligible</strong></td>
+<td><em>boolean</em></td>
+<td>True if the applicant is eligible for redirect.</td>
+<td><code>true</code></td>
+</tr>
+</tbody></table>
 
 <h4>Curl Example</h4>
 
-<pre lang="bash"><code>$ curl -n https://api.webadmit.org/api/v1/user_identities/:user_identity_id/decisions \
+<pre lang="bash"><code>$ curl -n -X PUT https://api.webadmit.org/api/v1/user_identities/:user_identity_id/applicant_details \
+  -d &#39;{
+  &quot;applicants&quot;: [
+    {
+      &quot;applicant_cas_id&quot;: &quot;123456789&quot;,
+      &quot;redirect_eligible&quot;: true
+    }
+  ]
+}&#39; \
+  -H &quot;Content-Type: application/json&quot; \
   -H &quot;x-api-key: 0123456789abcdef0123456789abcdef&quot;
 </code></pre>
 
@@ -62,13 +80,6 @@ title: Decision
 </code></pre>
 
 <pre lang="json"><code>{
-  &quot;href&quot;: &quot;/api/v1/user_identities/1/decisions&quot;,
-  &quot;decisions&quot;: [
-    {
-      &quot;id&quot;: 42,
-      &quot;name&quot;: &quot;Offer Accepted&quot;
-    }
-  ]
 }
 </code></pre>
 
