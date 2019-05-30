@@ -106,24 +106,32 @@ title: Organization
 <p>When the user_identity is not found</p>
 
 <pre lang="json"><code>{
-  &quot;errors&quot;: {
-    &quot;schema&quot;: [
-      &quot;User identity &#39;999&#39; not found.&quot;
-    ]
-  }
+  &quot;message&quot;: &quot;User identity &#39;999&#39; not found.&quot;
 }
 </code></pre>
 
 <p>When the program is not found</p>
 
 <pre lang="json"><code>{
-  &quot;errors&quot;: {
-    &quot;schema&quot;: [
-      &quot;Program &#39;99999999999&#39; not found.&quot;
-    ]
-  }
+  &quot;message&quot;: &quot;Program &#39;99999999999&#39; not found.&quot;
 }
 </code></pre>
+
+<p>When the applicant is not found</p>
+
+<pre lang="json"><code>{
+  &quot;message&quot;: &quot;Applicant &#39;99999999999&#39; not found.&quot;
+}
+</code></pre>
+
+<p>When the custom field is not found</p>
+
+<pre lang="json"><code>{
+  &quot;message&quot;: &quot;CustomeField &#39;99999999999&#39; not found.&quot;
+}
+</code></pre>
+
+<p>While these error messages are most often associated with resources that don&#39;t exist when making a <code>GET</code> request, please note that the same messages are also the response during <code>POST</code>, <code>PUT</code>, and <code>PATCH</code> requests if any resources specified by parameters cannot be found.</p>
 
 <h4>Generic error message (legacy error)</h4>
 
@@ -135,7 +143,7 @@ title: Organization
 }
 </code></pre>
 
-<p>While <code>404 Not Found</code> is most often associated with resources that don&#39;t exist when making a <code>GET</code> request, please note that <code>404 Not Found</code> is also the response during <code>POST</code>, <code>PUT</code>, and <code>PATCH</code> requests if any resources specified by parameters cannot be found.</p>
+<p>Liaison is currently phasing out this error message in favor of more descriptive messages.  If you encounter this message, please contact your Liaison representative with a detail description of the API request you made and one of our engineers will update the API.</p>
 
 <h3>Unauthorized</h3>
 

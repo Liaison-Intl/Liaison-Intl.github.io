@@ -47,8 +47,8 @@
                 "status": {
                   "type": "string",
                   "description": "Current status of this export file.",
-                  "enum": ["initializing", "queued", "in_progress", "available", "success_with_errors", "empty_list", "failed"],
-                  "example": "available"
+                  "enum": ["Initializing", "Queued", "In Progress", "Available", "Success With Errors", "Empty List", "Failed"],
+                  "example": "Available"
                 }
               }
             }
@@ -93,8 +93,8 @@
           "status": {
             "type": "string",
             "description": "Current status of this export file.",
-            "enum": ["initializing", "queued", "in_progress", "available", "success_with_errors", "empty_list", "failed"],
-            "example": "available"
+            "enum": ["Initializing", "Queued", "In Progress", "Available", "Success With Errors", "Empty List", "Failed"],
+            "example": "Available"
           }
         }
       }
