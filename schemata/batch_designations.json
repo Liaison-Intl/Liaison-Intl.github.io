@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/hyper-schema",
   "id": "/schemata/batch_designations",
   "title": "Batch Designations",
-  "description": "Use batch to schedule multiple designation decision changes for a set of applicants in a single API request.\nA batch action is an asynchronous operation that can be created using a first endpoint and then have its result checked\nusing another endpoint.\nFirst the batch action is created using the __POST__ (create) endpoint by sending in the request body, the JSON describing all the\nchanges to apply. The creation endpoint validates the changes and then schedules the batch to be executed returning a batch\n**id** to check the result later on.\nThen the __GET__ (show) endpoint can be used to check the completion of the scheduled batch, using the **id** returned by the\nprevious __POST__. Once the batch has finished, the result will be included in the batch object.",
+  "description": "Update designation decisions for a set of applicants in a single API request using a batch action.\nA batch action is an asynchronous operation that can be created using a first endpoint and then have its result checked\nusing another endpoint.\nFirst the batch action is created using the __POST__ (create) endpoint by sending in the request body, the JSON describing all the\nchanges to apply. The creation endpoint validates the changes and then schedules the batch to be executed returning a batch\n**id** to check the result later on.\nThen the __GET__ (show) endpoint can be used to check the completion of the scheduled batch, using the **id** returned by the\nprevious __POST__. Once the batch has finished, the result will be included in the batch object.",
   "links": [
     {
       "description": "Retrieve the status of a running/done batch action initiated with a previous POST. The **id** parameter is required. It is the id of the batch\nthat you wish to check the status of. You may continue to issue this call over a reasonable polling interval (10s) until the batch has finished.\nOnce the status of the batch becomes \"Available\", the detailed information of the modification applied will be in the \"result\" property of the\nbatch object in the response.",
@@ -26,7 +26,7 @@
       }
     },
     {
-      "description": "Schedule the update of multiple designations with the given applicant CAS IDs and program ID, by creating a batch. **WARNING:** The decision provided to this endpoint is used even if it conflicts with the local status. It is possible to change a decision so that it does not match the local status. (Example: a local status of \"Offer Accepted\" and a decision of \"Withdrawn\".)",
+      "description": "Schedule the update of multiple designations with the given applicant CAS IDs and program ID, by creating a batch.\n**WARNING:** You'll get an error when you're trying to set a decision_id to a designation which already has a local status assigned.\nIf you want to be able to force the decision_id please contact Liaison to turn on the \"Disassociate Decision Codes from Local Status\"\nfeature which will allow you to set the decision even if the local_status is present.",
       "href": "/api/v2/user_identities/:user_identity_id/programs/:program_id/batch_designations",
       "method": "POST",
       "rel": "create",
