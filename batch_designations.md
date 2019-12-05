@@ -7,7 +7,7 @@ title: Batch Designations
 
 <h2><a name="resource-batch_designations">Batch Designations</a></h2>
 
-<p>Use batch to schedule multiple designation decision changes for a set of applicants in a single API request.
+<p>Update designation decisions for a set of applicants in a single API request using a batch action.
 A batch action is an asynchronous operation that can be created using a first endpoint and then have its result checked
 using another endpoint.
 First the batch action is created using the <strong>POST</strong> (create) endpoint by sending in the request body, the JSON describing all the
@@ -135,7 +135,10 @@ batch object in the response.</p>
 
 <h3><a name="link-POST-batch_designations-/api/v2/user_identities/:user_identity_id/programs/:program_id/batch_designations">Batch Designations Create</a></h3>
 
-<p>Schedule the update of multiple designations with the given applicant CAS IDs and program ID, by creating a batch. <strong>WARNING:</strong> The decision provided to this endpoint is used even if it conflicts with the local status. It is possible to change a decision so that it does not match the local status. (Example: a local status of &quot;Offer Accepted&quot; and a decision of &quot;Withdrawn&quot;.)</p>
+<p>Schedule the update of multiple designations with the given applicant CAS IDs and program ID, by creating a batch.
+<strong>WARNING:</strong> You&#39;ll get an error when you&#39;re trying to set a decision_id to a designation which already has a local status assigned.
+If you want to be able to force the decision_id please contact Liaison to turn on the &quot;Disassociate Decision Codes from Local Status&quot;
+feature which will allow you to set the decision even if the local_status is present.</p>
 
 <pre><code>POST /api/v2/user_identities/:user_identity_id/programs/:program_id/batch_designations
 </code></pre>
@@ -193,9 +196,41 @@ batch object in the response.</p>
 }
 </code></pre>
 
+<h3>Errors</h3>
+
+<h4>Response Example</h4>
+
+<pre><code>HTTP/1.1 422 Unprocessable Entity
+</code></pre>
+
+<pre lang="json"><code>{
+  &quot;errors&quot;: {
+    &quot;schema&quot;: [
+      &quot;The property &#39;#/&#39; did not contain a required property of &#39;designations&#39;&quot;
+    ]
+  }
+}
+</code></pre>
+
+<p>The request body did not match the expected request schema. Please check your parameters and try again.</p>
+
+<pre lang="json"><code>{
+  &quot;errors&quot;: {
+    &quot;schema&quot;: [
+      &quot;The property &#39;#/designations/0/applicant_cas_id&#39; of type Fixnum did not match the following type: string&quot;
+    ]
+  }
+}
+</code></pre>
+
+<p>The request body did not match the expected value type. In that example, the <code>applicant_cas_id</code> property of the first object (that is, at the <code>0</code> index) must be a String, not an Integer.</p>
+
 <h3>Not Found</h3>
 
 <h4>Specific error messages</h4>
+
+<pre><code>HTTP/1.1 404 Not Found
+</code></pre>
 
 <p>When the user_identity is not found</p>
 
@@ -210,34 +245,6 @@ batch object in the response.</p>
   &quot;message&quot;: &quot;Program &#39;99999999999&#39; not found.&quot;
 }
 </code></pre>
-
-<p>When the applicant is not found</p>
-
-<pre lang="json"><code>{
-  &quot;message&quot;: &quot;Applicant &#39;99999999999&#39; not found.&quot;
-}
-</code></pre>
-
-<p>When the custom field is not found</p>
-
-<pre lang="json"><code>{
-  &quot;message&quot;: &quot;CustomeField &#39;99999999999&#39; not found.&quot;
-}
-</code></pre>
-
-<p>While these error messages are most often associated with resources that don&#39;t exist when making a <code>GET</code> request, please note that the same messages are also the response during <code>POST</code>, <code>PUT</code>, and <code>PATCH</code> requests if any resources specified by parameters cannot be found.</p>
-
-<h4>Generic error message (legacy error)</h4>
-
-<pre><code>HTTP/1.1 404 Not Found
-</code></pre>
-
-<pre lang="json"><code>{
-  &quot;message&quot;: &quot;Not Found&quot;
-}
-</code></pre>
-
-<p>Liaison is currently phasing out this error message in favor of more descriptive messages.  If you encounter this message, please contact your Liaison representative with a detail description of the API request you made and one of our engineers will update the API.</p>
 
 <h3>Unauthorized</h3>
 
