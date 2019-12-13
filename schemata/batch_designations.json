@@ -119,6 +119,9 @@
     }
   },
   "properties": {
+    "href": {
+      "$ref": "/schemata/batch_designations/definitions/href"
+    },
     "batch": {
       "type": "object",
       "required": [
@@ -130,47 +133,89 @@
         "id": {
           "$ref": "/schemata/batch_designations/definitions/id"
         },
-        "href": {
-          "$ref": "/schemata/batch_designations/definitions/href"
-        },
         "status": {
           "$ref": "/schemata/batch_designations/definitions/status"
         },
-        "result": {
+        "results": {
           "type": [
-            "object",
+            "array",
             "null"
           ],
-          "description": "Result of the batch",
-          "properties": {
-            "designations": {
-              "type": [
-                "array",
-                "null"
-              ],
-              "description": "List of the updated designations",
-              "example": [
-                {
-                  "applicant_cas_id": "123456789",
-                  "decision_id": 99
-                },
-                {
-                  "applicant_cas_id": "987654321",
-                  "decision_id": 123
-                }
-              ],
-              "items": {
+          "description": "List of the updated designations",
+          "example": [
+            {
+              "decision": {
+                "id": 4697,
+                "name": "Matriculated"
+              },
+              "applicant_cas_id": "1595659994",
+              "errors": {
+                "creation_error": "A newer update (setting decision_id to 4698) is overriding this update"
+              }
+            },
+            {
+              "decision": {
+                "id": 420,
+                "name": "Unknown"
+              },
+              "applicant_cas_id": "1595659995",
+              "errors": {
+                "decision": "No decision found for that decision_id",
+                "applicant": "No applicant found for that applicant_cas_id"
+              }
+            },
+            {
+              "decision": {
+                "id": 4698,
+                "name": "Redirected"
+              },
+              "applicant_cas_id": "1595659994",
+              "errors": "null"
+            }
+          ],
+          "items": {
+            "type": "object",
+            "required": [
+              "decision",
+              "applicant_cas_id"
+            ],
+            "properties": {
+              "decision": {
                 "type": "object",
                 "required": [
-                  "applicant_cas_id",
-                  "decision_id"
+                  "id",
+                  "name"
                 ],
                 "properties": {
-                  "applicant_cas_id": {
-                    "$ref": "/schemata/batch_designations/definitions/applicant_cas_id"
+                  "name": {
+                    "type": "string",
+                    "description": "Human-readable name for this decision."
                   },
-                  "decision_id": {
+                  "id": {
                     "$ref": "/schemata/batch_designations/definitions/decision_id"
+                  }
+                }
+              },
+              "applicant_cas_id": {
+                "$ref": "/schemata/batch_designations/definitions/applicant_cas_id"
+              },
+              "errors": {
+                "type": [
+                  "object",
+                  "null"
+                ],
+                "properties": {
+                  "creation_error": {
+                    "type": "string",
+                    "description": "A message explaining why a change could not be completed."
+                  },
+                  "decision": {
+                    "type": "string",
+                    "description": "An error message indicating that the decision_id provided was invalid."
+                  },
+                  "applicant": {
+                    "type": "string",
+                    "description": "An error message indicating that the applicant_cas_id provided was invalid."
                   }
                 }
               }

@@ -28,46 +28,70 @@ previous <strong>POST</strong>. Once the batch has finished, the result will be 
 </tr>
 </thead><tbody>
 <tr>
-<td><strong>batch:href</strong></td>
-<td><em>string</em></td>
-<td>Hypertext reference to the batch.<br/> <strong>pattern:</strong> <code>/api/v2/user_identities/\d+/programs/\d+/batch_designations/\d+</code></td>
-<td><code>&quot;/api/v2/user_identities/1/programs/42023191739237/batch_designations/74780&quot;</code></td>
-</tr>
-<tr>
 <td><strong>batch:id</strong></td>
 <td><em>integer</em></td>
 <td>Unique identifier of this batch.</td>
 <td><code>74780</code></td>
 </tr>
 <tr>
-<td><strong>batch:result</strong></td>
-<td><em>nullable object</em></td>
-<td>Result of the batch</td>
-<td><code>null</code></td>
-</tr>
-<tr>
-<td><strong>batch:result:designations</strong></td>
+<td><strong>batch:results</strong></td>
 <td><em>nullable array</em></td>
 <td>List of the updated designations</td>
-<td><code>[{&quot;applicant_cas_id&quot;:&quot;123456789&quot;,&quot;decision_id&quot;:99},{&quot;applicant_cas_id&quot;:&quot;987654321&quot;,&quot;decision_id&quot;:123}]</code></td>
+<td><code>[{&quot;decision&quot;:{&quot;id&quot;:4697,&quot;name&quot;:&quot;Matriculated&quot;},&quot;applicant_cas_id&quot;:&quot;1595659994&quot;,&quot;errors&quot;:{&quot;creation_error&quot;:&quot;A newer update (setting decision_id to 4698) is overriding this update&quot;}},{&quot;decision&quot;:{&quot;id&quot;:420,&quot;name&quot;:&quot;Unknown&quot;},&quot;applicant_cas_id&quot;:&quot;1595659995&quot;,&quot;errors&quot;:{&quot;decision&quot;:&quot;No decision found for that decision_id&quot;,&quot;applicant&quot;:&quot;No applicant found for that applicant_cas_id&quot;}},{&quot;decision&quot;:{&quot;id&quot;:4698,&quot;name&quot;:&quot;Redirected&quot;},&quot;applicant_cas_id&quot;:&quot;1595659994&quot;,&quot;errors&quot;:&quot;null&quot;}]</code></td>
 </tr>
 <tr>
-<td><strong>batch:result:designations/applicant_cas_id</strong></td>
+<td><strong>batch:results/applicant_cas_id</strong></td>
 <td><em>string</em></td>
 <td>The CAS unique identifier of the applicant.</td>
 <td><code>&quot;123456789&quot;</code></td>
 </tr>
 <tr>
-<td><strong>batch:result:designations/decision_id</strong></td>
+<td><strong>batch:results/decision:id</strong></td>
 <td><em>integer</em></td>
 <td>The unique identifier for the decision to set. If the designation is in received status and the preliminary_data_handling feature is on, the code will prevent changes to the decision code.</td>
 <td><code>99</code></td>
+</tr>
+<tr>
+<td><strong>batch:results/decision:name</strong></td>
+<td><em>string</em></td>
+<td>Human-readable name for this decision.</td>
+<td><code>&quot;example&quot;</code></td>
+</tr>
+<tr>
+<td><strong>batch:results/errors</strong></td>
+<td><em>nullable object</em></td>
+<td></td>
+<td><code>null</code></td>
+</tr>
+<tr>
+<td><strong>batch:results/errors:applicant</strong></td>
+<td><em>string</em></td>
+<td>An error message indicating that the applicant_cas_id provided was invalid.</td>
+<td><code>&quot;example&quot;</code></td>
+</tr>
+<tr>
+<td><strong>batch:results/errors:creation_error</strong></td>
+<td><em>string</em></td>
+<td>A message explaining why a change could not be completed.</td>
+<td><code>&quot;example&quot;</code></td>
+</tr>
+<tr>
+<td><strong>batch:results/errors:decision</strong></td>
+<td><em>string</em></td>
+<td>An error message indicating that the decision_id provided was invalid.</td>
+<td><code>&quot;example&quot;</code></td>
 </tr>
 <tr>
 <td><strong>batch:status</strong></td>
 <td><em>string</em></td>
 <td>Current status of this batch.<br/> <strong>one of:</strong><code>&quot;Queued&quot;</code> or <code>&quot;In Progress&quot;</code> or <code>&quot;Available&quot;</code> or <code>&quot;Success With Errors&quot;</code> or <code>&quot;Failed&quot;</code></td>
 <td><code>&quot;Available&quot;</code></td>
+</tr>
+<tr>
+<td><strong>href</strong></td>
+<td><em>string</em></td>
+<td>Hypertext reference to the batch.<br/> <strong>pattern:</strong> <code>/api/v2/user_identities/\d+/programs/\d+/batch_designations/\d+</code></td>
+<td><code>&quot;/api/v2/user_identities/1/programs/42023191739237/batch_designations/74780&quot;</code></td>
 </tr>
 </tbody></table>
 
@@ -113,22 +137,41 @@ batch object in the response.</p>
 </code></pre>
 
 <pre lang="json"><code>{
+  &quot;href&quot;: &quot;/api/v2/user_identities/1/programs/42023191739237/batch_designations/74780&quot;,
   &quot;batch&quot;: {
     &quot;id&quot;: 74780,
-    &quot;href&quot;: &quot;/api/v2/user_identities/1/programs/42023191739237/batch_designations/74780&quot;,
     &quot;status&quot;: &quot;Available&quot;,
-    &quot;result&quot;: {
-      &quot;designations&quot;: [
-        {
-          &quot;applicant_cas_id&quot;: &quot;123456789&quot;,
-          &quot;decision_id&quot;: 99
+    &quot;results&quot;: [
+      {
+        &quot;decision&quot;: {
+          &quot;id&quot;: 4697,
+          &quot;name&quot;: &quot;Matriculated&quot;
         },
-        {
-          &quot;applicant_cas_id&quot;: &quot;987654321&quot;,
-          &quot;decision_id&quot;: 123
+        &quot;applicant_cas_id&quot;: &quot;1595659994&quot;,
+        &quot;errors&quot;: {
+          &quot;creation_error&quot;: &quot;A newer update (setting decision_id to 4698) is overriding this update&quot;
         }
-      ]
-    }
+      },
+      {
+        &quot;decision&quot;: {
+          &quot;id&quot;: 420,
+          &quot;name&quot;: &quot;Unknown&quot;
+        },
+        &quot;applicant_cas_id&quot;: &quot;1595659995&quot;,
+        &quot;errors&quot;: {
+          &quot;decision&quot;: &quot;No decision found for that decision_id&quot;,
+          &quot;applicant&quot;: &quot;No applicant found for that applicant_cas_id&quot;
+        }
+      },
+      {
+        &quot;decision&quot;: {
+          &quot;id&quot;: 4698,
+          &quot;name&quot;: &quot;Redirected&quot;
+        },
+        &quot;applicant_cas_id&quot;: &quot;1595659994&quot;,
+        &quot;errors&quot;: &quot;null&quot;
+      }
+    ]
   }
 }
 </code></pre>

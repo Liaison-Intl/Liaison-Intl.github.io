@@ -140,51 +140,54 @@
         "status": {
           "$ref": "/schemata/batch_custom_field_answers/definitions/status"
         },
-        "result": {
+        "results": {
           "type": [
-            "object",
+            "array",
             "null"
           ],
-          "description": "Result of the batch",
-          "properties": {
-            "custom_field_answers": {
-              "type": [
-                "array",
-                "null"
-              ],
-              "description": "List of the updated custom field answers",
-              "example": [
-                {
-                  "applicant_cas_id": "123456789",
-                  "custom_field_id": 99,
-                  "field_type": "boolean",
-                  "value": false
-                },
-                {
-                  "applicant_cas_id": "987654321",
-                  "custom_field_id": 123,
-                  "field_type": "string",
-                  "value": "banana"
-                }
-              ],
-              "items": {
-                "type": "object",
-                "required": [
-                  "applicant_cas_id",
-                  "custom_field_id",
-                  "field_type",
-                  "value"
+          "description": "List of the updated custom field answers",
+          "example": [
+            {
+              "custom_field_answer": {
+                "custom_field_id": 99,
+                "label": "Are you a citizen?",
+                "field_type": "boolean",
+                "value": false
+              },
+              "applicant_cas_id": "123456789"
+            },
+            {
+              "custom_field_answer": {
+                "custom_field_id": 123,
+                "label": "What is your favorite fruit?",
+                "field_type": "string",
+                "value": "banana"
+              },
+              "applicant_cas_id": "987654321"
+            }
+          ],
+          "items": {
+            "type": "object",
+            "required": [
+              "custom_field_answer"
+            ],
+            "properties": {
+              "custom_field_answer": {
+                "type": [
+                  "object",
+                  "null"
                 ],
+                "description": "Result of the batch",
                 "properties": {
-                  "applicant_cas_id": {
-                    "type": "string",
-                    "description": "The CAS unique identifier of the applicant.",
-                    "example": "123456789"
-                  },
                   "custom_field_id": {
                     "type": "integer",
                     "description": "Unique identifier of the **custom field** that this answers.",
                     "example": 99
+                  },
+                  "label": {
+                    "type": "string",
+                    "description": "Human-readable label for the custom field..",
+                    "example": "What is your favorite color?"
                   },
                   "field_type": {
                     "type": "string",
@@ -197,6 +200,11 @@
                     "example": false
                   }
                 }
+              },
+              "applicant_cas_id": {
+                "type": "string",
+                "description": "The CAS unique identifier of the applicant.",
+                "example": "123456789"
               }
             }
           }

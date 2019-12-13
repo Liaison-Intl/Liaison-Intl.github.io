@@ -40,37 +40,43 @@ previous <strong>POST</strong>. Once the batch has finished, the result will be 
 <td><code>74780</code></td>
 </tr>
 <tr>
-<td><strong>batch:result</strong></td>
-<td><em>nullable object</em></td>
-<td>Result of the batch</td>
-<td><code>null</code></td>
-</tr>
-<tr>
-<td><strong>batch:result:custom_field_answers</strong></td>
+<td><strong>batch:results</strong></td>
 <td><em>nullable array</em></td>
 <td>List of the updated custom field answers</td>
-<td><code>[{&quot;applicant_cas_id&quot;:&quot;123456789&quot;,&quot;custom_field_id&quot;:99,&quot;field_type&quot;:&quot;boolean&quot;,&quot;value&quot;:false},{&quot;applicant_cas_id&quot;:&quot;987654321&quot;,&quot;custom_field_id&quot;:123,&quot;field_type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;banana&quot;}]</code></td>
+<td><code>[{&quot;custom_field_answer&quot;:{&quot;custom_field_id&quot;:99,&quot;label&quot;:&quot;Are you a citizen?&quot;,&quot;field_type&quot;:&quot;boolean&quot;,&quot;value&quot;:false},&quot;applicant_cas_id&quot;:&quot;123456789&quot;},{&quot;custom_field_answer&quot;:{&quot;custom_field_id&quot;:123,&quot;label&quot;:&quot;What is your favorite fruit?&quot;,&quot;field_type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;banana&quot;},&quot;applicant_cas_id&quot;:&quot;987654321&quot;}]</code></td>
 </tr>
 <tr>
-<td><strong>batch:result:custom_field_answers/applicant_cas_id</strong></td>
+<td><strong>batch:results/applicant_cas_id</strong></td>
 <td><em>string</em></td>
 <td>The CAS unique identifier of the applicant.</td>
 <td><code>&quot;123456789&quot;</code></td>
 </tr>
 <tr>
-<td><strong>batch:result:custom_field_answers/custom_field_id</strong></td>
+<td><strong>batch:results/custom_field_answer</strong></td>
+<td><em>nullable object</em></td>
+<td>Result of the batch</td>
+<td><code>null</code></td>
+</tr>
+<tr>
+<td><strong>batch:results/custom_field_answer:custom_field_id</strong></td>
 <td><em>integer</em></td>
 <td>Unique identifier of the <strong>custom field</strong> that this answers.</td>
 <td><code>99</code></td>
 </tr>
 <tr>
-<td><strong>batch:result:custom_field_answers/field_type</strong></td>
+<td><strong>batch:results/custom_field_answer:field_type</strong></td>
 <td><em>string</em></td>
 <td>Type of data that the <strong>custom field</strong> stores.</td>
 <td><code>&quot;boolean&quot;</code></td>
 </tr>
 <tr>
-<td><strong>batch:result:custom_field_answers/value</strong></td>
+<td><strong>batch:results/custom_field_answer:label</strong></td>
+<td><em>string</em></td>
+<td>Human-readable label for the custom field..</td>
+<td><code>&quot;What is your favorite color?&quot;</code></td>
+</tr>
+<tr>
+<td><strong>batch:results/custom_field_answer:value</strong></td>
 <td><em>string</em></td>
 <td>The value to be stored as an answer to the <strong>custom field</strong>.</td>
 <td><code>false</code></td>
@@ -129,22 +135,26 @@ batch object in the response.</p>
     &quot;id&quot;: 74780,
     &quot;href&quot;: &quot;/api/v2/user_identities/1/programs/42023191739237/batch_custom_field_answers/74780&quot;,
     &quot;status&quot;: &quot;Available&quot;,
-    &quot;result&quot;: {
-      &quot;custom_field_answers&quot;: [
-        {
-          &quot;applicant_cas_id&quot;: &quot;123456789&quot;,
+    &quot;results&quot;: [
+      {
+        &quot;custom_field_answer&quot;: {
           &quot;custom_field_id&quot;: 99,
+          &quot;label&quot;: &quot;Are you a citizen?&quot;,
           &quot;field_type&quot;: &quot;boolean&quot;,
           &quot;value&quot;: false
         },
-        {
-          &quot;applicant_cas_id&quot;: &quot;987654321&quot;,
+        &quot;applicant_cas_id&quot;: &quot;123456789&quot;
+      },
+      {
+        &quot;custom_field_answer&quot;: {
           &quot;custom_field_id&quot;: 123,
+          &quot;label&quot;: &quot;What is your favorite fruit?&quot;,
           &quot;field_type&quot;: &quot;string&quot;,
           &quot;value&quot;: &quot;banana&quot;
-        }
-      ]
-    }
+        },
+        &quot;applicant_cas_id&quot;: &quot;987654321&quot;
+      }
+    ]
   }
 }
 </code></pre>
