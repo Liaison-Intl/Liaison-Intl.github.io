@@ -137,10 +137,7 @@
           "$ref": "/schemata/batch_designations/definitions/status"
         },
         "results": {
-          "type": [
-            "array",
-            "null"
-          ],
+          "type": "array",
           "description": "List of the updated designations",
           "example": [
             {
@@ -170,14 +167,15 @@
                 "name": "Redirected"
               },
               "applicant_cas_id": "1595659994",
-              "errors": "null"
+              "errors": null
             }
           ],
           "items": {
             "type": "object",
             "required": [
               "decision",
-              "applicant_cas_id"
+              "applicant_cas_id",
+              "errors"
             ],
             "properties": {
               "decision": {
@@ -216,6 +214,14 @@
                   "applicant": {
                     "type": "string",
                     "description": "An error message indicating that the applicant_cas_id provided was invalid."
+                  },
+                  "designation": {
+                    "type": "string",
+                    "description": "An error message indicating that no designation was found for the given applicant and program."
+                  },
+                  "update_error": {
+                    "type": "string",
+                    "description": "An error message explaining why the update could not be applied."
                   }
                 }
               }

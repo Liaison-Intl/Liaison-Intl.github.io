@@ -169,13 +169,18 @@
           "items": {
             "type": "object",
             "required": [
-              "custom_field_answer"
+              "custom_field_answer",
+              "applicant_cas_id",
+              "errors"
             ],
             "properties": {
               "custom_field_answer": {
-                "type": [
-                  "object",
-                  "null"
+                "type": "object",
+                "required": [
+                  "custom_field_id",
+                  "label",
+                  "field_type",
+                  "value"
                 ],
                 "description": "Result of the batch",
                 "properties": {
@@ -205,6 +210,30 @@
                 "type": "string",
                 "description": "The CAS unique identifier of the applicant.",
                 "example": "123456789"
+              },
+              "errors": {
+                "type": [
+                  "object",
+                  "null"
+                ],
+                "properties": {
+                  "creation_error": {
+                    "type": "string",
+                    "description": "A message explaining why a change could not be completed."
+                  },
+                  "update_error": {
+                    "type": "string",
+                    "description": "An error message explaining why the update could not be applied."
+                  },
+                  "applicant": {
+                    "type": "string",
+                    "description": "An error message indicating that the applicant_cas_id provided was invalid."
+                  },
+                  "custom_field": {
+                    "type": "string",
+                    "description": "An error message indicating that the custom_field_id provided was invalid."
+                  }
+                }
               }
             }
           }

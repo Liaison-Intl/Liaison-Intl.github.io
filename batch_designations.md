@@ -34,12 +34,6 @@ previous <strong>POST</strong>. Once the batch has finished, the result will be 
 <td><code>74780</code></td>
 </tr>
 <tr>
-<td><strong>batch:results</strong></td>
-<td><em>nullable array</em></td>
-<td>List of the updated designations</td>
-<td><code>[{&quot;decision&quot;:{&quot;id&quot;:4697,&quot;name&quot;:&quot;Matriculated&quot;},&quot;applicant_cas_id&quot;:&quot;1595659994&quot;,&quot;errors&quot;:{&quot;creation_error&quot;:&quot;A newer update (setting decision_id to 4698) is overriding this update&quot;}},{&quot;decision&quot;:{&quot;id&quot;:420,&quot;name&quot;:&quot;Unknown&quot;},&quot;applicant_cas_id&quot;:&quot;1595659995&quot;,&quot;errors&quot;:{&quot;decision&quot;:&quot;No decision found for that decision_id&quot;,&quot;applicant&quot;:&quot;No applicant found for that applicant_cas_id&quot;}},{&quot;decision&quot;:{&quot;id&quot;:4698,&quot;name&quot;:&quot;Redirected&quot;},&quot;applicant_cas_id&quot;:&quot;1595659994&quot;,&quot;errors&quot;:&quot;null&quot;}]</code></td>
-</tr>
-<tr>
 <td><strong>batch:results/applicant_cas_id</strong></td>
 <td><em>string</em></td>
 <td>The CAS unique identifier of the applicant.</td>
@@ -79,6 +73,18 @@ previous <strong>POST</strong>. Once the batch has finished, the result will be 
 <td><strong>batch:results/errors:decision</strong></td>
 <td><em>string</em></td>
 <td>An error message indicating that the decision_id provided was invalid.</td>
+<td><code>&quot;example&quot;</code></td>
+</tr>
+<tr>
+<td><strong>batch:results/errors:designation</strong></td>
+<td><em>string</em></td>
+<td>An error message indicating that no designation was found for the given applicant and program.</td>
+<td><code>&quot;example&quot;</code></td>
+</tr>
+<tr>
+<td><strong>batch:results/errors:update_error</strong></td>
+<td><em>string</em></td>
+<td>An error message explaining why the update could not be applied.</td>
 <td><code>&quot;example&quot;</code></td>
 </tr>
 <tr>
@@ -169,7 +175,7 @@ batch object in the response.</p>
           &quot;name&quot;: &quot;Redirected&quot;
         },
         &quot;applicant_cas_id&quot;: &quot;1595659994&quot;,
-        &quot;errors&quot;: &quot;null&quot;
+        &quot;errors&quot;: null
       }
     ]
   }
