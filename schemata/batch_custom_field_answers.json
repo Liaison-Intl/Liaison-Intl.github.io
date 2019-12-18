@@ -78,14 +78,14 @@
       "targetSchema": {
         "type": "object",
         "properties": {
+          "href": {
+            "$ref": "/schemata/batch_custom_field_answers/definitions/href"
+          },
           "batch": {
             "type": "object",
             "properties": {
               "id": {
                 "$ref": "/schemata/batch_custom_field_answers/definitions/id"
-              },
-              "href": {
-                "$ref": "/schemata/batch_custom_field_answers/definitions/href"
               },
               "status": {
                 "$ref": "/schemata/batch_custom_field_answers/definitions/status",
@@ -123,19 +123,18 @@
     }
   },
   "properties": {
+    "href": {
+      "$ref": "/schemata/batch_custom_field_answers/definitions/href"
+    },
     "batch": {
       "type": "object",
       "required": [
         "id",
-        "href",
         "status"
       ],
       "properties": {
         "id": {
           "$ref": "/schemata/batch_custom_field_answers/definitions/id"
-        },
-        "href": {
-          "$ref": "/schemata/batch_custom_field_answers/definitions/href"
         },
         "status": {
           "$ref": "/schemata/batch_custom_field_answers/definitions/status"
@@ -154,7 +153,8 @@
                 "field_type": "boolean",
                 "value": false
               },
-              "applicant_cas_id": "123456789"
+              "applicant_cas_id": "123456789",
+              "errors": null
             },
             {
               "custom_field_answer": {
@@ -163,7 +163,10 @@
                 "field_type": "string",
                 "value": "banana"
               },
-              "applicant_cas_id": "987654321"
+              "applicant_cas_id": "987654321",
+              "errors": {
+                "applicant": "No applicant found for that applicant_cas_id"
+              }
             }
           ],
           "items": {

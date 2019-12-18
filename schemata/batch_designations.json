@@ -64,14 +64,14 @@
       "targetSchema": {
         "type": "object",
         "properties": {
+          "href": {
+            "$ref": "/schemata/batch_designations/definitions/href"
+          },
           "batch": {
             "type": "object",
             "properties": {
               "id": {
                 "$ref": "/schemata/batch_designations/definitions/id"
-              },
-              "href": {
-                "$ref": "/schemata/batch_designations/definitions/href"
               },
               "status": {
                 "$ref": "/schemata/batch_designations/definitions/status",

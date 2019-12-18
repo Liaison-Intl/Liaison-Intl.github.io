@@ -28,12 +28,6 @@ previous <strong>POST</strong>. Once the batch has finished, the result will be 
 </tr>
 </thead><tbody>
 <tr>
-<td><strong>batch:href</strong></td>
-<td><em>string</em></td>
-<td>Hypertext reference to the batch.<br/> <strong>pattern:</strong> <code>/api/v2/user_identities/\d+/programs/\d+/batch_custom_field_answers/\d+</code></td>
-<td><code>&quot;/api/v2/user_identities/1/programs/42023191739237/batch_custom_field_answers/74780&quot;</code></td>
-</tr>
-<tr>
 <td><strong>batch:id</strong></td>
 <td><em>integer</em></td>
 <td>Unique identifier of this batch.</td>
@@ -43,7 +37,7 @@ previous <strong>POST</strong>. Once the batch has finished, the result will be 
 <td><strong>batch:results</strong></td>
 <td><em>nullable array</em></td>
 <td>List of the updated custom field answers</td>
-<td><code>[{&quot;custom_field_answer&quot;:{&quot;custom_field_id&quot;:99,&quot;label&quot;:&quot;Are you a citizen?&quot;,&quot;field_type&quot;:&quot;boolean&quot;,&quot;value&quot;:false},&quot;applicant_cas_id&quot;:&quot;123456789&quot;},{&quot;custom_field_answer&quot;:{&quot;custom_field_id&quot;:123,&quot;label&quot;:&quot;What is your favorite fruit?&quot;,&quot;field_type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;banana&quot;},&quot;applicant_cas_id&quot;:&quot;987654321&quot;}]</code></td>
+<td><code>[{&quot;custom_field_answer&quot;:{&quot;custom_field_id&quot;:99,&quot;label&quot;:&quot;Are you a citizen?&quot;,&quot;field_type&quot;:&quot;boolean&quot;,&quot;value&quot;:false},&quot;applicant_cas_id&quot;:&quot;123456789&quot;,&quot;errors&quot;:null},{&quot;custom_field_answer&quot;:{&quot;custom_field_id&quot;:123,&quot;label&quot;:&quot;What is your favorite fruit?&quot;,&quot;field_type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;banana&quot;},&quot;applicant_cas_id&quot;:&quot;987654321&quot;,&quot;errors&quot;:{&quot;applicant&quot;:&quot;No applicant found for that applicant_cas_id&quot;}}]</code></td>
 </tr>
 <tr>
 <td><strong>batch:results/applicant_cas_id</strong></td>
@@ -111,6 +105,12 @@ previous <strong>POST</strong>. Once the batch has finished, the result will be 
 <td>Current status of this batch.<br/> <strong>one of:</strong><code>&quot;Queued&quot;</code> or <code>&quot;In Progress&quot;</code> or <code>&quot;Available&quot;</code> or <code>&quot;Success With Errors&quot;</code> or <code>&quot;Failed&quot;</code></td>
 <td><code>&quot;Available&quot;</code></td>
 </tr>
+<tr>
+<td><strong>href</strong></td>
+<td><em>string</em></td>
+<td>Hypertext reference to the batch.<br/> <strong>pattern:</strong> <code>/api/v2/user_identities/\d+/programs/\d+/batch_custom_field_answers/\d+</code></td>
+<td><code>&quot;/api/v2/user_identities/1/programs/42023191739237/batch_custom_field_answers/74780&quot;</code></td>
+</tr>
 </tbody></table>
 
 <h3><a name="link-GET-batch_custom_field_answers-/api/v2/user_identities/:user_identity_id/programs/:program_id/batch_custom_field_answers/:id">Batch Custom Field Answers Show</a></h3>
@@ -155,9 +155,9 @@ batch object in the response.</p>
 </code></pre>
 
 <pre lang="json"><code>{
+  &quot;href&quot;: &quot;/api/v2/user_identities/1/programs/42023191739237/batch_custom_field_answers/74780&quot;,
   &quot;batch&quot;: {
     &quot;id&quot;: 74780,
-    &quot;href&quot;: &quot;/api/v2/user_identities/1/programs/42023191739237/batch_custom_field_answers/74780&quot;,
     &quot;status&quot;: &quot;Available&quot;,
     &quot;results&quot;: [
       {
@@ -167,7 +167,8 @@ batch object in the response.</p>
           &quot;field_type&quot;: &quot;boolean&quot;,
           &quot;value&quot;: false
         },
-        &quot;applicant_cas_id&quot;: &quot;123456789&quot;
+        &quot;applicant_cas_id&quot;: &quot;123456789&quot;,
+        &quot;errors&quot;: null
       },
       {
         &quot;custom_field_answer&quot;: {
@@ -176,7 +177,10 @@ batch object in the response.</p>
           &quot;field_type&quot;: &quot;string&quot;,
           &quot;value&quot;: &quot;banana&quot;
         },
-        &quot;applicant_cas_id&quot;: &quot;987654321&quot;
+        &quot;applicant_cas_id&quot;: &quot;987654321&quot;,
+        &quot;errors&quot;: {
+          &quot;applicant&quot;: &quot;No applicant found for that applicant_cas_id&quot;
+        }
       }
     ]
   }
@@ -249,9 +253,9 @@ batch object in the response.</p>
 </code></pre>
 
 <pre lang="json"><code>{
+  &quot;href&quot;: &quot;/api/v2/user_identities/1/programs/42023191739237/batch_custom_field_answers/74780&quot;,
   &quot;batch&quot;: {
     &quot;id&quot;: 74780,
-    &quot;href&quot;: &quot;/api/v2/user_identities/1/programs/42023191739237/batch_custom_field_answers/74780&quot;,
     &quot;status&quot;: &quot;Queued&quot;
   }
 }

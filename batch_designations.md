@@ -237,9 +237,9 @@ feature which will allow you to set the decision even if the local_status is pre
 </code></pre>
 
 <pre lang="json"><code>{
+  &quot;href&quot;: &quot;/api/v2/user_identities/1/programs/42023191739237/batch_designations/74780&quot;,
   &quot;batch&quot;: {
     &quot;id&quot;: 74780,
-    &quot;href&quot;: &quot;/api/v2/user_identities/1/programs/42023191739237/batch_designations/74780&quot;,
     &quot;status&quot;: &quot;Queued&quot;
   }
 }
