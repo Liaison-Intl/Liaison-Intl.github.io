@@ -107,3 +107,4 @@ generate_markdown_from_json_schema 'Export/Report Files check status' 'export_fi
 generate_markdown_from_json_schema 'Export/Report Files initiate a run' 'export_files.json' '' '' 'not_found.md' > 'export_files.md'
 generate_markdown_from_json_schema 'Applicant Details' 'applicant_details.json' '' 'prototype.md' 'not_found.md' > 'applicant_details.md'
 generate_markdown_from_json_schema 'Batch Designations' 'batch_designations.json' '' 'prototype.md' 'batch_designations_errors.md batch_not_found_errors.md' > 'batch_designations.md'
+generate_markdown_from_json_schema 'Batch Custom Field Answers' 'batch_custom_field_answers.json' '' 'prototype.md' 'batch_custom_field_answers_errors.md batch_not_found_errors.md' > 'batch_custom_field_answers.md'
