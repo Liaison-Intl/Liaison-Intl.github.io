@@ -79,25 +79,25 @@ previous <strong>POST</strong>. Once the batch has finished, the result will be 
 <td><strong>batch:results/errors:applicant</strong></td>
 <td><em>string</em></td>
 <td>An error message indicating that the applicant_cas_id provided was invalid.</td>
-<td><code>&quot;example&quot;</code></td>
+<td><code>&quot;No applicant found for that applicant_cas_id&quot;</code></td>
 </tr>
 <tr>
 <td><strong>batch:results/errors:creation_error</strong></td>
 <td><em>string</em></td>
 <td>A message explaining why a change could not be completed.</td>
-<td><code>&quot;example&quot;</code></td>
+<td><code>&quot;A newer update (setting custom_field_answers to {\&quot;field_type\&quot;:\&quot;string\&quot;,\&quot;value\&quot;:\&quot;Boston\&quot;}) is overriding this update&quot;</code></td>
 </tr>
 <tr>
 <td><strong>batch:results/errors:custom_field</strong></td>
 <td><em>string</em></td>
 <td>An error message indicating that the custom_field_id provided was invalid.</td>
-<td><code>&quot;example&quot;</code></td>
+<td><code>&quot;No custom field found for that custom_field_id&quot;</code></td>
 </tr>
 <tr>
 <td><strong>batch:results/errors:update_error</strong></td>
 <td><em>string</em></td>
 <td>An error message explaining why the update could not be applied.</td>
-<td><code>&quot;example&quot;</code></td>
+<td><code>&quot;ActiveRecord::ConnectionNotEstablished&quot;</code></td>
 </tr>
 <tr>
 <td><strong>batch:status</strong></td>

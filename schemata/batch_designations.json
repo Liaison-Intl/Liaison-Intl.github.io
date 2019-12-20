@@ -205,23 +205,28 @@
                 "properties": {
                   "creation_error": {
                     "type": "string",
-                    "description": "A message explaining why a change could not be completed."
+                    "description": "A message explaining why a change could not be completed.",
+                    "example": "A newer update (setting decision_id to 4698) is overriding this update"
                   },
                   "decision": {
                     "type": "string",
-                    "description": "An error message indicating that the decision_id provided was invalid."
+                    "description": "An error message indicating that the decision_id provided was invalid.",
+                    "example": "No decision found for that decision_id"
                   },
                   "applicant": {
                     "type": "string",
-                    "description": "An error message indicating that the applicant_cas_id provided was invalid."
+                    "description": "An error message indicating that the applicant_cas_id provided was invalid.",
+                    "example": "No applicant found for that applicant_cas_id"
                   },
                   "designation": {
                     "type": "string",
-                    "description": "An error message indicating that no designation was found for the given applicant and program."
+                    "description": "An error message indicating that no designation was found for the given applicant and program.",
+                    "example": "No designation found for the given applicant and program"
                   },
                   "update_error": {
                     "type": "string",
-                    "description": "An error message explaining why the update could not be applied."
+                    "description": "An error message explaining why the update could not be applied.",
+                    "example": "ActiveRecord::ConnectionNotEstablished"
                   }
                 }
               }
