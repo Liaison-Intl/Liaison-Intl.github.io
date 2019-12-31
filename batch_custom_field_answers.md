@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Batch Designations
+title: Batch Custom Field Answers
 ---
 
 <!-- WARNING: This is an automatically generated file.  Do not modify directly.  See script/generate-docs. -->
 
-<h2><a name="resource-batch_designations">Batch Designations</a></h2>
+<h2><a name="resource-batch_custom_field_answers">Batch Custom Field Answers</a></h2>
 
-<p>Update designation decisions for a set of applicants in a single API request using a batch action.
+<p>Update custom field answers for a set of applicants in a single API request using a batch action.
 A batch action is an asynchronous operation that can be created using a first endpoint and then have its result checked
 using another endpoint.
 First the batch action is created using the <strong>POST</strong> (create) endpoint by sending in the request body, the JSON describing all the
@@ -34,22 +34,40 @@ previous <strong>POST</strong>. Once the batch has finished, the result will be 
 <td><code>74780</code></td>
 </tr>
 <tr>
+<td><strong>batch:results</strong></td>
+<td><em>nullable array</em></td>
+<td>List of the updated custom field answers</td>
+<td><code>[{&quot;custom_field_answer&quot;:{&quot;custom_field_id&quot;:99,&quot;label&quot;:&quot;Are you a citizen?&quot;,&quot;field_type&quot;:&quot;boolean&quot;,&quot;value&quot;:false},&quot;applicant_cas_id&quot;:&quot;123456789&quot;,&quot;errors&quot;:null},{&quot;custom_field_answer&quot;:{&quot;custom_field_id&quot;:123,&quot;label&quot;:&quot;What is your favorite fruit?&quot;,&quot;field_type&quot;:&quot;string&quot;,&quot;value&quot;:&quot;banana&quot;},&quot;applicant_cas_id&quot;:&quot;987654321&quot;,&quot;errors&quot;:{&quot;applicant&quot;:&quot;No applicant found for that applicant_cas_id&quot;}}]</code></td>
+</tr>
+<tr>
 <td><strong>batch:results/applicant_cas_id</strong></td>
 <td><em>string</em></td>
 <td>The CAS unique identifier of the applicant.</td>
 <td><code>&quot;123456789&quot;</code></td>
 </tr>
 <tr>
-<td><strong>batch:results/decision:id</strong></td>
+<td><strong>batch:results/custom_field_answer:custom_field_id</strong></td>
 <td><em>integer</em></td>
-<td>The unique identifier for the decision to set. If the designation is in received status and the preliminary_data_handling feature is on, the code will prevent changes to the decision code.</td>
+<td>Unique identifier of the <strong>custom field</strong> that this answers.</td>
 <td><code>99</code></td>
 </tr>
 <tr>
-<td><strong>batch:results/decision:name</strong></td>
+<td><strong>batch:results/custom_field_answer:field_type</strong></td>
 <td><em>string</em></td>
-<td>Human-readable name for this decision.</td>
-<td><code>&quot;example&quot;</code></td>
+<td>Type of data that the <strong>custom field</strong> stores.</td>
+<td><code>&quot;boolean&quot;</code></td>
+</tr>
+<tr>
+<td><strong>batch:results/custom_field_answer:label</strong></td>
+<td><em>string</em></td>
+<td>Human-readable label for the custom field..</td>
+<td><code>&quot;What is your favorite color?&quot;</code></td>
+</tr>
+<tr>
+<td><strong>batch:results/custom_field_answer:value</strong></td>
+<td><em>string</em></td>
+<td>The value to be stored as an answer to the <strong>custom field</strong>.</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><strong>batch:results/errors</strong></td>
@@ -67,19 +85,13 @@ previous <strong>POST</strong>. Once the batch has finished, the result will be 
 <td><strong>batch:results/errors:creation_error</strong></td>
 <td><em>string</em></td>
 <td>A message explaining why a change could not be completed.</td>
-<td><code>&quot;A newer update (setting decision_id to 4698) is overriding this update&quot;</code></td>
+<td><code>&quot;A newer update (setting custom_field_answers to {\&quot;field_type\&quot;:\&quot;string\&quot;,\&quot;value\&quot;:\&quot;Boston\&quot;}) is overriding this update&quot;</code></td>
 </tr>
 <tr>
-<td><strong>batch:results/errors:decision</strong></td>
+<td><strong>batch:results/errors:custom_field</strong></td>
 <td><em>string</em></td>
-<td>An error message indicating that the decision_id provided was invalid.</td>
-<td><code>&quot;No decision found for that decision_id&quot;</code></td>
-</tr>
-<tr>
-<td><strong>batch:results/errors:designation</strong></td>
-<td><em>string</em></td>
-<td>An error message indicating that no designation was found for the given applicant and program.</td>
-<td><code>&quot;No designation found for the given applicant and program&quot;</code></td>
+<td>An error message indicating that the custom_field_id provided was invalid.</td>
+<td><code>&quot;No custom field found for that custom_field_id&quot;</code></td>
 </tr>
 <tr>
 <td><strong>batch:results/errors:update_error</strong></td>
@@ -96,19 +108,19 @@ previous <strong>POST</strong>. Once the batch has finished, the result will be 
 <tr>
 <td><strong>href</strong></td>
 <td><em>string</em></td>
-<td>Hypertext reference to the batch.<br/> <strong>pattern:</strong> <code>/api/v2/user_identities/\d+/programs/\d+/batch_designations/\d+</code></td>
-<td><code>&quot;/api/v2/user_identities/1/programs/42023191739237/batch_designations/74780&quot;</code></td>
+<td>Hypertext reference to the batch.<br/> <strong>pattern:</strong> <code>/api/v2/user_identities/\d+/programs/\d+/batch_custom_field_answers/\d+</code></td>
+<td><code>&quot;/api/v2/user_identities/1/programs/42023191739237/batch_custom_field_answers/74780&quot;</code></td>
 </tr>
 </tbody></table>
 
-<h3><a name="link-GET-batch_designations-/api/v2/user_identities/:user_identity_id/programs/:program_id/batch_designations/:id">Batch Designations Show</a></h3>
+<h3><a name="link-GET-batch_custom_field_answers-/api/v2/user_identities/:user_identity_id/programs/:program_id/batch_custom_field_answers/:id">Batch Custom Field Answers Show</a></h3>
 
 <p>Retrieve the status of a running/done batch action initiated with a previous POST. The <strong>id</strong> parameter is required. It is the id of the batch
 that you wish to check the status of. You may continue to issue this call over a reasonable polling interval (10s) until the batch has finished.
 Once the status of the batch becomes &quot;Available&quot;, the detailed information of the modification applied will be in the &quot;result&quot; property of the
 batch object in the response.</p>
 
-<pre><code>GET /api/v2/user_identities/:user_identity_id/programs/:program_id/batch_designations/:id
+<pre><code>GET /api/v2/user_identities/:user_identity_id/programs/:program_id/batch_custom_field_answers/:id
 </code></pre>
 
 <h4>Required Parameters</h4>
@@ -131,7 +143,7 @@ batch object in the response.</p>
 
 <h4>Curl Example</h4>
 
-<pre lang="bash"><code>$ curl -n https://api.webadmit.org/api/v2/user_identities/:user_identity_id/programs/:program_id/batch_designations/:id \
+<pre lang="bash"><code>$ curl -n https://api.webadmit.org/api/v2/user_identities/:user_identity_id/programs/:program_id/batch_custom_field_answers/:id \
  -G \
   -d id=74780 \
   -H &quot;x-api-key: 0123456789abcdef0123456789abcdef&quot;
@@ -143,53 +155,43 @@ batch object in the response.</p>
 </code></pre>
 
 <pre lang="json"><code>{
-  &quot;href&quot;: &quot;/api/v2/user_identities/1/programs/42023191739237/batch_designations/74780&quot;,
+  &quot;href&quot;: &quot;/api/v2/user_identities/1/programs/42023191739237/batch_custom_field_answers/74780&quot;,
   &quot;batch&quot;: {
     &quot;id&quot;: 74780,
     &quot;status&quot;: &quot;Available&quot;,
     &quot;results&quot;: [
       {
-        &quot;decision&quot;: {
-          &quot;id&quot;: 4697,
-          &quot;name&quot;: &quot;Matriculated&quot;
+        &quot;custom_field_answer&quot;: {
+          &quot;custom_field_id&quot;: 99,
+          &quot;label&quot;: &quot;Are you a citizen?&quot;,
+          &quot;field_type&quot;: &quot;boolean&quot;,
+          &quot;value&quot;: false
         },
-        &quot;applicant_cas_id&quot;: &quot;1595659994&quot;,
-        &quot;errors&quot;: {
-          &quot;creation_error&quot;: &quot;A newer update (setting decision_id to 4698) is overriding this update&quot;
-        }
+        &quot;applicant_cas_id&quot;: &quot;123456789&quot;,
+        &quot;errors&quot;: null
       },
       {
-        &quot;decision&quot;: {
-          &quot;id&quot;: 420,
-          &quot;name&quot;: &quot;Unknown&quot;
+        &quot;custom_field_answer&quot;: {
+          &quot;custom_field_id&quot;: 123,
+          &quot;label&quot;: &quot;What is your favorite fruit?&quot;,
+          &quot;field_type&quot;: &quot;string&quot;,
+          &quot;value&quot;: &quot;banana&quot;
         },
-        &quot;applicant_cas_id&quot;: &quot;1595659995&quot;,
+        &quot;applicant_cas_id&quot;: &quot;987654321&quot;,
         &quot;errors&quot;: {
-          &quot;decision&quot;: &quot;No decision found for that decision_id&quot;,
           &quot;applicant&quot;: &quot;No applicant found for that applicant_cas_id&quot;
         }
-      },
-      {
-        &quot;decision&quot;: {
-          &quot;id&quot;: 4698,
-          &quot;name&quot;: &quot;Redirected&quot;
-        },
-        &quot;applicant_cas_id&quot;: &quot;1595659994&quot;,
-        &quot;errors&quot;: null
       }
     ]
   }
 }
 </code></pre>
 
-<h3><a name="link-POST-batch_designations-/api/v2/user_identities/:user_identity_id/programs/:program_id/batch_designations">Batch Designations Create</a></h3>
+<h3><a name="link-POST-batch_custom_field_answers-/api/v2/user_identities/:user_identity_id/programs/:program_id/batch_custom_field_answers">Batch Custom Field Answers Create</a></h3>
 
-<p>Schedule the update of multiple designations with the given applicant CAS IDs and program ID, by creating a batch.
-<strong>WARNING:</strong> You&#39;ll get an error when you&#39;re trying to set a decision_id to a designation which already has a local status assigned.
-If you want to be able to force the decision_id please contact Liaison to turn on the &quot;Disassociate Decision Codes from Local Status&quot;
-feature which will allow you to set the decision even if the local_status is present.</p>
+<p>Schedule the update of multiple custom field answers with the given applicant CAS IDs and program ID, by creating a batch.</p>
 
-<pre><code>POST /api/v2/user_identities/:user_identity_id/programs/:program_id/batch_designations
+<pre><code>POST /api/v2/user_identities/:user_identity_id/programs/:program_id/batch_custom_field_answers
 </code></pre>
 
 <h4>Required Parameters</h4>
@@ -203,27 +205,41 @@ feature which will allow you to set the decision even if the local_status is pre
 </tr>
 </thead><tbody>
 <tr>
-<td><strong>designations:applicant_cas_id</strong></td>
+<td><strong>custom_field_answers:applicant_cas_id</strong></td>
 <td><em>string</em></td>
 <td>The CAS unique identifier of the applicant.</td>
 <td><code>&quot;123456789&quot;</code></td>
 </tr>
 <tr>
-<td><strong>designations:decision_id</strong></td>
+<td><strong>custom_field_answers:custom_field_id</strong></td>
 <td><em>integer</em></td>
-<td>The unique identifier for the decision to set. If the designation is in received status and the preliminary_data_handling feature is on, the code will prevent changes to the decision code.</td>
-<td><code>99</code></td>
+<td>Unique identifier of the <strong>custom field</strong> that this answers.</td>
+<td><code>4</code></td>
+</tr>
+<tr>
+<td><strong>custom_field_answers:field_type</strong></td>
+<td><em>string</em></td>
+<td>Type of data that the <strong>custom field</strong> stores.<br/> <strong>one of:</strong><code>&quot;boolean&quot;</code> or <code>&quot;number&quot;</code> or <code>&quot;date&quot;</code> or <code>&quot;string&quot;</code> or <code>&quot;select&quot;</code></td>
+<td><code>&quot;boolean&quot;</code></td>
+</tr>
+<tr>
+<td><strong>custom_field_answers:value</strong></td>
+<td><em>nullable [boolean, string, number, date, select]</em></td>
+<td>The value to be stored as an answer to the <strong>custom field</strong>.</td>
+<td><code>false</code></td>
 </tr>
 </tbody></table>
 
 <h4>Curl Example</h4>
 
-<pre lang="bash"><code>$ curl -n -X POST https://api.webadmit.org/api/v2/user_identities/:user_identity_id/programs/:program_id/batch_designations \
+<pre lang="bash"><code>$ curl -n -X POST https://api.webadmit.org/api/v2/user_identities/:user_identity_id/programs/:program_id/batch_custom_field_answers \
   -d &#39;{
-  &quot;designations&quot;: [
+  &quot;custom_field_answers&quot;: [
     {
       &quot;applicant_cas_id&quot;: &quot;123456789&quot;,
-      &quot;decision_id&quot;: 99
+      &quot;custom_field_id&quot;: 4,
+      &quot;field_type&quot;: &quot;boolean&quot;,
+      &quot;value&quot;: false
     }
   ]
 }&#39; \
@@ -237,7 +253,7 @@ feature which will allow you to set the decision even if the local_status is pre
 </code></pre>
 
 <pre lang="json"><code>{
-  &quot;href&quot;: &quot;/api/v2/user_identities/1/programs/42023191739237/batch_designations/74780&quot;,
+  &quot;href&quot;: &quot;/api/v2/user_identities/1/programs/42023191739237/batch_custom_field_answers/74780&quot;,
   &quot;batch&quot;: {
     &quot;id&quot;: 74780,
     &quot;status&quot;: &quot;Queued&quot;
@@ -255,7 +271,7 @@ feature which will allow you to set the decision even if the local_status is pre
 <pre lang="json"><code>{
   &quot;errors&quot;: {
     &quot;schema&quot;: [
-      &quot;The property &#39;#/&#39; did not contain a required property of &#39;designations&#39;&quot;
+      &quot;The property &#39;#/&#39; did not contain a required property of &#39;custom_field_answers&#39;&quot;
     ]
   }
 }
@@ -266,7 +282,7 @@ feature which will allow you to set the decision even if the local_status is pre
 <pre lang="json"><code>{
   &quot;errors&quot;: {
     &quot;schema&quot;: [
-      &quot;The property &#39;#/designations/0/applicant_cas_id&#39; of type Fixnum did not match the following type: string&quot;
+      &quot;The property &#39;#/custom_question_answers/0/applicant_cas_id&#39; of type Fixnum did not match the following type: string&quot;
     ]
   }
 }
