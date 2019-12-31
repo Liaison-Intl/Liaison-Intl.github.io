@@ -106,7 +106,7 @@ title: Designation
 
 <h3><a name="link-PATCH-designation-/api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:applicant_cas_id/designation">Designation Update</a></h3>
 
-<p>Update the designation with the given applicant CAS ID and program ID.  <strong>WARNING:</strong> The decision provided to this endpoint is used even if it conflicts with the local status.   It is possible to change a decision so that it does not match the local status.  (Example: a local status of &quot;Offer Accepted&quot; and a decision of &quot;Withdrawn&quot;.)</p>
+<p>Update the designation with the given applicant CASID and program ID. <strong>WARNING:</strong> You&#39;ll get this error when you&#39;re trying to set a decision_id to a designation that already has a local status assigned. If you want to be able to force the decision_id please contact Liaison to turn on the &quot;Disassociate Decision Codes from Local Status&quot; feature which will allow you to set the decision even if the local_status is present.</p>
 
 <pre><code>PATCH /api/v1/user_identities/:user_identity_id/programs/:program_id/applicants_by_cas_id/:applicant_cas_id/designation
 </code></pre>
@@ -269,8 +269,6 @@ title: Designation
   &quot;message&quot;: &quot;Not Found&quot;
 }
 </code></pre>
-
-<p>Liaison is currently phasing out this error message in favor of more descriptive messages.  If you encounter this message, please contact your Liaison representative with a detail description of the API request you made and one of our engineers will update the API.</p>
 
 <h3>Unauthorized</h3>
 
