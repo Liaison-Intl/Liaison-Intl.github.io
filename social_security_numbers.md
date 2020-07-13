@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Social Security Number
+title: Social Security Numbers
 ---
 
 <!-- WARNING: This is an automatically generated file.  Do not modify directly.  See script/generate-docs. -->
