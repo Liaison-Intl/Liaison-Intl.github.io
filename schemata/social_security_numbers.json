@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-04/hyper-schema",
+  "id": "/schemata/social_security_numbers",
+
+  "title": "Social Security Numbers",
+  "description": "A **user identity** may have one **organization**. An **organization** may have none or one **Social Security Numbers document**.",
+
+  "links": [
+    {
+      "description": "Display existing SSNs.",
+      "href": "/api/v1/user_identities/:user_identity_id/social_security_numbers",
+      "method": "GET",
+      "rel": "self",
+      "title": "Show",
+      "http_header": { "x-api-key": "0123456789abcdef0123456789abcdef" },
+      "response_example": {
+        "head": "HTTP/1.1 200 OK",
+        "body": "-----BEGIN PGP MESSAGE-----\nVersion: Crypt::OpenPGP 1.06\n\n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"
+      }
+    }
+  ]
+}
