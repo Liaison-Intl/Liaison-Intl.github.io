@@ -6,22 +6,20 @@ title: Export/Report Files check status
 <!-- WARNING: This is an automatically generated file.  Do not modify directly.  See script/generate-docs. -->
 
 <h2><a name="resource-export_files_check">Export/Report Files (check status)</a></h2>
-
 <p>Stability: <code>production</code></p>
-
 <p>Retrieve the status of a running export file initiated with the previous POST. Required parameters are the <strong>id</strong> of the export (e.g. export template) and the id of the running instance of that export (e.g. export file) that you wish to check the status of. You may continue to issue this call over a reasonable polling interval until the file becomes ready for download.  Once the status of the file becomes &quot;available&quot;, a download URL for the file will also be returned from the API.  This URL is secure and time-sensitive, expiring less than 30 seconds from when it is issued. It is the expectation that software using this API will immediately download the file once given the URL. The download URL can always be re-generated if it expires by re-calling this method – a new URL will be issued.</p>
 
-
 <h3>Attributes</h3>
-
-<table><thead>
+<table>
+<thead>
 <tr>
 <th>Name</th>
 <th>Type</th>
 <th>Description</th>
 <th>Example</th>
 </tr>
-</thead><tbody>
+</thead>
+<tbody>
 <tr>
 <td><strong>export_files:download_url</strong></td>
 <td><em>string</em></td>
@@ -52,26 +50,19 @@ title: Export/Report Files check status
 <td>Current status of this export file.<br/> <strong>one of:</strong><code>&quot;Initializing&quot;</code> or <code>&quot;Queued&quot;</code> or <code>&quot;In Progress&quot;</code> or <code>&quot;Available&quot;</code> or <code>&quot;Success With Errors&quot;</code> or <code>&quot;Empty List&quot;</code> or <code>&quot;Failed&quot;</code></td>
 <td><code>&quot;Available&quot;</code></td>
 </tr>
-</tbody></table>
-
+</tbody>
+</table>
 <h3><a name="link-GET-export_files_check-/api/v1/exports/:export_id/export_files/:export_file_id">Export/Report Files (check status) Show</a></h3>
-
 <p>The response is the status of the running instance of the export the user is checking on, including the id of that export_file (the running instance), the export id (the export template), the status of the execution, and the actual (time-sensitive) URL to download the file if it is ready.</p>
-
 <pre><code>GET /api/v1/exports/:export_id/export_files/:export_file_id
 </code></pre>
-
 <h4>Curl Example</h4>
-
 <pre lang="bash"><code>$ curl -n https://api.webadmit.org/api/v1/exports/:export_id/export_files/:export_file_id \
   -H &quot;x-api-key: 0123456789abcdef0123456789abcdef&quot;
 </code></pre>
-
 <h4>Response Example</h4>
-
 <pre><code>HTTP/1.1 200 OK
 </code></pre>
-
 <pre lang="json"><code>{
   &quot;export_files&quot;: {
     &quot;id&quot;: 74780,
@@ -82,59 +73,40 @@ title: Export/Report Files check status
   }
 }
 </code></pre>
-
 <h3>Not Found</h3>
-
 <h4>Specific error messages</h4>
-
 <p>When the user_identity is not found</p>
-
 <pre lang="json"><code>{
-  &quot;message&quot;: &quot;User identity &#39;999&#39; not found.&quot;
+  &quot;message&quot;: &quot;User identity '999' not found.&quot;
 }
 </code></pre>
-
 <p>When the program is not found</p>
-
 <pre lang="json"><code>{
-  &quot;message&quot;: &quot;Program &#39;99999999999&#39; not found.&quot;
+  &quot;message&quot;: &quot;Program '99999999999' not found.&quot;
 }
 </code></pre>
-
 <p>When the applicant is not found</p>
-
 <pre lang="json"><code>{
-  &quot;message&quot;: &quot;Applicant &#39;99999999999&#39; not found.&quot;
+  &quot;message&quot;: &quot;Applicant '99999999999' not found.&quot;
 }
 </code></pre>
-
 <p>When the custom field is not found</p>
-
 <pre lang="json"><code>{
-  &quot;message&quot;: &quot;CustomeField &#39;99999999999&#39; not found.&quot;
+  &quot;message&quot;: &quot;CustomeField '99999999999' not found.&quot;
 }
 </code></pre>
-
-<p>While these error messages are most often associated with resources that don&#39;t exist when making a <code>GET</code> request, please note that the same messages are also the response during <code>POST</code>, <code>PUT</code>, and <code>PATCH</code> requests if any resources specified by parameters cannot be found.</p>
-
+<p>While these error messages are most often associated with resources that don't exist when making a <code>GET</code> request, please note that the same messages are also the response during <code>POST</code>, <code>PUT</code>, and <code>PATCH</code> requests if any resources specified by parameters cannot be found.</p>
 <h4>Generic error message (legacy error)</h4>
-
 <pre><code>HTTP/1.1 404 Not Found
 </code></pre>
-
 <pre lang="json"><code>{
   &quot;message&quot;: &quot;Not Found&quot;
 }
 </code></pre>
-
 <p>Liaison is currently phasing out this error message in favor of more descriptive messages.  If you encounter this message, please contact your Liaison representative with a detail description of the API request you made and one of our engineers will update the API.</p>
-
 <h3>Unauthorized</h3>
-
 <h4>Response Example</h4>
-
 <pre><code>HTTP/1.1 401 Unauthorized
 </code></pre>
-
 <p>(Empty response body.)</p>
 
