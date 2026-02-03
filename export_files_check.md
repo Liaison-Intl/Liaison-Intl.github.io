@@ -24,7 +24,7 @@ title: Export/Report Files check status
 <td><strong>export_files:download_url</strong></td>
 <td><em>string</em></td>
 <td>This is a secure S3 URL that can be requested for downloading the generated file.</td>
-<td><code>&quot;https://webadmit-production.s3.amazonaws.com/export_files/reports/000/074/780/d19d6c0a34b7062c4496530f3d5dbfb_original.txt?AWSAccessKeyId=AKIAIT7746URBGHSHEA&amp;Expires=1425359248&amp;Signature=y2jwr78kbVt44xz%2BfaEnp5dXKU%3D&amp;response-content-disposition=attachment%3B%20filename%3DTest-API-Export.csv&amp;response-content-type=text%2Fcsv%3Bcharset%3Diso-8859-1&quot;</code></td>
+<td><code>&quot;https://webadmit-production.s3.amazonaws.com/export_files/reports/000/074/780/d19d6c0a34b7062c4496530f3d5dbfb_original.txt?AWSAccessKeyId=AKIAIT7746URBGHSHEA&amp;Expires=1425359248&amp;Signature=y2jwr78kbVt44xz%2BfaEnp5dXKU%3D&amp;response-content-disposition=attachment%3B%20filename%3DTest-API-Export.csv&amp;response-content-type=text%2Fcsv%3Bcharset%3Dutf-8&quot;</code></td>
 </tr>
 <tr>
 <td><strong>export_files:export_id</strong></td>
@@ -69,10 +69,21 @@ title: Export/Report Files check status
     &quot;href&quot;: &quot;/api/v1/exports/86466/export_files/74780&quot;,
     &quot;export_id&quot;: 86446,
     &quot;status&quot;: &quot;Available&quot;,
-    &quot;download_url&quot;: &quot;https://webadmit-production.s3.amazonaws.com/export_files/reports/000/074/780/d19d6c0a34b7062c4496530f3d5dbfb_original.txt?AWSAccessKeyId=AKIAIT7746URBGHSHEA&amp;Expires=1425359248&amp;Signature=y2jwr78kbVt44xz%2BfaEnp5dXKU%3D&amp;response-content-disposition=attachment%3B%20filename%3DTest-API-Export.csv&amp;response-content-type=text%2Fcsv%3Bcharset%3Diso-8859-1&quot;
+    &quot;download_url&quot;: &quot;https://webadmit-production.s3.amazonaws.com/export_files/reports/000/074/780/d19d6c0a34b7062c4496530f3d5dbfb_original.txt?AWSAccessKeyId=AKIAIT7746URBGHSHEA&amp;Expires=1425359248&amp;Signature=y2jwr78kbVt44xz%2BfaEnp5dXKU%3D&amp;response-content-disposition=attachment%3B%20filename%3DTest-API-Export.csv&amp;response-content-type=text%2Fcsv%3Bcharset%3Dutf-8&quot;
   }
 }
 </code></pre>
+<h3>Instructions to open the CSV file</h3>
+<img src="./img/utf-8-ref.png" alt="Reference screenshot for UTF-8 CSV import in Excel" width="200" height="100"/>
+<ul>
+  <li>Open a blank Excel workbook.</li>
+  <li>Go to the Data tab.</li>
+  <li>In the “Get & Transform Data” group, click From Text/CSV.</li>
+  <li>Navigate to your UTF-8 CSV file, select it, and click Import.</li>
+  <li>In the preview dialog, find the File Origin dropdown and select 65001: Unicode (UTF-8).</li>
+  <li>Verify that the delimiter and data preview look correct.</li>
+  <li>Click Close & Load to import the data into your worksheet.</li>
+</ul>
 <h3>Not Found</h3>
 <h4>Specific error messages</h4>
 <p>When the user_identity is not found</p>
