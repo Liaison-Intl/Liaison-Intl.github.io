@@ -1562,8 +1562,21 @@ if (typeof jQuery === 'undefined') {
     var $tip  = this.tip()
     var title = this.getTitle()
 
-    $tip.find('.tooltip-inner')[this.options.html ? 'html' : 'text'](title)
+    if (this.options.html) {
+      $tip.find('.tooltip-inner').html(this.escapeHtml(title))
+    } else {
+      $tip.find('.tooltip-inner').text(title)
+    }
     $tip.removeClass('fade in top bottom left right')
+  }
+
+  Tooltip.prototype.escapeHtml = function (string) {
+    return String(string == null ? '' : string)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;')
   }
 
   Tooltip.prototype.hide = function (callback) {

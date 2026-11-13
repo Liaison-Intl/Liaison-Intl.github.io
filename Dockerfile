@@ -1,8 +1,8 @@
-FROM ruby:2.7.2
+FROM ruby:3.3.13
 
-ENV BUNDLER_VERSION=2.2.9
+ENV BUNDLER_VERSION=2.5.22
 
-RUN gem update --system && gem install bundler:$BUNDLER_VERSION
+RUN gem install bundler:$BUNDLER_VERSION
 
 WORKDIR /src
 
@@ -13,4 +13,4 @@ RUN bundle install
 COPY . .
 
 # Force choosing a command in docker-compose.yml or CLI
-CMD jekyll --help
+CMD ["bundle", "exec", "jekyll", "--help"]

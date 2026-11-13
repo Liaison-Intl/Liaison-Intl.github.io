@@ -19,7 +19,6 @@
   "type": "object",
   "strictProperties": true,
 
-  "type": "object",
   "properties": {
     "href": {
       "type": "string",
