@@ -71,8 +71,7 @@ title: Applicant Details
 <h4>Response Example</h4>
 <pre><code>HTTP/1.1 200 OK
 </code></pre>
-<pre lang="json"><code>{
-}
+<pre lang="json"><code>{}
 </code></pre>
 <h3>Not Found</h3>
 <h4>Specific error messages</h4>

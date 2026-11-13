@@ -1,7 +1,8 @@
-app:
-  build: .
-  volumes:
-    - .:/src
-  command: jekyll server --host 0.0.0.0 --port 4567
-  ports:
-    - "4567:4567"
+services:
+  app:
+    build: .
+    volumes:
+      - .:/src
+    command: bundle exec jekyll serve --host 0.0.0.0 --port 4567
+    ports:
+      - "4567:4567"
